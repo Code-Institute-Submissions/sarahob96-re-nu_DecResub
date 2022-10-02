@@ -80,6 +80,7 @@ a:hover{
     vertical-align: middle;
     border-radius: 50%;
     padding: 10px;
+
 }
 .navbar-light .navbar-nav .nav-link{
     color: #5EBAB1;
@@ -122,6 +123,7 @@ h2{
     position: relative;
     margin: 0 auto;
     flex-wrap: wrap;
+    padding-top: 30px;
 }
 
 .c-container{
@@ -132,7 +134,10 @@ h2{
     border: 5px solid white;
     box-sizing: border-box;
 }
-
+.category-heading{
+    color: #5EBAB1;
+    
+}
 .category-image{
  
     width: 100%;
@@ -140,3 +145,11 @@ h2{
 
 }
 
+.footer-container{
+
+    background-color: #FFE8FF;
+}
+
+hr{
+    color:#5EBAB1;
+}
