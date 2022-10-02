@@ -111,3 +111,32 @@ h2{
 .fa-search{
     color: #C9A4D5;
 }
+
+.section{
+    max-width: 1200px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.category-container{
+    position: relative;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.c-container{
+    width:20%;
+    background-color: white;
+    text-align: center;
+    float: left;
+    border: 5px solid white;
+    box-sizing: border-box;
+}
+
+.category-image{
+ 
+    width: 100%;
+    height:300px;
+
+}
+
