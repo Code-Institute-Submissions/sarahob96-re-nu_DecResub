@@ -38,22 +38,21 @@
 </head>
 
 <body>
-  <header class="container-fluid fixed-top"> </header>
-
-  {% if messages %}
-  <div class="message-container"></div>
-  {% endif %}
+  <header class="container-fluid"> 
+ 
 
   <nav class="navbar navbar-expand-lg navbar-light main-nav">
-    <a class="navbar-brand brand-text nav-icon " href="{% url 'home' %}">
-      <h2> RENU</h2>
+    <div class="block">
+    <a class="navbar-brand brand-text nav-icon circle" href="{% url 'home' %}">
+      <h2> RE <br> NU</h2>
     </a>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse navbar-border" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
@@ -73,10 +72,26 @@
             <a class="dropdown-item" href=""> Sports Bras </a>
             </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href=""> Accessories </a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href=""> Accessories </a>
+          </li>
 
+          <li class="nav-item nav-padding dropdown nav-search">
+                <form method="GET" action="">
+                  <div class="input-group">
+                    <input class="form-control border rounded-0" id="search-box" type="text" name="q"
+                      placeholder="Search RE-NU Apparel">
+                    <div class="input-group-append">
+                      <button class="form-control btn btn-black border rounded-0" id="search-box2" type="submit">
+                        <span class="icon">
+                          <i class="fas fa-search"></i>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+            </li>
+            
 
             <div class="nav-menu">
               <li class="nav-item nav-padding dropdown">
@@ -97,8 +112,11 @@
               </ul>
             </div>
         
-            </nav>
-
+          </nav>
+        </header>
+            {% if messages %}
+            <div class="message-container"></div>
+            {% endif %}
 
   {% block body %}
   {% endblock %}
