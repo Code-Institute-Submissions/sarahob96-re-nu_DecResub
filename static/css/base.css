@@ -64,7 +64,7 @@ a:hover{
 }
 
 .navbar-light .navbar-brand {
-    color: #FFE8FF;
+    color: white;
     letter-spacing: 3px;
     padding-left: 20px;
     font-family: 'Abril Fatface', cursive; 
@@ -142,7 +142,8 @@ h2{
 }
 .category-heading{
     color: #5EBAB1;
-    
+    font-family: 'Abril Fatface', cursive; 
+    padding-bottom: 10px;
 }
 .category-image{
  
