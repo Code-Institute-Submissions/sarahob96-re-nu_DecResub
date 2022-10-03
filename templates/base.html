@@ -20,7 +20,8 @@
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;700&family=Viga&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alegreya+Sans+SC:wght@400;700&family=Viga&display=swap"
     rel="stylesheet">
 
   <!-- Font Awesome, jQuery and Bootstrap -->
@@ -38,134 +39,136 @@
 </head>
 
 <body>
-  <header class="container-fluid"> 
- 
+  <header class="container-fluid">
 
-  <nav class="navbar navbar-expand-lg navbar-light main-nav">
-    <div class="block">
-    <a class="navbar-brand brand-text nav-icon circle" href="{% url 'home' %}">
-      <h2> RE <br> NU</h2>
-    </a>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse navbar-border" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href=""> New In </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Clothing
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href=""> Sweatshirts </a>
-            <a class="dropdown-item" href=""> Tops </a>
-            <a class="dropdown-item" href=""> Bottoms </a>
-            <a class="dropdown-item" href=""> Sports Bras </a>
+    <nav class="navbar navbar-expand-lg navbar-light main-nav">
+      <div class="block">
+        <a class="navbar-brand brand-text nav-icon circle" href="{% url 'home' %}">
+          <h2> RE <br> NU</h2>
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navbar-border" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=""> New In </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Clothing
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href=""> Sweatshirts </a>
+              <a class="dropdown-item" href=""> Tops </a>
+              <a class="dropdown-item" href=""> Bottoms </a>
+              <a class="dropdown-item" href=""> Sports Bras </a>
             </div>
-            </li>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href=""> Accessories </a>
           </li>
 
           <li class="nav-item nav-padding dropdown nav-search">
-                <form method="GET" action="">
-                  <div class="input-group">
-                    <input class="form-control border rounded-0" id="search-box" type="text" name="q"
-                      placeholder="Search RE-NU Apparel">
-                    <div class="input-group-append">
-                      <button class="form-control btn btn-black border rounded-0" id="search-box2" type="submit">
-                        <span class="icon">
-                          <i class="fas fa-search"></i>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-            </li>
-            
-
-            <div class="nav-menu">
-              <li class="nav-item nav-padding dropdown">
-                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false"> <i class="fa-regular fa-user"></i></a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {% if user.is_authenticated %}
-                  <a class="dropdown-item" href=""> Logout</a>
-                  {% else %}
-                  <a class="dropdown-item" href=""> Login</a>
-                  <a class="dropdown-item" href=""> Register</a>
-                  {% endif %}
+            <form method="GET" action="">
+              <div class="input-group">
+                <input class="form-control border rounded-0" id="search-box" type="text" name="q"
+                  placeholder="Search RE-NU Apparel">
+                <div class="input-group-append">
+                  <button class="form-control btn btn-black border rounded-0" id="search-box2" type="submit">
+                    <span class="icon">
+                      <i class="fas fa-search"></i>
+                    </span>
+                  </button>
                 </div>
-              </li>
-                
-              <li class="nav-item"><a class="nav-link" href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
               </div>
-              </ul>
-            </div>
-        
-          </nav>
-        </header>
-            {% if messages %}
-            <div class="message-container"></div>
-            {% endif %}
+            </form>
+          </li>
+
+
+          <div class="nav-menu">
+            <li class="nav-item nav-padding dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false"> <i class="fa-regular fa-user"></i></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if user.is_authenticated %}
+                <a class="dropdown-item" href=""> Logout</a>
+                {% else %}
+                <a class="dropdown-item" href=""> Login</a>
+                <a class="dropdown-item" href=""> Register</a>
+                {% endif %}
+              </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+          </div>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+  {% if messages %}
+  <div class="message-container"></div>
+  {% endif %}
 
   {% block body %}
   {% endblock %}
+
   <footer class="text-center">
 
     <div class="footer-container">
-        <section class="mt-5">
-            <div class="row text-center d-flex justify-content-center pt-5">
-                <div class="col-md-2">
-                    <h6 class="text-uppercase font-weight-bold">
-                        <a href="#">About us</a>
-                    </h6>
-                </div>
-                <div class="col-md-2">
-                    <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!"> Help</a>
-                    </h6>
-                </div>
-                <div class="col-md-2">
-                    <h6 class="text-uppercase font-weight-bold">
-                        <a href="#">Contact</a>
-                    </h6>
-                </div>
-            </div>
+      <section class="mt-5">
+        <div class="row text-center d-flex justify-content-center pt-5">
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#">About us</a>
+            </h6>
+          </div>
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!"> Help</a>
+            </h6>
+          </div>
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#">Contact</a>
+            </h6>
+          </div>
+        </div>
+      </section>
+
+
+      <hr class="my-5 w-50">
+
+      <section class="text-center mb-5">
+        <a href="" class="me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+
+        <a href="" class="me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <div class="text-center p-3">
+          © 2022 Renu Apparel
+        </div>
         </section>
-
-
-        <hr class="my-5 w-50">
-
-        <section class="text-center mb-5">
-            <a href="" class="me-4">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="" class="me-4">
-                <i class="fab fa-twitter"></i>
-            </a>
-
-            <a href="" class="me-4">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-    <div class="text-center p-3">
-        © 2022 Renu Apparel
-    </div>
     </div>
 
-    
 
-</footer>
+
+  </footer>
 </body>
 
 </html>

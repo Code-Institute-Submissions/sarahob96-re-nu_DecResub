@@ -1,69 +1,83 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block body %}
-    <div class="fluid-container h-100">
-        <div>
-            <div class="hero">
-                {% if user.is_authenticated %}
+<div class="fluid-container h-100">
+    <div>
+        <div class="hero">
+            {% if user.is_authenticated %}
 
-                <h4 class="text-center float-right user-hero"> Welcome {{ user.username }} </h4>
-                {% endif%}
+            <h4 class="text-center float-right user-hero"> Welcome {{ user.username }} </h4>
+            {% endif%}
 
-                <img src="{% static 'images/group-workout2.jpeg'%}" alt="group of girls holding yoga mats">
-                <div class="col-6 col-md-4 my-auto hero-text">
-                    <h2>
-                        The complete workout uniform
-                    </h2>
-                    <h3> Search for your perfect everyday fit </h3>
-                    <a class="shop-button" href="" role="button"> Shop Now</a>
-                </div>
-            </div>
-
-        </div>
-
-  
-        <div class="fluid-container">
-           
-        <div class="category-container">
-                <div class="one-whole column center"> 
-                    <h2 class="text-center category-heading"> Shop by Category </h2>
-                </div>
-            
-            <div class="one-whole column">
-               <div class="c-container">
-                <img class="category-image" src="{% static 'images/sweatshirt.jpeg'%}" alt="group of girls holding yoga mats" >
-                <h4 class="category-text"> Sweatshirts</h4>
-            </div>     
-            <div class="c-container">
-                <img class="category-image" src="{% static 'images/full-outfit.jpeg'%}" alt="group of girls holding yoga mats">
-                <h4 class="category-text"> Tops </h4>
-            </div>
-            
-            <div class="c-container">
-                <img class="category-image" src="{% static 'images/sports-bra.jpeg'%}" alt="group of girls holding yoga mats">
-                <h4 class="category-text"> Sports Bras</h4>
-            </div>
-            <div class="c-container">
-                <img class="category-image" src="{% static 'images/leggings.jpeg'%}" alt="group of girls holding yoga mats"> 
-                <h4 class="category-text"> Bottoms</h4>
-            </div>
-            
-            <div class="c-container" >
-                <img class="category-image" src="{% static 'images/ball.jpeg'%}" alt="group of girls holding yoga mats">
-                <h4 class="category-text"> Accessories </h4>
+            <img src="{% static 'images/group-workout2.jpeg'%}" alt="group of girls holding yoga mats">
+            <div class="col-6 col-md-4 my-auto hero-text">
+                <h2>
+                    The complete workout uniform
+                </h2>
+                <h3> Search for your perfect everyday fit </h3>
+                <a class="shop-button" href="" role="button"> Shop Now</a>
             </div>
         </div>
-        </div>
-    </div>
-
-    <div class="best-seller">
-
 
     </div>
+</div>
 
-    <div class="classes"></div>
+<div class="fluid-container">
 
-   
-    
+    <div class="category-container">
+        <div class="one-whole column center">
+            <h2 class="text-center category-heading"> Shop by Category </h2>
+        </div>
+
+        <div class="one-whole column">
+            <div class="c-container">
+                <a href="">
+                    <img class="category-image" src="{% static 'images/sweatshirt.jpeg'%}"
+                        alt="group of girls holding yoga mats">
+                    <h4 class="category-text"> Sweatshirts</h4>
+                </a>
+            </div>
+            <div class="c-container">
+                <a href="">
+                    <img class="category-image" src="{% static 'images/full-outfit.jpeg'%}"
+                        alt="group of girls holding yoga mats">
+                    <h4 class="category-text"> Tops </h4>
+                </a>
+            </div>
+
+            <div class="c-container">
+                <a href="">
+                    <img class="category-image" src="{% static 'images/sports-bra.jpeg'%}"
+                        alt="group of girls holding yoga mats">
+                    <h4 class="category-text"> Sports Bras</h4>
+                </a>
+            </div>
+            <div class="c-container">
+                <a href="">
+                    <img class="category-image" src="{% static 'images/leggings.jpeg'%}"
+                        alt="group of girls holding yoga mats">
+                    <h4 class="category-text"> Bottoms</h4>
+                </a>
+            </div>
+
+            <div class="c-container">
+                <a href="">
+                    <img class="category-image" src="{% static 'images/ball.jpeg'%}"
+                        alt="group of girls holding yoga mats">
+                    <h4 class="category-text"> Accessories </h4>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="best-seller fluid-container">
+    <img src="{% static 'images/leggings-edit.jpeg'%}" class="bestseller-img">
+    <a href="" class="bestseller-btn btn" role="button"> Shop the look </a>
+
+</div>
+
+
+
+
 {% endblock %}
