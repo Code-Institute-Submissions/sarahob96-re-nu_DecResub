@@ -9,10 +9,10 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-    
+  
     def get_category_name(self):
         return self.category_name
-    
+   
 
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
@@ -26,4 +26,4 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-    
+
