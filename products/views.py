@@ -7,4 +7,8 @@ def products(request):
 
     items = Product.objects.all()
 
-    return render(request, 'products/products.html', {'items': items})
+    context = {
+        'products': items,
+    }
+
+    return render(request, 'products/products.html', context)

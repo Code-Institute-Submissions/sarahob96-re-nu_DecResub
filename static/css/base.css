@@ -195,3 +195,8 @@ hr{
     ;
 }
 
+
+.thumbnail-image{
+    width: 60%;
+    height: 400px;
+}
