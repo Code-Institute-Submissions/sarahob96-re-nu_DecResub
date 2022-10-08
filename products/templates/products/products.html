@@ -3,20 +3,30 @@
 
 {% block body %}
 
+<div class="container-fluid">
 
     <div class="row">
-        {% for product in products %}
 
-        <div class="col-lg-4 product-image">
-            <img class="thumbnail thumbnail-image" src="{{ product.image.url }}">
-            <div>
-                <h4> {{product.name}} </h4>
-                <hr>
-                <p> {{product.price}}</p>
+
+        <div class="col product-image text-center">
+            
+            <div class="row">
+                {% for product in products %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 text-center">
+                  <a href="">
+                        <img class="thumbnail thumbnail-image" src="{{ product.image.url }}">
+                    </a>
+                    <h4 class="float-left"> {{product.name}} </h4>
+                    <p class=".d-print-inline-block float-right"> {{product.price}}</p>
+             
+                </div>
+                {% endfor %}
             </div>
+
         </div>
-        {% endfor %}
+
     </div>
+</div>
 
 
 

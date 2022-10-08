@@ -197,6 +197,11 @@ hr{
 
 
 .thumbnail-image{
-    width: 60%;
+    width: 70%;
     height: 400px;
+}
+
+.product-image{
+    display:flex;
+    justify-content: center;
 }
