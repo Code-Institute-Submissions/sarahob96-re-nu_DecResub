@@ -19,15 +19,15 @@
 
         <div class="col product-image text-center">
             
-            <div class="row">
+            <div class="row product-image-container">
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 text-center">
                     <div class="w-60">
                   <a href="">
                         <img class="thumbnail thumbnail-image" src="{{ product.image.url }}">
                     </a>
-                    <h4 class="float-left"> {{product.name}} </h4>
-                    <p class=".d-print-inline-block float-right"> £{{product.price}}</p>
+                    <h5 class="float-left mb-3 mt-1"> {{product.name}} </h5>
+                    <p class=".d-print-inline-block float-right mt-1"> £{{product.price}}</p>
              </div>
                 </div>
                 {% endfor %}
