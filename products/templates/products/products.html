@@ -23,7 +23,7 @@
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 text-center">
                     <div class="w-60">
-                  <a href="">
+                  <a href="{% url 'product_info' product.id %}">
                         <img class="thumbnail thumbnail-image" src="{{ product.image.url }}">
                     </a>
                     <h5 class="float-left mb-3 mt-1"> {{product.name}} </h5>
