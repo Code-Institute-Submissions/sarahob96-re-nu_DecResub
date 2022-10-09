@@ -29,9 +29,31 @@
             </div>
 
             <div>
+            
                 <form class="form" action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-12">
+                            <p> QTY</p>
+                            <div class="form-group w-25 float-left d-print-inline-block">
+                                <div class="input-group">
+                                    <input class="form-control float-left" type="number" name="quantity" value="1" min="1" max="50" data-item_id="" id="">
+                                </div>
+                             </div>   
+                                <div class="d-print-inline-block">
+                                <input type="submit" class="btn ml-4 border add-to-bag-btn" value="Add to bag">
+                                </div>
+                            
+                        </div>
 
-                </form>
+                        <div class="col-12 mt-3">
+                            <a href="{% url 'products' %}" class="btn pb-0">
+                                <p class="text-uppercase"> <i class="fas fa-chevron-left"></i> Continue Shopping</p>
+                            </a>
+                        </div>
+                        <input type="hidden" name="redirect_url" value="">
+                    </div>
+                </form>  
             </div>
         </div>
     </div>

@@ -209,3 +209,8 @@ hr{
 .product-image-container{
     margin:0px 60px 0px 60px;
 }
+
+.add-to-bag-btn{
+    background-color: #FFE8FF;
+    padding: 6px 10px 6px 10px;
+}
