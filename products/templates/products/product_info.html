@@ -6,29 +6,34 @@
 
 
 <div class="fluid-container">
-            
+
     <div class="row mt-5 ml-5 mr-5">
-        
+
         <div class="offset-lg-1 col-12 col-sm-4 col-md-6 col-lg-4 col-xl-3 mb-4 text-center">
             <div class="prod-info-image">
-          <a href="{{ product.image.url }}" target="_blank">
-                <img class="thumbnail thumbnail-image" src="{{ product.image.url }}">
-            </a>
-          </div>
-     </div>
-    
-     
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img class="thumbnail thumbnail-image" src="{{ product.image.url }}">
+                </a>
+            </div>
+        </div>
 
 
-    <div class="offset-3 col-12 col-md-6 col-lg-4">
-<div class="prod-info">
-    <h4 class="float-left m-0"> {{product.name}} </h4>
-    <br>
-    <p class="float-left"> £{{product.price}}</p>
-    <br>
-    <p> {{product.product_description}}</p>
-    </div>
-    </div>
+
+
+        <div class="offset-2 col-12 col-md-6 col-lg-4">
+            <div class="prod-info">
+                <h3 class="text-left m-0 mt-3"> {{product.name}} </h3>
+                <p class="text-left"> £{{product.price}}</p>
+                <hr class="w-50">
+                <p class="mt-2 mb-2"> {{product.product_description}}</p>
+            </div>
+
+            <div>
+                <form class="form" action="" method="POST">
+
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
