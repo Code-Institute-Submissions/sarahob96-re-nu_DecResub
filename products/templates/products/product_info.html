@@ -9,7 +9,7 @@
 
     <div class="row mt-5 ml-5 mr-5">
 
-        <div class="offset-lg-1 col-12 col-sm-4 col-md-6 col-lg-4 col-xl-3 mb-4 text-center">
+        <div class="offset-lg-2 col-12 col-sm-4 col-md-6 col-lg-4 col-xl-3 mb-4 text-center">
             <div class="prod-info-image">
                 <a href="{{ product.image.url }}" target="_blank">
                     <img class="thumbnail thumbnail-image" src="{{ product.image.url }}">
@@ -20,12 +20,12 @@
 
 
 
-        <div class="offset-2 col-12 col-md-6 col-lg-4">
+        <div class="offset-1 col-12 col-md-6 col-lg-4">
             <div class="prod-info">
                 <h3 class="text-left m-0 mt-3"> {{product.name}} </h3>
                 <p class="text-left"> £{{product.price}}</p>
-                <hr class="w-50">
-                <p class="mt-2 mb-2"> {{product.product_description}}</p>
+                <hr class="w-50 mb-4">
+                <p class="mt-2 mb-4"> {{product.product_description}}</p>
             </div>
 
             <div>
@@ -34,7 +34,7 @@
                     {% csrf_token %}
                     <div class="form-row">
                         <div class="col-12">
-                            <p> QTY</p>
+                            <p class="mb-1"> QTY</p>
                             <div class="form-group w-25 float-left d-print-inline-block">
                                 <div class="input-group">
                                     <input class="form-control float-left" type="number" name="quantity" value="1" min="1" max="50" data-item_id="" id="">
