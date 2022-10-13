@@ -4,5 +4,12 @@
 {% block body %}
 
 shopping bag
-   
+    <div>
+        {% if bag_contents %}
+
+            {{ bag_contents }}
+        {% else %}
+        <p> no items in the bag </p>
+        {% endif %}
+    </div>
 {% endblock %}
