@@ -9,7 +9,7 @@ def shopping_bag(request):
     return render(request, 'bag/bag.html')
 
 
-def add_to_bag(request, product_id):
+def add_product(request, product_id):
 
     qty = request.POST.get('qty')
     redirect_url = request.POST.get('redirect_url')
@@ -21,5 +21,4 @@ def add_to_bag(request, product_id):
         bag[product_id] += int(qty)
 
     request.session['bag'] = bag
-    print(request.session['bag'])
     return redirect(redirect_url)
