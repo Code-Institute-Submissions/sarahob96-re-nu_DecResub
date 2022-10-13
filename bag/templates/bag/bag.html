@@ -6,8 +6,28 @@
 shopping bag
     <div>
         {% if bag_contents %}
+        <table class="table-responsive">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th> Item</th>
+                    <th> Quantity</th>
+                    <th> Price</th>
+                    <th> Total </th>
 
-            {{ bag_contents }}
+                </tr>
+            </thead>
+            {% for contents in bag_contents %}
+            <tr>
+                <td> 
+                    <img class="img-fluid" src="{{ contents.product.image.url }}"> 
+                </td>
+                <td> {{ contents.product.name}} </td>
+                <td>{{ contents.product.qty}} </td>
+                <td>{{ contents.product.price}} </td>
+            </tr>
+            {% endfor %}
+                </table>
         {% else %}
         <p> no items in the bag </p>
         {% endif %}
