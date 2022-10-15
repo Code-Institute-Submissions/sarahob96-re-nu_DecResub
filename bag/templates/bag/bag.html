@@ -23,13 +23,21 @@ shopping bag
                     <img class="img-fluid" src="{{ contents.product.image.url }}"> 
                 </td>
                 <td> {{ contents.product.name}} </td>
-                <td>{{ contents.product.qty}} </td>
+                <td>{{ contents.qty}} </td>
                 <td>{{ contents.product.price}} </td>
+                <td>  </td>
             </tr>
             {% endfor %}
                 </table>
+            
+            <div>
+                <a href="{% url 'products' %}"> Continue Shopping </a>
+                <a href=""> Checkout now </a>
+            </div>
         {% else %}
-        <p> no items in the bag </p>
+        <p> You have no items in your shopping bag </p>
+        <br>
+        <a href="{% url 'products' %}"> Shop now </a>
         {% endif %}
     </div>
 {% endblock %}
