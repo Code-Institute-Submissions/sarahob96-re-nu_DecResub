@@ -22,3 +22,4 @@ def add_product(request, product_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+
