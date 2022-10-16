@@ -22,7 +22,7 @@ class Checkout(models.Model):
     country = CountryField(blank_label="country", null=False, blank=False)
     postcode = models.CharField(max_length=40, null=False, blank=False)
     delivery = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)
-    order_total = models.DecimalField(max_digits=12, decimal_places=2, null=False, default=0)
+    total = models.DecimalField(max_digits=12, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=12, decimal_places=2, null=False, default=0)
 
     def create_order_number(self):
@@ -35,7 +35,7 @@ class Checkout(models.Model):
         super().save(*args, **kwargs)
 
     def update_total_cost(self):
-        self.order_total = self.order.aggregate(Sum('order_total'))['order_total_total__sum'] or 0
+        self.total = self.order.aggregate(Sum('order_total'))['order_total_total__sum'] or 0
 
     def __str__(self):
         return self.order_number
