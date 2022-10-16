@@ -3,14 +3,63 @@
 {% load templatetags %}
 
 {% block body %}
+{% load crispy_forms_tags %}
 
 <div>
     <h2 class="text-center"> Checkout </h2>
     <hr class="black w-50 pb-3">
     <div class="row">
+
+<p class="text-black"> Checkout Summary </p>
+                <div class="row">
+                    <div>
+                        <p>Item ({{ product_count }}) </p>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p>Subtotal</p>
+                    </div>
+    </div>
+    {% for contents in bag_contents %}
+    <div class="row">
+        <div class="col">
+            <img class="w-25" src="{{contents.product.image.url}}" alt="{{product.name}}">
+        </div>
+        <div class="col">
+            <p> {{contents.product.name}}</p>
+            <p> {{ contents.qty}}</p>
+            <p> €{{ contents.product.price | individual_total:contents.qty}}</p>
+        </div>
+
+    </div>
+    {% endfor%}
+    <div class="row">
         <div class="col-12 col-lg-6">
             <h5> Fill out the form below to checkout and complete your order</h5>
+            <form action="{% url 'checkout' %}" class="w-50" method="POST" id="checkout-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                {{ checkout_form }}
+            
+                {% if user.is_authenticated %}
+                <label class="form-check-label" for="id-save-details">Save this delivery information to my
+                    profile</label>
+                <input class="form-check-input" type="checkbox" id="id-save-details" name="save-details"
+                    checked>
+                {% else %}
+                <a href="">
+                    Register an account
+                </a>
 
+                <a href="">
+                    Login to save info
+                </a>
+                {% endif %}
+
+                <button type="submit" class="btn"> Back to cart</button>
+
+                <button type="submit" class="btn"> Continue to Payment</button>
+
+            </form>
         </div>
 
     </div>
