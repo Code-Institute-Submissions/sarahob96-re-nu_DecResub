@@ -214,3 +214,15 @@ hr{
     background-color: #FFE8FF;
     padding: 6px 10px 6px 10px;
 }
+
+.shopping-link{
+    background-color: #FFE8FF;
+    padding: 10px;
+    color: black;
+}
+
+.checkout-link{
+    background-color: #5EBAB1;
+    padding:10px;
+    color: black;
+}
