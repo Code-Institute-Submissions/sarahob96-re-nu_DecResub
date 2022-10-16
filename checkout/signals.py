@@ -10,6 +10,6 @@ def update_order_on_save(sender, instance, created, **kwargs):
 
 
 @receiver(post_delete, sender-Order)
-def update_order_on_save(sender, instance, **kwargs):
+def update_order_on_delete(sender, instance, **kwargs):
 
     instance.checkout.update_total()
