@@ -54,6 +54,9 @@
                     Login to save info
                 </a>
                 {% endif %}
+                
+                <div id="card-element"></div>
+
 
                 <button type="submit" class="btn"> Back to cart</button>
 
@@ -64,4 +67,13 @@
 
     </div>
 </div>
+{% endblock %}
+
+{% block js %}
+
+{{ block.super }}
+{{ stripe_publishable_key|json_script:"id_stripe_publishable_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe.js' %}"></script>
+
 {% endblock %}
