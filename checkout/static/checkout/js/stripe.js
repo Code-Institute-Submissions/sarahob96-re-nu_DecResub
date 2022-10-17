@@ -19,8 +19,21 @@ var style = {
         iconColor: '#dc3545'
     }
 };
-var card = elements.create('card', {
-    style: style
+
+var stripeCard = elements.create('card', {
+    style: style });
+    stripeCard.mount('#stripe-card');
+
+
+stripeCard.addEventListener('change', function (event) {
+    var cardError = document.getElementById('card-error-message');
+    if (event.error) {
+
+        var html = `
+            <span>${event.error.message}</span>`;
+        $(cardError).html(html);
+    } else {
+        cardError.textContent = '';
+    }
 });
-card.mount('#card-element');
 
