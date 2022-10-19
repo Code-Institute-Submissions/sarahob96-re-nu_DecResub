@@ -1,10 +1,11 @@
 import json
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from .forms import CheckoutForm
 from bag.contexts import bag_items
 from django.conf import settings
 from products.models import Product
 import stripe
+from .models import Checkout
 # Create your views here.
 
 def order(request):
@@ -31,19 +32,19 @@ def order(request):
         checkout_form = CheckoutForm(checkout_details)
 
         if checkout_form.is_valid():
-            checkout_form.save()
+            order = checkout_form.save()
 
             request.session['save_details'] = 'save-detail' in request.POST
             return redirect(reverse('order_successful', args=[order.order_number]))
 
     #messages error
-        users_bag = bag_items(request)
-        total = users_bag['total']
-        stripe_total_price = round(total * 100)
-        stripe.api_key = stripe_secret_key
-        intent = stripe.PaymentIntent.create(
-         amount=stripe_total_price,
-         currency=settings.STRIPE_CURRENCY,
+    users_bag = bag_items(request)
+    total = users_bag['total']
+    stripe_total_price = round(total * 100)
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total_price,
+        currency=settings.STRIPE_CURRENCY,
         )
 
     checkout_form = CheckoutForm()
@@ -60,7 +61,7 @@ def order(request):
 def order_successful(request, order_number):
 
     save_details = request.session.get('save_details')
-    order = get_object_or_404(Order, order_number=order_number)
+    checkout_order = get_object_or_404(Checkout, order_number=order_number)
     #success message
 
     if 'bag' in request.session:
@@ -68,7 +69,7 @@ def order_successful(request, order_number):
 
     template = 'checkout/order_success.html'
     context = {
-        'order': order,
+        'checkout_order': checkout_order,
 
     }
-    return render(request, context)
+    return render(request, template, context)
