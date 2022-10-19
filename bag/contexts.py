@@ -23,8 +23,7 @@ def bag_items(request):
         'bag_contents': bag_contents,
         'total': total,
         'product_count': product_count,
-        'qty': qty,
-        'individual_total': individual_total,
+        
 
     }
     return context

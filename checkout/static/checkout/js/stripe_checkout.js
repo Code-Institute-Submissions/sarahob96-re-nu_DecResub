@@ -1,7 +1,7 @@
 
-var stripe_public_key = $("#id_stripe_public_key").text().slice(1,-1);
-var client_secret = $('#id_client_secret').text().slice(1,-1);
-var stripe = Stripe(stripe_public_key);
+var stripePublicKey = $("#id_stripe_public_key").text().slice(1,-1);
+var clientSecret = $('#id_client_secret').text().slice(1,-1);
+var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
 
 var style = {
@@ -39,3 +39,28 @@ stripeCard.addEventListener('change', function (event) {
 
 // stripe documentation
 
+var form = document.getElementById('checkout-form');
+
+form.addEventListener('submit', function(ev) {
+    ev.preventDefault();
+    stripeCard.update({ 'disabled': true});
+    $('#submit-btn').attr('disabled', true);
+    stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+            card: stripeCard,
+        }
+    }).then(function(result) {
+        if (result.error) {
+            var cardError = document.getElementById('card-error-message');
+            var html = `
+                <span>${result.error.message}</span>`;
+            $(cardError).html(html);
+            card.update({ 'disabled': false});
+            $('#submit-btn').attr('disabled', false);
+        } else {
+            if (result.paymentIntent.status === 'succeeded') {
+                form.submit();
+            }
+        }
+    });
+});
