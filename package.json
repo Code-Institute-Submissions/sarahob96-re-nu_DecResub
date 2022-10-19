@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@stripe/stripe-js": "^1.42.0"
+  },
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+      "outDir": "../out-tsc/app",
+      "types": [
+        "stripe-v3"
+      ]
+    },
+    "exclude": [
+      "test.ts",
+      "**/*.spec.ts"
+    ]
+  }
+
