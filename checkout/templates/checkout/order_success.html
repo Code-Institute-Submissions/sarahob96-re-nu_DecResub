@@ -3,6 +3,31 @@
 
 {% block body %}
 
+<div class="order-success text-center">
+<h3>Thanks for ordering from RENU Apparel</h3>
+<p> order #{{ checkout_order.order_number}} <br>
+You will recieve confirmation of your order at {{ checkout_order.email }}.</p>
 
-<p> order success </p>
+
+<h5> We can't wait to see you in RENU </h5>
+<h6> Tag us on instagram #renuapparel</h6>
+
+<h3> ORDER DETAILS </h3>
+
+<p> Date : {{checkout_order.date}} <br>
+    Name : {{checkout_order.name}} <br>
+    Email : {{checkout_order.email}}<br>
+    Address Line 1 : {{checkout_order.address_line_1}}<br>
+    Address Line 2 : {{checkout_order.address_line_2}}<br>
+    Town: {{checkout_order.town}}<br>
+    City:{{checkout_order.city}}<br>
+    Postcode:{{checkout_order.postcode}}<br>
+    Country:{{checkout_order.country}}<br>
+</p>
+
+
+</div>
+
+
+
 {% endblock %}
