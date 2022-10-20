@@ -3,8 +3,13 @@ from .models import Checkout, Order_number
 
 # Register your models here.
 
+class orderNumberAdminTabInline(admin.TabularInline):
+    model = Order_number
+    readonly_fields = ('order_total',)
 
 class CheckoutAdmin(admin.ModelAdmin):
+    inlines = (orderNumberAdminTabInline,)
+
     readonly_fields = ('order_number', 'date', 'delivery', 'total', 
                        'grand_total')
 

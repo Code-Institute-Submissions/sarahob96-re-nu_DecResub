@@ -27,7 +27,7 @@ class Checkout(models.Model):
 
     def create_order_number(self):
         return uuid.uuid4().hex.upper()
-
+        
     def save(self, *args, **kwargs):
 
         if not self.order_number:
@@ -43,7 +43,7 @@ class Checkout(models.Model):
 class Order_number(models.Model):
     order = models.ForeignKey(Checkout, null=False, blank=False, on_delete=models.CASCADE, related_name='ordernumber')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    qty= models.IntegerField(null=False, blank=False, default=0)
+    qty = models.IntegerField(null=False, blank=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, blank=False, editable=False)
 
     def save(self, *args, **kwargs):
