@@ -27,15 +27,17 @@ class Checkout(models.Model):
 
     def create_order_number(self):
         return uuid.uuid4().hex.upper()
-        
+
+    def update_total_cost(self):
+        self.total = self.order.aggregate(Sum('order_total'))['order_total_total__sum'] or 0
+    
+            
     def save(self, *args, **kwargs):
 
         if not self.order_number:
             self.order_number = self.create_order_number()
         super().save(*args, **kwargs)
 
-    def update_total_cost(self):
-        self.total = self.order.aggregate(Sum('order_total'))['order_total_total__sum'] or 0
 
     def __str__(self):
         return self.order_number

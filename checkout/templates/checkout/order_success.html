@@ -25,6 +25,17 @@ You will recieve confirmation of your order at {{ checkout_order.email }}.</p>
     Country:{{checkout_order.country}}<br>
 </p>
 
+{% for product in checkout.ordernumber.all %}
+
+<div class="row">
+    <div class="col">
+        <p> {{ product.products }}</p>
+        {{ product.qty }}
+    </div>
+
+</div>
+{% endfor %}
+
 
 </div>
 
