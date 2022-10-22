@@ -1,14 +1,50 @@
 <div class="toast custom-toast rounded-0 border-top-0" data-autohide="false">
     <div class="arrow-up arrow-success"></div>
-    <div class="w-100 toast-capper bg-success"></div>
+    <div class="w-100 toast-capper toast-capper-bg"></div>
     <div class="toast-header bg-white text-dark">
         <strong class="mr-auto text-uppercase">Success!</strong>
         <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
+    <div class="toast-body bg-white">
+        <div class="row">
+            <div class="col">
+                {{ message }} 
+                <hr>       
+            </div>
+        </div>
 
-    <div class="toast-body-success">
-        {{ message }}
+        <p class="logo py-1">Your Bag ({{ product_count }})</p>
+        <div class="bag-preview-container">
+            {% for product in bag_contents %}
+
+            <div class="row">
+                <div class="col-4 my-1">
+                    {% if product.product.image %}
+                    <img class="w-100" src="{{ product.product.image.url }}" alt="{{ item.product.name }}">
+                    {% endif %}
+                </div>
+                <div class="col-8">
+                    <p class="my-0"><strong>{{ product.name }}</strong></p>
+                    <p class="my-0 small text-muted">Qty: {{ product.qty }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="mt-3 mb-1">
+                    Total price
+                    <span class="float-right">£{{ total|floatformat:2 }}</span>
+                </p>
+                <div class="w-100 bag-preview-button">
+                <a href="{% url 'shopping_bag' %}" class="btn btn-block bag-add-btn mt-2">
+                    <span class="w-100 text-uppercase">Go To Shopping Bag<i class="fas fa-shopping-bag"></i></span>
+                
+                </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

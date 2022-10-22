@@ -18,10 +18,11 @@ def add_product(request, product_id):
 
     if product_id not in list(bag.keys()):
         bag[product_id] = int(qty)
-    else:
-        bag[product_id] += int(qty)
         messages.success(request, f'Added {product.name} to the bag')
 
+    else:
+        bag[product_id] += int(qty)
+        messages.success(request, f' {product.name} quantity has been updated')
     request.session['bag'] = bag
     return redirect(redirect_url)
 
