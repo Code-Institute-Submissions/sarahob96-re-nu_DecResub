@@ -16,6 +16,20 @@ a{
     color:#5EBAB1;
 
 }
+
+.message-block{
+    z-index: 99999;
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    
+}
+.custom-toast{
+    overflow: visible;
+}
+.toast-capper{
+    height: 5px;
+}
 .hero img {
     width: 100%;
     height: 80%;
