@@ -5,10 +5,12 @@
 {% block body %}
 
 <div>
-    <h2 class="text-center"> Shopping bag</h2>
+    <h2 class="text-center"> Shopping bag</h2> 
+    {% if bag_contents %}
+        <h5 class="text-center"> {{ product_count }} Items </div>
     <hr class="black w-50 pb-3">
     <div class="cart-container w-50 ">
-        {% if bag_contents %}
+       
         <table class="table-responsive ml-5 mr-5">
             <thead>
                 <tr>

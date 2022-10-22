@@ -1,29 +1,29 @@
-import json
 from django.shortcuts import render, get_object_or_404, reverse, redirect, HttpResponse
-from .forms import CheckoutForm
-from django.views.decorators.http import require_http_methods, require_POST
-from bag.contexts import bag_items
 from django.conf import settings
+from django.views.decorators.http import require_http_methods, require_POST
+
+from bag.contexts import bag_items
 from products.models import Product
+from .forms import CheckoutForm
+from .models import Checkout
+
 import stripe
 import json
-from .models import Checkout
-# Create your views here.
 
-@require_POST
-def cache_checkout(request):
-    try:
-        pid = request.POST.get('client_secret').split('secret')[0]
-        stripe.api_key = settings.STRIPE_SECRET_KEY
-        stripe.PaymentIntent.modify(pid, metadata={
-            'bag': json.dumps(request.session.get('bag', {})),
-            'save_details': request.POST.get('save_details'),
-            'username': request.user,
-        })
-        return HttpResponse(status=200)
-    except Exception as e:
+#@require_POST
+#def cache_checkout(request):
+#    try:
+      #  pid = request.POST.get('client_secret').split('_secret')[0]
+       # stripe.api_key = settings.STRIPE_SECRET_KEY
+       # stripe.PaymentIntent.modify(pid, metadata={
+          #  'bag': json.dumps(request.session.get('bag', {})),
+           # 'save_details': request.POST.get('save_details'),
+           # 'username': request.user,
+     #   })
+        #return HttpResponse(status=200)
+   # except Exception as e:
        
-        return HttpResponse(content=e, status=400)
+      #  return HttpResponse(content=e, status=400)
 # error
 
 def order(request):
