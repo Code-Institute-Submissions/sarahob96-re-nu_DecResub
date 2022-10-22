@@ -26,11 +26,26 @@
                 <p class="text-left"> €{{product.price}}</p>
                 <hr class="w-50 mb-4">
                 <p class="mt-2 mb-4"> {{product.product_description}}</p>
+        
            
        
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
+                        {% with product.sizes as p %}
+                    {% if p %}
+                    <div>
+                        <select>
+                            <option value="4"> Size 4 </option>
+                            <option value="6"> Size 6 </option>
+                            <option value="8"> Size 8 </option>
+                            <option value="10" selected> Size 10 </option>
+                            <option value="12"> Size 12</option>
+                            <option value="14"> Size 14 </option>
+                            <option value="16"> Size 16 </option>
+                        </select>
+                    </div>
+                    {% endif %}
                         <div class="col-12">
                         <p> QTY</p>
                             <div class="form-group w-25 float-left d-print-inline-block">
@@ -50,6 +65,7 @@
                             
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        {% endwith %}
                     </div>
                 </form>      
         </div>
