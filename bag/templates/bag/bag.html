@@ -6,7 +6,7 @@
 
 <div>
     <h2 class="text-center"> Shopping bag</h2> 
-    {% if bag_contents %}
+    
         <h5 class="text-center"> {{ product_count }} Items </div>
     <hr class="black w-50 pb-3">
     <div class="cart-container w-50 ">
@@ -16,23 +16,27 @@
                 <tr>
                     <th></th>
                     <th> Item</th>
+                    <th> Size</th>
                     <th> Quantity</th>
                     <th> Price</th>
                     <th> Total </th>
 
                 </tr>
             </thead>
+            {% if bag_contents %}
             {% for contents in bag_contents %}
             <tr>
                 <td class="w-25">
                     <img class="img-fluid w-100" src="{{ contents.product.image.url }}">
                 </td>
                 <td> {{ contents.product.name}} </td>
+               <!---<td> {% if contents.product.sizes %}{{product.size}}{%else%}ONE-SIZE{% endif %}</td>-->
                 <td>{{ contents.qty}} </td>
                 <td>€{{ contents.product.price}} </td>
                 <td> €{{ contents.product.price | individual_total:contents.qty}}</td>
-                {% endfor %}
+               
             </tr>
+             {% endfor %}
         </table>
 
         <h5><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h5>

@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404
 from products.models import Product
-
+from decimal import Decimal 
+from django.conf import settings 
 
 def bag_items(request):
 
@@ -10,6 +11,7 @@ def bag_items(request):
     bag = request.session.get('bag', {})
 
     for product_id, qty in bag.items():
+       
         product = get_object_or_404(Product, pk=product_id)
         total += qty * product.price
         product_count += qty
@@ -17,14 +19,13 @@ def bag_items(request):
             'product_id': product_id,
             'qty': qty,
             'product': product, 
-        })
-        individual_total = qty * product.price
+            })
+
     context = {
         'bag_contents': bag_contents,
         'total': total,
         'product_count': product_count,
-        
-
+   
     }
     return context
 
