@@ -9,8 +9,9 @@
     {% if user.is_authenticated %}
     <div class="row">
         <div class="col">
-    <h2 class="text-center"> {{user.username}} Profile </h2>
+    <h2 class="text-center"> {{user.username}}'s' Profile </h2>
     <hr class="black w-50 pb-3">
+    <div>
     <h3> My Profile </h3>
     <form>
         {{ csrf_token}}
@@ -27,6 +28,8 @@
     {% else %}
     <h4 class="text-center"> Please login or register an account to view your profile </h4>
 </div>
+</div>
+
 {% endif %}
 {% endblock %}
 {% block js %}
