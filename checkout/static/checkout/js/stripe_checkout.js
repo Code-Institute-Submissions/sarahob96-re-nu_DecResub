@@ -47,11 +47,38 @@ form.addEventListener('submit', function(ev) {
     $('#submit-btn').attr('disabled', true);
     $('#checkout-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
+
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: stripeCard,
+            billing_details: {
+                name: $.trim(form.name.value),
+                phone: $.trim(form.phone.value),
+                email: $.trim(form.email.value),
+                address: {
+                    line1 : $.trim(form.address_line_1.value),
+                    line2: $.trim(form.address_line_2.value),
+                    city: $.trim(form.city.value),
+                    postal_code: $.trim(form.postcode.value),
+                    country: $.trim(form.country.value),
+                
+
+            }
         }
-    }).then(function(result) {
+    },
+            shipping: {
+                name: $.trim(form.name.value),
+                phone: $.trim(form.phone.value),
+                address: {
+                    line1 : $.trim(form.address_line_1.value),
+                    line2: $.trim(form.address_line_2.value),
+                    city: $.trim(form.city.value),
+                    postal_code: $.trim(form.postcode.value),
+                    country: $.trim(form.country.value),
+                
+            }
+    },
+}).then(function(result) {
         if (result.error) {
             var cardError = document.getElementById('card-error-message');
             var html = `
@@ -59,12 +86,12 @@ form.addEventListener('submit', function(ev) {
             $(cardError).html(html);
             $('#checkout-form').fadeToggle(100);
             $('#loading-overlay').fadeToggle(100);
-            card.update({ 'disabled': false});
+            stripeCard.update({ 'disabled': false});
             $('#submit-btn').attr('disabled', false);
         } else {
             if (result.paymentIntent.status === 'succeeded') {
                 form.submit();
             }
         }
-    });
-});
+    })
+})
