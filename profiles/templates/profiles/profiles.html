@@ -5,10 +5,25 @@
 {% block body %}
 {% load crispy_forms_tags %}
 
-<div>
+<div class="profile-container">
     {% if user.is_authenticated %}
+    <div class="row">
+        <div class="col">
     <h2 class="text-center"> {{user.username}} Profile </h2>
     <hr class="black w-50 pb-3">
+    <h3> My Profile </h3>
+    <form>
+        {{ csrf_token}}
+        {{ form|crispy}}
+    </form>
+        </div>
+    <div class="col">
+        <h3> My Orders</h3>
+    </div>
+    <div class="col">
+        <h3> My Reviews </h3>
+    </div>
+    </div>
     {% else %}
     <h4 class="text-center"> Please login or register an account to view your profile </h4>
 </div>
