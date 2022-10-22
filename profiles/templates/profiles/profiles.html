@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block body %}
+{% load crispy_forms_tags %}
+
+<div>
+    {% if user.is_authenticated %}
+    <h2 class="text-center"> {{user.username}} Profile </h2>
+    <hr class="black w-50 pb-3">
+    {% else %}
+    <h4 class="text-center"> Please login or register an account to view your profile </h4>
+</div>
+{% endif %}
+{% endblock %}
+{% block js %}
+
+{{ block.super }}
+{% endblock %}
