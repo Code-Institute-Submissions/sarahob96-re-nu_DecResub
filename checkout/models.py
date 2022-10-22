@@ -4,12 +4,12 @@ from django.db.models import Sum
 from django.conf import Settings
 from django_countries.fields import CountryField
 
-from products.models import Product
-
+from profiles.models import Profile
 # Create your models here.
 
 class Checkout(models.Model):
 
+    profile = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, related_name='user_orders')
     order_number = models.CharField(max_length=20, null=False, editable=False)
     date = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=40, null=False, blank=False)
