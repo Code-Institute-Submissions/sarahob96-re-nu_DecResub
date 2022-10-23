@@ -3,6 +3,7 @@ from .models import Product, Category
 from django.db.models import Q
 from django.db.models.functions import Lower
 
+
 # Create your views here.
 
 
@@ -66,3 +67,4 @@ def product_info(request, product_id):
     }
 
     return render(request, 'products/product_info.html', context)
+
