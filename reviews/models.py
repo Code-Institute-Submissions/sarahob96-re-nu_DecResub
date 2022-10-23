@@ -2,7 +2,7 @@ from django.db import models
 
 from profiles.models import Profile
 from products.models import Product
-
+from django.contrib.auth.models import User
 class ProductReview(models.Model):
     """
     Review model for users to leave a review
@@ -10,16 +10,16 @@ class ProductReview(models.Model):
 
     STARS = [(1, '1'), (2, '2'), (3, "3"), (4, "4"), (5, "5")]
     
-    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    title = models.CharField(max_length=40)
-    review = models.TextField(max_length=400)
+    title = models.CharField(max_length=40, null=True, blank=True)
+    review = models.TextField(max_length=400, blank=True)
     date = models.DateField(auto_now_add=True)
     rating = models.IntegerField(choices=STARS)
 
 
 def __str__(self):
-    return self.title
+    return self.review
 
 
 class ClassReview(models.Model):
