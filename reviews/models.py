@@ -3,6 +3,8 @@ from django.db import models
 from profiles.models import Profile
 from products.models import Product
 from django.contrib.auth.models import User
+
+
 class ProductReview(models.Model):
     """
     Review model for users to leave a review
@@ -19,7 +21,7 @@ class ProductReview(models.Model):
 
 
 def __str__(self):
-    return self.review
+    return self.title
 
 
 class ClassReview(models.Model):

@@ -11,11 +11,7 @@
 <div class="text-center">
     <form action = "{% url 'product_review' product.id %}" method="POST">
         {% csrf_token %}
-       
-        <div>
-            Title: <input type="text" value="title">
-            Review: <textarea name="review" id="review" required></textarea>
-        </div>
+        {{ product_review_form|crispy}}
 
 
         <button type="submit">Submit Review</button>

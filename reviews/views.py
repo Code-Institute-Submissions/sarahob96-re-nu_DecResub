@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
-
+from django.shortcuts import render, get_object_or_404, reverse
+from django.contrib import messages
 from .models import ProductReview
 from .forms import ClassReviewForm, ProductReviewForm
 from products.models import Product
@@ -8,27 +8,29 @@ from profiles.models import Profile
 
 def product_review(request, product_id):
 
+    user = Profile.objects.get(user=request.user)
     product = get_object_or_404(Product, pk=product_id)
-    if request.method == 'POST':
-        form = ProductReviewForm(request.POST)
-        if form.is_valid():
-            data = ProductReview()
-            data.rating = form.cleaned_data['rating']
-            data.title = form.cleaned_data['title']
-            data.review = form.cleaned_data['review']
-            data.product = product
-            data.user_id = request.user.user_id
-            data.save()
+    product_review_form = ProductReviewForm()
+    review_fields = {
+        'title': request.POST['title'],
+        'review': request.POST['review'],
+        'rating': request.POST['rating'],
+    }
 
-            return redirect(reverse('product_info', args=[product.id]))
-        else:
-            return redirect(reverse('product_info', args=[product.id]))
+    product_review_form = ProductReviewForm(review_fields)
+
+    if product_review_form.is_valid():
+        item_review = product_review_form.save(commit=False)
+        item_review.user = user
+        item_review.product = product
+        item_review.save()
+
+        item_reviews = ProductReview.objects.filter(product=product)
+        product.save()
+
+        messages.success(request, "Thanks for leaving a review!")
     
     else:
-        form = ProductReviewForm()
-    
-    template = 'products/product_info.html'
-    
-    return render(request, template)
+        messages.error(request, "Sorry, your review could not be added. Please make sure form is filled in")
 
-        
+    return redirect(reverse('product_info', args=(product_id,)))
