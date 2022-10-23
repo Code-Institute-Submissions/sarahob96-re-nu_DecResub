@@ -12,13 +12,13 @@ class CheckoutForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         placeholders = {
-            'name': 'Full Name *',
-            'email': 'Email*',
-            'phone': 'Phone Number*',
-            'address_line_1': 'Address line 1*',
+            'name': 'Full Name',
+            'email': 'Email',
+            'phone': 'Phone Number',
+            'address_line_1': 'Address line 1',
             'address_line_2': 'Address Line 2',
-            'town': 'Town*',
-            'city': 'City*',
+            'town': 'Town',
+            'city': 'City',
             'postcode': 'Postcode',
-            "country": 'Country*',
+            "country": 'Country',
     }

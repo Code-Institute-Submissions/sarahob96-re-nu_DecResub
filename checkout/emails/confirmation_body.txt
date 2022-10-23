@@ -1,0 +1,30 @@
+Hey there {{ order.name }},
+
+Thank you for your latest RENU purchase.
+
+Order Confirmation Details:
+
+Order Number: {{ order.order_number }}
+Order date: {{ order.date }}
+
+Order Total: {{order.total}}
+Delivery: 5.00
+Grand Total: {{order.grand_total}}
+
+Delivery Details:
+{{ order.address_line_1}}
+{{ order.address_line_2}}
+{{ order.town }}
+{{ order.city }}
+{{ order.postcode }}
+{{ order.country }}
+
+Our Renu team will start to prepare your order asap!
+
+We would love to see you showing off your renu uniform.
+Tag us on instagram #renuapparel #weloverenu.
+
+If you have any questions in the meantime, please don't hesitate to contact us through
+our FB page or email.
+
+The RENU team x
