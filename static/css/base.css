@@ -273,3 +273,9 @@ hr{
     margin: 0;
     height: 100%;
     color: #5EBAB1;
+}
+
+#map{
+    min-height: 360px;
+    object-position: center;
+}

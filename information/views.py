@@ -20,3 +20,7 @@ def contact(request):
         }   
 
     return render(request, 'information/contact.html')
+
+def contact_success(request):
+
+    return render(request, 'information/contact-success.html')
