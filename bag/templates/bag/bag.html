@@ -33,6 +33,7 @@
                 <td> {{ contents.product.name}} </td>
                <td> {% if contents.product.sizes %}{{ contents.size }}{%else%}ONE-SIZE{% endif %}</td>
                 <td>{{ contents.qty}} </td>
+                <td> {% include "bag/bag-quantity.html" %}</td>
                 <td>€{{ contents.product.price }} </td>
                 <td> €{{ contents.product.price | individual_total:contents.qty}}</td>
                
@@ -52,4 +53,10 @@
         {% endif %}
     </div>
 </div>
+{% endblock %}
+
+{% block js %}
+{{ block.super }}
+
+{% include 'products/includes/product_quantity.html' %}
 {% endblock %}

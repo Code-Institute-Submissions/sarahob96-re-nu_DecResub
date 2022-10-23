@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from products.models import Product
 from django.contrib import messages
 # Create your views here.
@@ -36,3 +36,19 @@ def add_product(request, product_id):
     request.session['bag'] = bag
     return redirect(redirect_url)
 
+
+def adjust_quantity(request, product_id):
+
+    product = get_object_or_404(Product, pk=product_id)
+    qty = int(request.POST.get('qty'))
+    bag = request.session.get('bag', {})
+
+    if qty > 0:
+        bag[product_id] = qty
+        messages.success(request, f'Updated qty')
+    else:
+        bag.pop(product_id)
+        messages.success(request, f'Removed item')
+
+        request.session['bag'] = bag
+        return redirect(reverse('shopping_bag'))
