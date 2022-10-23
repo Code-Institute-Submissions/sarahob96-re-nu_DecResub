@@ -1,25 +1,35 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .forms import contact_form
+from django.contrib.auth import get_user
 
 # Create your views here.
 
-def contact(request):
+def form_contact(request):
+    """user contact form """
 
-
+    form = contact_form()
     if request.method == 'POST':
-        
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
+        contact_fields = {
 
-        message_fields = {
-            'name': name,
-            'email': email,
-            'subject': subject,
-            'message': message,
-        }   
+            'name': request.POST['name'],
+            'your_message': request.POST['your_message'],
+            'email': request.POST['email'],
+            'date': request.POST['email'],
+            'phone': request.POST['phone'],
+        }
+        form = contact_form(contact_fields)
 
-    return render(request, 'information/contact.html')
+        if form.is_valid():
+            form.save()
+            return redirect("information/contact-success.html")
+
+    else:
+        if request.user.is_authenticated:
+            name = get_user(request)
+            form = contact_form(initial={'name': name})
+
+    return render(request, "information/contact.html", {'form': form})
+
 
 def contact_success(request):
 
