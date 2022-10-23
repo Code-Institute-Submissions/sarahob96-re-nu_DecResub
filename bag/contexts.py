@@ -9,6 +9,7 @@ def bag_items(request):
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
+    grand_total = 0
 
     for product_id, data in bag.items():
         if isinstance(data, int):
@@ -31,11 +32,12 @@ def bag_items(request):
                     'product': product,
                     'size': size,
                 })
-
+    grand_total = total+5
     context = {
         'bag_contents': bag_contents,
         'total': total,
         'product_count': product_count,
+        'grand_total': grand_total
    
     }
     return context

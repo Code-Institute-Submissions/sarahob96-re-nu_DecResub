@@ -40,8 +40,9 @@
             </tr>
              {% endfor %}
         </table>
-
+        <h5><strong> Delivery Cost: €5.00 </strong></h5>
         <h5><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h5>
+        <h5><strong>Grand Total :€{{ grand_total |floatformat:2}}  </strong></h5>
         <div class=" fluid-container mt-5 pl-5">
             <a href="{% url 'products' %}" class="shopping-link mr-5"> Continue Shopping </a>
             <a href="{% url 'checkout' %}" class="checkout-link"> Checkout <i class="fa-solid fa-cart-shopping"></i></a>
