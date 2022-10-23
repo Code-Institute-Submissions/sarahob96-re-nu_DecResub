@@ -1,10 +1,29 @@
 from django.http import HttpResponse
-
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 
 class StripeWebHook_handler:
 
     def __init__(self, request):
         self.request = request
+
+     
+    def _confirmation_email(self, order):
+        customer_email = order.email
+        subject = render_to_string(
+            'checkout/emails/confirmation_subject.txt',
+            {'order': order})
+        body = render_to_string('checkout/emails/confirmation_body.txt',
+                                {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [customer_email]
+        )
+
 
     def event_handler(self, event):
 
