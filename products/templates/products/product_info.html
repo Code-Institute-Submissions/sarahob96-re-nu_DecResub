@@ -26,58 +26,75 @@
                 <p class="text-left"> €{{product.price}}</p>
                 <hr class="w-50 mb-4">
                 <p class="mt-2 mb-4"> {{product.product_description}}</p>
-        
-           
-       
+
+
+
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
-                      {% with product.sizes as p %}
-                    {% if p %}
-                    <div>
-                        <select class="form-control" name="product_size" id="id_product_size>">
-                            <option value="4"> Size 4 </option>
-                            <option value="6"> Size 6 </option>
-                            <option value="8"> Size 8 </option>
-                            <option value="10" selected> Size 10 </option>
-                            <option value="12"> Size 12 </option>
-                            <option value="14"> Size 14 </option>
-                            <option value="16"> Size 16 </option>
-                        </select>
-                    </div>
-                  {% endif %}
+                        {% with product.sizes as p %}
+                        {% if p %}
+                        <div>
+                            <select class="form-control" name="product_size" id="id_product_size>">
+                                <option value="4"> Size 4 </option>
+                                <option value="6"> Size 6 </option>
+                                <option value="8"> Size 8 </option>
+                                <option value="10" selected> Size 10 </option>
+                                <option value="12"> Size 12 </option>
+                                <option value="14"> Size 14 </option>
+                                <option value="16"> Size 16 </option>
+                            </select>
+                        </div>
+                        {% endif %}
                         <div class="col-12">
-                        <p> QTY</p>
+                            <p> QTY</p>
                             <div class="form-group w-25 float-left d-print-inline-block">
                                 <div class="input-group">
-                                    <input class="form-control float-left qty_input" type="number" name="qty" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                </div>
-                            </div>
-                            <input type="submit" class="btn border ml-4 add-to-bag-btn" value="Add to Bag">
-                        </div>
+                                    <div class="input-group-prepend">
+                                        <button class="decrement-qty" data-item_id="{{ product.product_id }}"
+                                            id="decrement-qty_{{ product.product_id }}">
+                                            <i class="fas fa-minus fa-sm"></i>
+                                        </button>
+                                    </div>
+                                    <input class="form-control float-left qty_input" type="number" name="qty" value="1"
+                                        min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
 
+
+
+                                    <div class="input-group-append">
+                                        <button class="increment-qty" data-item_id="{{ product.product_id }}"
+                                            id="increment-qty_{{ product.product_id }}">
+                                            <i class="fas fa-plus fa-sm"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <input type="submit" class="btn border ml-4 add-to-bag-btn" value="Add to Bag">
+
+                            </div>
+                        </div>
                         <div class="col-12">
                             <a href="{% url 'products' %}" class="btn">
-                              
-                               
+
+
                                 <p class="text-uppercase"> <i class="fas fa-chevron-left"></i>Keep Shopping</p>
                             </a>
-                            
+
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         {% endwith %}
                     </div>
-                </form>      
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 
-{% include 'reviews/includes/review.html'%}
+    {% include 'reviews/includes/review.html'%}
 
+    {% endblock %}
 
+    {% block js %}
 
-
-
-
-{% endblock%}
+    {{ block.super }}
+    {% include 'products/includes/product_quantity.html'%}
+    {% endblock%}

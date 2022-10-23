@@ -1,0 +1,43 @@
+<script type="text/javascript">
+
+
+    function maxAndMin(itemId) {
+        var currentQty = parseInt($(`#id_qty_${itemId}`).val());
+        var min = currentQty < 2;
+        var max = currentQty > 98;
+        $(`#decrement-qty_${itemId}`).prop('disabled', min);
+        $(`#increment-qty_${itemId}`).prop('disabled', max);
+    }
+
+    
+    var allQtyInputs = $('.qty_input');
+    for(var i = 0; i < allQtyInputs.length; i++){
+        var itemId = $(allQtyInputs[i]).data('item_id');
+        maxAndMin(itemId);
+    }
+
+    $('.qty_input').change(function() {
+        var itemId = $(this).data('item_id');
+        maxAndMin(itemId);
+    });
+
+
+    $('.increment-qty').click(function(e) {
+       e.preventDefault();
+       var qtyInput = $(this).closest('.input-group').find('.qty_input')[0];
+       var currentQty = parseInt($(qtyInput).val());
+       $(qtyInput).val(currentQty + 1);
+       var itemId = $(this).data('item_id');
+       maxAndMin(itemId);
+    });
+
+   
+    $('.decrement-qty').click(function(e) {
+       e.preventDefault();
+       var qtyInput = $(this).closest('.input-group').find('.qty_input')[0];
+       var currentQty = parseInt($(qtyInput).val());
+       $(qtyInput).val(currentQty - 1);
+       var itemId = $(this).data('item_id');
+       maxAndMin(itemId);
+    });
+</script>
