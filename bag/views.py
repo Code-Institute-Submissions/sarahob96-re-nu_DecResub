@@ -11,6 +11,7 @@ def shopping_bag(request):
 
 def add_product(request, product_id):
 
+    product = Product.objects.get(pk=product_id)
     qty = int(request.POST.get('qty'))
     redirect_url = request.POST.get('redirect_url')
     size = None
@@ -22,16 +23,21 @@ def add_product(request, product_id):
         if product_id in list(bag.keys()):
             if size in bag[product_id]['products_by_size'].keys():
                 bag[product_id]['products_by_size'][size] += qty
+                messages.success(request, f'Added {product.name} to your bag')
             else:
                 bag[product_id]['products_by_size'][size] = qty
+                messages.success(request, f'Added {product.name} to your bag')
         else:
             bag[product_id] = {'products_by_size': {size: qty}}
-    else:      
+            messages.success(request, f'Added {product.name} to your bag')
+    else:
         if product_id in list(bag.keys()):
             bag[product_id] += qty
-        
+            messages.success(
+                request, f'Updated {product.name} quantity to {bag[product_id]}')
         else:
             bag[product_id] = qty
+            messages.success(request, f'Added {product.name} to your bag')
           
     request.session['bag'] = bag
     return redirect(redirect_url)

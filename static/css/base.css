@@ -251,7 +251,9 @@ hr{
 .checkout-link{
     background-color: #5EBAB1;
     padding:10px;
+    width: 120px;
     color: black;
+    margin-right: 60px;
 }
 
 #loading-overlay {
@@ -281,6 +283,10 @@ hr{
 }
 #contact-post{
     height: 200px;
+}
+.contact-us{
+    height: 50vh;
+    
 }
 .group-workout-img{
     height:400px;
@@ -332,4 +338,31 @@ hr{
 .password-redo{
     margin:auto;
     width: 40;
+}
+
+.cart-container{
+    margin:auto;
+}
+
+.table-image{
+    width:100px;
+}
+
+.shopping-table th{
+    padding-right: 20px;
+}
+.shopping-table td{
+    padding-right:20px;
+}
+
+.bag-total{
+    padding-right: 50px;
+    margin-top: 30px;
+    margin-right: 20px;
+    display:inline-block;
+}
+
+.checkout-btn{
+    width: 100%;
+    display:inline-block;
 }
