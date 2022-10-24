@@ -292,3 +292,26 @@ hr{
     width:600px;
 
 }
+.boxing-block{
+    border-radius: 10px;
+    width:70%;
+    height:50vh;
+    background-color: #FFE8FF;
+    margin: auto;
+}
+.boxing-img{
+ height:300px;
+ float:left;
+ 
+}
+.yoga-block{
+
+    border-radius: 10px;
+    width:70%;
+    height:50vh;
+    background-color: #5EBAB1;
+    margin:auto;
+}
+.yoga-img{
+    height:300px;
+}
