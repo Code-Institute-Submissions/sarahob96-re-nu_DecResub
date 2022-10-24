@@ -379,3 +379,24 @@ element.style {
 .form-check-input {
     margin-left: 0 !important;
 }
+
+.total-alert{
+    color:#5EBAB1;
+}
+
+.back-btn{
+    background-color: #5EBAB1;
+}
+.purple-text{
+    color: #A75EC2;
+}
+
+.order-success-img{
+    width:600px;
+    height:400px;
+}
+
+.order-details-container{
+    width:50%;
+    margin: auto;
+}

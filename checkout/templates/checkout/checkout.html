@@ -15,7 +15,7 @@ Checkout
     
 <div class="row">
 
-<h4 class="text-black text-center pl-3"> Checkout Summary ({{ product_count }})  </h4>
+<h4 class="text-black text-center pl-3 pb-3"> Checkout Summary ({{ product_count }})  </h4>
            
     <table class="table-responsive shopping-table ml-5 mr-5 text-center">
         <thead>
@@ -40,7 +40,7 @@ Checkout
         <div> <p class="pl-5"><strong> Grand Total (incl Delivery) €{{grand_total}} </strong></p></div>
     <div class="col-md-12">
         <div class="col-12">
-            <h5> Fill out the form below to checkout and complete your order</h5>
+            <h4 class="pt-3"> Fill out the form below to checkout and complete your order</h4>
             <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
                 {% csrf_token %}
                
@@ -64,9 +64,12 @@ Checkout
                 <div id="stripe-card"></div>
 
                 <div id="card-error-message"></div>
-                <button type="submit" class="btn"> Back to cart</button>
+                <div class="pt-4">
+                <button type="submit" class="btn back-btn"> Back to cart</button>
 
-                <button id="submit-btn" type="submit" class="btn"> Complete Payment </button>
+                <button id="submit-btn" type="submit" class="btn submit-btn "> Complete Payment </button> 
+                <p class="total-alert"> <strong> <i class="fa-solid fa-circle-exclamation"></i> Your card will be charged €{{grand_total}} </strong> </p>
+                    </div>
 
             </form>
         </div>

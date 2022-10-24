@@ -5,18 +5,18 @@ Order Success
 {% endblock%}
 {% block body %}
 
-<div class="order-success text-center">
-<h3>Thanks for ordering from RENU Apparel</h3>
+<div class="pt-5 order-success text-center">
+<h3 class="purple-text">Thanks for ordering from RENU Apparel</h3>
 <p> order #{{ checkout_order.order_number}} <br>
 You will recieve confirmation of your order at {{ checkout_order.email }}.</p>
 
+<div class="confirmation-border pt-4">
 
-<h5> We can't wait to see you in RENU </h5>
-<h6> Tag us on instagram #renuapparel #weloverenu</h6>
 
-<h3> ORDER DETAILS </h3>
-
-<p> Date : {{checkout_order.date}} <br>
+<div class="order-details-container">
+    <h3 class="purple-text"> ORDER DETAILS </h3>
+<p class="order-details">
+    Date : {{checkout_order.date}} <br>
     Name : {{checkout_order.name}} <br>
     Email : {{checkout_order.email}}<br>
     Address Line 1 : {{checkout_order.address_line_1}}<br>
@@ -26,18 +26,14 @@ You will recieve confirmation of your order at {{ checkout_order.email }}.</p>
     Postcode:{{checkout_order.postcode}}<br>
     Country:{{checkout_order.country}}<br>
 </p>
-
-{% for product in checkout.ordernumber.all %}
-
-<div class="row">
-    <div class="col">
-        <p> {{ product.products }}</p>
-        {{ product.qty }}
-    </div>
-
 </div>
-{% endfor %}
+</div>
 
+<h5> We can't wait to see you in RENU </h5>
+<h6 class="purple-text"> Tag us on instagram <strong> #renuapparel #weloverenu #renugo </strong> </h6>
+<div>
+    <img class="order-success-img"src="{% static 'images/yoga-group.jpeg'%}" alt="group of girls with yoga mats">
+</div>
 
 </div>
 
