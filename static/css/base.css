@@ -237,7 +237,7 @@ hr{
     margin:0px 60px 0px 60px;
 }
 
-.add-to-bag-btn{
+.submit-btn{
     background-color: #FFE8FF;
     padding: 6px 10px 6px 10px;
 }
@@ -320,4 +320,16 @@ hr{
     width: 20%;
     float: right;
     
+}
+.login-form{
+    margin: auto;
+}
+.register-form{
+    margin:auto;
+    width: 30%;
+}
+
+.password-redo{
+    margin:auto;
+    width: 40;
 }
