@@ -61,9 +61,15 @@ def all_products(request):
 def product_info(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
+    product_reviews = Product_review.objects.filter(
+        product_id=product.id)
+    review_count = product_reviews.count()
+    
 
     context = {
         'product': product,
+        'product_reviews': product_reviews,
+        'review_count': review_count,
     }
 
     return render(request, 'products/product_info.html', context)

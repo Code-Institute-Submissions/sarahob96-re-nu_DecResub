@@ -116,6 +116,16 @@ Product Information
             <button type="submit" class="btn submit-btn"> Add Review </button>
         </form>
     </div>
+    <div > 
+        <h3> Customer Reviews </h3>
+        {% for review in product_reviews %}
+        {{ review.user }}
+        {{ review.date }}
+        {{ review.title}}
+        {{ review.rating}}
+        {{ review.review }}
+        {% endfor %}
+    </div>
     
 </div>
 </div>
