@@ -4,18 +4,14 @@
 <div class="fluid-container h-100">
     <div>
         <div class="hero">
-            {% if user.is_authenticated %}
-
-            <h4 class="text-center float-right user-hero"> Welcome {{ user.username }} </h4>
-            {% endif%}
-
+        
             <img src="{% static 'images/group-workout2.jpeg'%}" alt="group of girls holding yoga mats">
             <div class="col-6 col-md-4 my-auto hero-text">
                 <h2>
                     The complete workout uniform
                 </h2>
                 <h3> Search for your perfect everyday fit </h3>
-                <a class="shop-button" href="" role="button"> Shop Now</a>
+                <a class="shop-button" href="{%url 'products' %}" role="button"> Shop Now</a>
             </div>
         </div>
 
@@ -31,14 +27,14 @@
 
         <div class="one-whole column">
             <div class="c-container">
-                <a href="">
+                <a href="{% url 'products' %}?renu_category=sweatshirts">
                     <img class="category-image" src="{% static 'images/sweatshirt.jpeg'%}"
                         alt="group of girls holding yoga mats">
                     <h4 class="category-text"> Sweatshirts</h4>
                 </a>
             </div>
             <div class="c-container">
-                <a href="">
+                <a href="{% url 'products' %}?renu_category=tops">
                     <img class="category-image" src="{% static 'images/full-outfit.jpeg'%}"
                         alt="group of girls holding yoga mats">
                     <h4 class="category-text"> Tops </h4>
@@ -46,14 +42,14 @@
             </div>
 
             <div class="c-container">
-                <a href="">
+                <a href="{% url 'products' %}?renu_category=sports_bras">
                     <img class="category-image" src="{% static 'images/sports-bra.jpeg'%}"
                         alt="group of girls holding yoga mats">
                     <h4 class="category-text"> Sports Bras</h4>
                 </a>
             </div>
             <div class="c-container">
-                <a href="">
+                <a href="{% url 'products' %}?renu_category=bottoms">
                     <img class="category-image" src="{% static 'images/leggings.jpeg'%}"
                         alt="group of girls holding yoga mats">
                     <h4 class="category-text"> Bottoms</h4>
@@ -61,7 +57,7 @@
             </div>
 
             <div class="c-container">
-                <a href="">
+                <a href="{% url 'products' %}?renu_category=accessories">
                     <img class="category-image" src="{% static 'images/ball.jpeg'%}"
                         alt="group of girls holding yoga mats">
                     <h4 class="category-text"> Accessories </h4>
@@ -82,7 +78,7 @@
     <h2 class="text-center"> COMING SOON </h2>
     <img class="w-100 new-jacket-home" src="{% static 'images/laura_jacket.jpeg'%}" alt="girl in pink jacket">
     {% else %}
-    <img class="w-100" src="{% static 'images/member-1.png'%}" alt="girl in pink jacket">
+   <a href="{%url 'account_signup'%}"><img class="w-100" src="{% static 'images/member-1.png'%}" alt="women running"></a>
     {%endif%}
 </div>
 
