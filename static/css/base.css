@@ -366,3 +366,16 @@ hr{
     width: 100%;
     display:inline-block;
 }
+
+#checkout-form{
+    width:70%;
+}
+
+
+element.style {
+    margin-right: 10px;
+}
+
+.form-check-input {
+    margin-left: 0 !important;
+}
