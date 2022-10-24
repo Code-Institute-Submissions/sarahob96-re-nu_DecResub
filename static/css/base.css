@@ -315,3 +315,9 @@ hr{
 .yoga-img{
     height:300px;
 }
+.search-bar{
+    margin:auto;
+    width: 20%;
+    float: right;
+    
+}
