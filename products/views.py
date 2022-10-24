@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Product, Category
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from .models import Product, Category, Product_review
 from django.db.models import Q
 from django.db.models.functions import Lower
-
+from .forms import productForm
 
 # Create your views here.
 
@@ -68,3 +68,31 @@ def product_info(request, product_id):
 
     return render(request, 'products/product_info.html', context)
 
+def product_review(request, product_id):
+
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = productForm(request.POST)
+        if form.is_valid():
+            data = Product_review()
+            data.title = form.cleaned_data['title']
+            data.rating = form.cleaned_data['rating']
+            data.review = form.cleaned_data['review']
+            data.product_id = product_id
+            data.user = request.user
+            data.save()
+            #messages.success(
+                #request, 'Thank you! Your review has been submitted.')
+            return redirect(reverse('product_info', args=[product.id]))
+        else:
+           # messages.error(
+                #request, "Sorry your review could not be submitted.")
+            return redirect(reverse('product_info', args=[product.id]))
+    else:
+        form = productForm()
+
+    template = 'products/product_details.html'
+
+    return render(request, template)
+
+    

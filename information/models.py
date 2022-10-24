@@ -15,3 +15,19 @@ class contact(models.Model):
 
 def __str__(self):
     return self.name
+
+class renuReview(models.Model):
+    """
+    Review model for users to leave a review
+    """
+
+    STARS = ((1, "one"), (2, "two"), (3, "three"), (4, "four"), (5, "five"))
+  
+    name = models.CharField(max_length=20)
+    your_experience = models.TextField(max_length=400)
+    date = models.DateField(auto_now_add=True)
+    rating = models.IntegerField(choices=STARS)
+
+
+def __str__(self):
+    return self.name

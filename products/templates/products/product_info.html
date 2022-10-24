@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 
 {% block title %}
 Product Information
@@ -89,10 +89,36 @@ Product Information
                 </form>      
         </div>
     </div>
-   
-</div>
-</div>
+    <div>
 
+        <form action="{% url 'product_review' product.id %}" method="POST">
+          
+            {% csrf_token %}
+            <h6> Write your Review </h6>
+            <div>
+                Review Title:
+                <input type="text" class="form-control" name="title" required>
+                <br>
+                Review:
+                <textarea name="review" class="form-control" rows="5" required></textarea>
+                <br>
+                
+                <label for="rating"> Rating </label>
+                <select name="rating" id="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    </select>
+            </div>
+    
+            <button type="submit" class="btn submit-btn"> Add Review </button>
+        </form>
+    </div>
+    
+</div>
+</div>
 
 
 

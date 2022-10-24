@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect
-from .forms import contact_form
+from django.shortcuts import render, redirect
+from .forms import contact_form, clubReviewForm
+from .models import renuReview, contact
 from django.contrib.auth import get_user
 
 # Create your views here.
@@ -38,3 +39,32 @@ def contact_success(request):
 def renu_go(request):
 
     return render(request, 'information/renu-go.html')
+
+def renu_form_review(request):
+    """
+    form view that saves review left by user
+    """
+
+    form = clubReviewForm()
+
+    if request.method == 'POST':
+        renu_fields = {
+
+            'name': request.POST['name'],
+            'rating': request.POST['rating'],
+            'your_experience': request.POST['your_experience']
+        }
+        form = clubReviewForm(renu_fields)
+
+        if form.is_valid():
+            form.save()
+            return redirect("information/contact-success.html")
+
+    else:
+        if request.user.is_authenticated:
+            name = get_user(request)
+            form = clubReviewForm(initial={'name': name})
+
+    renu_reviews = Review.objects.all()
+    return render(request, "information/renu-go.html", {'renu_reviews': renu_reviews,
+                                                    'form': form})
