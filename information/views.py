@@ -35,3 +35,6 @@ def contact_success(request):
 
     return render(request, 'information/contact-success.html')
       
+def renu_go(request):
+
+    return render(request, 'information/renu-go.html')

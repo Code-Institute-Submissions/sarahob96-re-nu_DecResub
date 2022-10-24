@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<div class="contact-success">
+    <div class="row text-center mt-5">
+        <div class="col">
+            <h2> RENU go</h2>
+
+            {% if user.is_authenticated %}
+
+            <h3> Our Upcoming Events </h3>
+            <h3> New product Sneak Peak </h3>
+           
+    
+    </div> 
+    {% else %}
+
+            <h5> Become a RENU go member today for access to our latest workout events and MORE </h5>
+            
+            <a href="{% url 'account_signup' %}"> Sign up </a> or <a href="{% url 'account_login'%}"> Login now </a> 
+            <a href="{% url 'products'%}"> Shopping this way </a> 
+           
+         {% endif%}
+        </div>
+      
+</div>
+
+
+{% endblock %}
