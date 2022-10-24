@@ -3,14 +3,17 @@
 
 {% block body %}
 <div class="contact-success">
-    <div class="row">
+    <div class="row text-center mt-5">
         <div class="col">
             <h2> Thanks for contacting us!!</h2>
             <h5> We have recieved your message. <br>
             A renu team member will respond soon. </h5>
-        </div>
-       <a href="{% url 'products'%}"> Wanna go shopping? </a>  
+
+            <a href="{% url 'products'%}"> Wanna go shopping? </a> 
+            <a href="{% url 'renugo' %}"> Check out the latest Renu Go news </a> 
        
+        </div>
+    
     </div>
 </div>
 

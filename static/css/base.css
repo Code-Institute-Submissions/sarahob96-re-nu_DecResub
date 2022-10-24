@@ -279,3 +279,6 @@ hr{
     min-height: 360px;
     object-position: center;
 }
+#contact-post{
+    height: 200px;
+}

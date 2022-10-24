@@ -6,76 +6,79 @@
 <div class="contact-container">
     <div class="row">
         <div class="col text-center">
-                <h3 class="text-center"> Contact us at Renu</h3>
+            <h3 class="text-center"> Contact us at Renu</h3>
 
-                <h6> Send us a message or get in touch via our facebook page</h6>
-            
-                <hr class="w-50">
+            <h6> Send us a message or get in touch via our facebook page</h6>
+
+            <hr class="w-50">
         </div>
     </div>
     <div class="row">
-        <div class="contact-us ">
-              
-                   
-            <h3 class = "text-center"> Get in touch </h3>
-            <hr class="w-50"> 
-            <div class="align-items-center justify-content-center d-flex">
-            <div class = "contact-form-container">
-            <form action="{% url 'form_contact'%}" method="post" id="contact-post">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button type = "submit" class="btn btn-dark" data-toggle="modal" data-target="contactModal" aria-hidden="true"> Submit </button>
-            </form>
+        <div class=" col contact-us ">
 
+            <div class="align-items-center justify-content-center d-flex">
+                <div class="contact-form-container">
+                    <form action="{% url 'contact-success'%}" method="post" id="contact-post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-dark"> Submit </button>
+                    </form>
+
+                </div>
             </div>
         </div>
     </div>
-    <div class="contact-details-container">
-        <div class="text-center">
+    <div class="row contact-details-container align-items-center justify-content-center d-flex">
+        <div class=" col text-center">
             <h3> Our details </h3>
             <hr class="w-50 hr">
-                <p>Phone: 01 9876544  </p>
-                <p> Email: info@renuapparel.com</p>
-                <p> Pop up shop location: Arnotts, Henry Street, Dublin</p>
-                <div id="map"></div>
-    <p class="text-center"> Ps. Follow us on instagram to keep up with the latest renu trends </p>
+            <p>Phone: 01 9876544 </p>
+            <p> Email: info@renuapparel.com</p>
+            <p> Pop up shop location: Arnotts, Henry Street, Dublin</p>
+            <div id="map"></div>
+            <p class="text-center"> Ps. Follow us on instagram to keep up with the latest renu trends </p>
+        </div>
+    </div>
 </div>
+
 {% endblock %}
 
 {% block js %}
 
 <script>
-
-
-    function initMap(){
-        var map = new google.maps.Map(document.getElementById("map"),{
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById("map"), {
             zoom: 12,
             center: {
-                lat:  53.34927219307912, 
-                lng:  -6.2631254355844295
+                lat: 53.34927219307912,
+                lng: -6.2631254355844295
 
             }
         });
-    
+
         var dublin = new google.maps.Marker({
-            position : {lat:53.34927219307912, lng: -6.2631254355844295 },
-            map:map,
-        
+            position: {
+                lat: 53.34927219307912,
+                lng: -6.2631254355844295
+            },
+            map: map,
+
         });
-       
+
         var infowindow = new google.maps.InfoWindow({
             content: "Our Pop up location - Arnotts, Henry Street, Dublin"
         });
 
-        dublin.addListener('click', function() { 
+        dublin.addListener('click', function () {
             infowindow.open(map, dublin);
-            });
-        }
-
+        });
+    }
 </script>
 
-<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGIUweH84pCcagHcAAiDIzHyPZ7WiLPQU&callback=initMap"></script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGIUweH84pCcagHcAAiDIzHyPZ7WiLPQU&callback=initMap"></script>
 
 
 {% endblock %}

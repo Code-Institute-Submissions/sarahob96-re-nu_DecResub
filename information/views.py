@@ -34,3 +34,4 @@ def form_contact(request):
 def contact_success(request):
 
     return render(request, 'information/contact-success.html')
+      
