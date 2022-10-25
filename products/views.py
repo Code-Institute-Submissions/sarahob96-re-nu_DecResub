@@ -65,8 +65,7 @@ def product_info(request, product_id):
     product_reviews = Product_review.objects.filter(
         product_id=product.id)
     review_count = product_reviews.count()
-    
-
+     
     context = {
         'product': product,
         'product_reviews': product_reviews,
@@ -160,3 +159,28 @@ def add_product(request):
         }
     
     return render(request, 'products/add_product.html', context)
+
+
+def edit_product(request, product_id):
+
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = AdminProductForm(request.POST, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f' product has been successfully updated')
+           
+            return redirect(reverse('product_info', args=[product.id]))
+        
+        else:
+            messages.error(request, f' There was an error editing product, please try again')
+
+    else:
+        form = AdminProductForm(instance=product)
+        
+        context = {
+            'form': form,
+            'product': product,
+        }
+    
+    return render(request, 'products/edit_product.html', context)
