@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Products
+{% endblock %}
+
+{% block body %}
+<div class="col-12">
+    <form action="{% url 'update_review' review.id %}" method="POST">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <input type="submit" value="Update Review" class="btn submit-review">
+        <a href="{% url 'product_details' product.id %}" class="btn rounded-0 btn-lg ">
+            <span>
+                <i class="fas fa-chevron-left"></i>
+            </span>
+            Back to Product
+        </a>
+    </form>
+</div>
+{% endblock %}

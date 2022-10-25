@@ -96,6 +96,7 @@ Product Information
         <div>  
         <p>{{ review.rating}} <i class="fa-solid fa-star"></i> <span class="text-muted ">  {{ review.user }} on  {{ review.date }} </span></p>
         <strong> {{ review.review }}</strong> 
+        <a href="{% url 'delete_review' product.id %}"> <i class="delete fa-solid fa-trash-can"></i> </a><a href="{% url 'update_review' product.id %}"><i class="modify fa-solid fa-pen-to-square"></i></a>
 
         <hr>
         {% endfor %}

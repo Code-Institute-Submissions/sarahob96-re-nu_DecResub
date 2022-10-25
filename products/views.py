@@ -3,7 +3,8 @@ from .models import Product, Category, Product_review
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .forms import productForm
-
+from django.contrib import messages
+from django.urls import reverse_lazy
 # Create your views here.
 
 
@@ -87,12 +88,12 @@ def product_review(request, product_id):
             data.product_id = product_id
             data.user = request.user
             data.save()
-            #messages.success(
-                #request, 'Thank you! Your review has been submitted.')
+            messages.success(
+                request, 'Thanks, your review has been submitted.')
             return redirect(reverse('product_info', args=[product.id]))
         else:
-           # messages.error(
-                #request, "Sorry your review could not be submitted.")
+            messages.error(
+                request, "Sorry, your review could not be submitted.")
             return redirect(reverse('product_info', args=[product.id]))
     else:
         form = productForm()
@@ -101,4 +102,40 @@ def product_review(request, product_id):
 
     return render(request, template)
 
+def delete_review(request, review_id):
+    """ deletes user review """
+    review = get_object_or_404(Product_review, pk=review_id)
+    product = review.product
+
+    if request.method == "POST":
+        review.delete()
+        messages.success(request, 'Your review has been successfully deleted')
+        return redirect(reverse_lazy('product_info', args=[product.id]))
+
+    return render(request, 'products/delete_review.html')
+
+
+def update_review(request, review_id):
+    """ updates the users review """
+    all_reviews = get_object_or_404(Product_review, pk=review_id)
+    product = all_reviews.product
+
+    if request.method == "POST":
+        form = productForm(request.POST, request.FILES, instance=all_reviews)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your review was updated")
+            return redirect(reverse('product_info', args=[product.id]))
+        else: 
+            messages.error(request, 'sorry, we cannot update your review')
+            
+    else:
+        form = productForm(instance=all_reviews)
     
+    template = 'products/edit_review.html'
+    context = {
+        'form': form,
+        'all_reviews': all_reviews,
+        'product': product
+     }
+    return render(request, template, context)
