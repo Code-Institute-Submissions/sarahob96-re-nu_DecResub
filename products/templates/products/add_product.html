@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block body %}
+
+<div class="col-12">
+    <form action="{% url 'add_product' %}" method="POST">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <button type="submit"> Add Product </button>
+    </form>
+</div>
+{% endblock %}

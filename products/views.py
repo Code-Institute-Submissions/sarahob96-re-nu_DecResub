@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Product, Category, Product_review
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .forms import productForm
+from .forms import productForm, AdminProductForm
 from django.contrib import messages
 from django.urls import reverse_lazy
 # Create your views here.
@@ -139,3 +139,24 @@ def update_review(request, review_id):
         'product': product
      }
     return render(request, template, context)
+
+def add_product(request):
+
+    if request.method == 'POST':
+        form = AdminProductForm(request.POST)
+        if form.is_valid():
+            product = form.save()
+            messages.success(request, f' product has been successfully added')
+            return redirect(reverse('product_info', args=[product.id]))
+        
+        else:
+            messages.error(request, f' There was an error adding product, please try again')
+
+    else:
+        form = AdminProductForm()
+        
+        context = {
+            'form': form,
+        }
+    
+    return render(request, 'products/add_product.html', context)
