@@ -88,13 +88,31 @@ Product Information
                     </div>
                 </form>      
         </div>
-    </div>
-    <div>
+    </div> 
+    <hr class="w-100">
+    <div class="customer-review-container w-100 text-left" > 
+        <h3 class="pb-4"> Customer Reviews ({{review_count}})</h3>
+        {% for review in product_reviews %}
+        <div>  
+        <p>{{ review.rating}} <i class="fa-solid fa-star"></i> <span class="text-muted ">  {{ review.user }} on  {{ review.date }} </span></p>
+        <strong> {{ review.review }}</strong> 
 
-        <form action="{% url 'product_review' product.id %}" method="POST">
+        <hr>
+        {% endfor %}
+
+        </div>
+{%  if  request.user == review.user  %}
+    <i class=fa-solid fa-pencil></i>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <div class="product-form-container w-100 pt-5">
+
+        <form action="{% url 'product_review' product.id %}" class="product-review-form " method="POST">
           
             {% csrf_token %}
-            <h6> Write your Review </h6>
+            
+            <h4> Leave a Review </h4>
             <div>
                 Review Title:
                 <input type="text" class="form-control" name="title" required>
@@ -103,30 +121,21 @@ Product Information
                 <textarea name="review" class="form-control" rows="5" required></textarea>
                 <br>
                 
-                <label for="rating"> Rating </label>
+                <label for="rating"> Rating   <i class="fa-solid fa-star"></i> </label>
                 <select name="rating" id="rating">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
+                    <option value="1">5</option>
+                    <option value="2">4</option>
                     <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="4">2</option>
+                    <option value="5">1</option>
                     </select>
             </div>
     
             <button type="submit" class="btn submit-btn"> Add Review </button>
         </form>
-    </div>
-    <div > 
-        <h3> Customer Reviews </h3>
-        {% for review in product_reviews %}
-        {{ review.user }}
-        {{ review.date }}
-        {{ review.title}}
-        {{ review.rating}}
-        {{ review.review }}
-        {% endfor %}
-    </div>
-    
+        {% else %}
+        <p> Please <a href="{% url 'account_login'%}"> login </a> to leave a review <i class="fa-regular fa-heart"></i></p>
+        {% endif %}
 </div>
 </div>
 
