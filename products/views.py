@@ -121,7 +121,7 @@ def update_review(request, review_id):
     product = all_reviews.product
 
     if request.method == "POST":
-        form = productForm(request.POST, request.FILES, instance=all_reviews)
+        form = productForm(request.POST, instance=all_reviews)
         if form.is_valid():
             form.save()
             messages.success(request, "Your review was updated")
@@ -132,10 +132,10 @@ def update_review(request, review_id):
     else:
         form = productForm(instance=all_reviews)
     
-    template = 'products/edit_review.html'
+    template = 'products/update_review.html'
     context = {
         'form': form,
-        'all_reviews': all_reviews,
+        'review': all_reviews,
         'product': product
      }
     return render(request, template, context)

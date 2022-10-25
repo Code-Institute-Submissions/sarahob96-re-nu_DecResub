@@ -1,1 +1,18 @@
-hello
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Delete review
+{% endblock %}
+
+{% block body %}
+
+<form method="post">
+    {% csrf_token %}
+    <p></p> You are about to delete your review </p>
+    <input type="submit" value="Delete review" class="btn btn-danger btn-del">
+    <a href="{% url 'products' %}" class="btn submit-btn dlt-btn btn-cancel">Cancel</a>
+</form>
+
+
+{% endblock %}

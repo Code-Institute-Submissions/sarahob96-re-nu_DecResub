@@ -96,7 +96,8 @@ Product Information
         <div>  
         <p>{{ review.rating}} <i class="fa-solid fa-star"></i> <span class="text-muted ">  {{ review.user }} on  {{ review.date }} </span></p>
         <strong> {{ review.review }}</strong> 
-        <a href="{% url 'delete_review' product.id %}"> <i class="delete fa-solid fa-trash-can"></i> </a><a href="{% url 'update_review' product.id %}"><i class="modify fa-solid fa-pen-to-square"></i></a>
+        <a href="{% url 'delete_review' review.id %}"> <i class="delete fa-solid fa-trash-can"></i> </a>
+        <a href="{% url 'update_review' review.id %}"><i class="modify fa-solid fa-pen-to-square"></i></a>
 
         <hr>
         {% endfor %}
@@ -124,11 +125,11 @@ Product Information
                 
                 <label for="rating"> Rating   <i class="fa-solid fa-star"></i> </label>
                 <select name="rating" id="rating">
-                    <option value="1">5</option>
-                    <option value="2">4</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
                     <option value="3">3</option>
-                    <option value="4">2</option>
-                    <option value="5">1</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
                     </select>
             </div>
     
