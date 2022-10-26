@@ -185,12 +185,12 @@ def edit_product(request, product_id):
     
     return render(request, 'products/edit_product.html', context)
 
-def delete_product(request, product_id):
-    product = get_object_or_404(Product, pk=product_id)
+#def delete_product(request, product_id):
+   # product = get_object_or_404(Product, pk=product_id)
    
-    if request.method == 'POST':
-        product.delete()
-        messages.success(f' The product is deleted')
-        return redirect(reverse('products'))
+   # if request.method == 'POST':
+       # product.delete()
+        #messages.success(f' The product is deleted')
+        #return redirect(reverse('products'))
 
-    return render(request, 'products/delete_review.html')
+   # return render(request, 'products/delete_review.html')

@@ -93,6 +93,7 @@
                     class="fa-regular fa-user"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% if user.is_authenticated %}
+                <a class="dropdown-item" href="{% url 'profile' %}"> Profile </a>
                 <a class="dropdown-item" href="{% url 'account_logout' %}"> Logout</a>
                 {% else %}
                 <a class="dropdown-item" href="{% url 'account_login' %}"> Login</a>

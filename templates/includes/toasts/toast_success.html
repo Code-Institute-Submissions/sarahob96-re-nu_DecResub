@@ -14,7 +14,7 @@
                 <hr>       
             </div>
         </div>
-
+            {% if not profile_page %}
         <p class="logo py-1">Your Bag ({{ product_count }})</p>
         <div class="bag-preview-container">
             {% for product in bag_contents %}
@@ -46,5 +46,6 @@
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>
