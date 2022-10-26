@@ -142,10 +142,10 @@ def update_review(request, review_id):
 def add_product(request):
 
     if request.method == 'POST':
-        form = AdminProductForm(request.POST)
+        form = AdminProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.success(request, f' product has been successfully added')
+            messages.success(request, f' Product has been successfully added')
             return redirect(reverse('product_info', args=[product.id]))
         
         else:

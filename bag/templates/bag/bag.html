@@ -32,9 +32,13 @@ Shopping bag
           
             {% for contents in bag_contents %}
             <tr>
+                {% if contents.product.image %}
                 <td class="table-image">
                     <img class="img-fluid w-100" src="{{ contents.product.image.url }}">
+                    {% else %}
+                    <img class="w-100" src = "{{ MEDIA_URL }}noimage.png">
                 </td>
+                {% endif %}
                 <td> {{ contents.product.name}}<br> <span class="text-muted">Item code:{{contents.product.sku}}</span></p> </td>
                <td> {% if contents.product.sizes %}{{ contents.size }}{%else%}ONE-SIZE{% endif %}</td>
                 <td>{{ contents.qty}} </td>

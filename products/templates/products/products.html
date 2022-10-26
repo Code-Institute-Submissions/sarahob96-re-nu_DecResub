@@ -44,9 +44,14 @@ Products
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 text-center">
                     <div class="w-60">
+                       
                   <a href="{% url 'product_info' product.id %}">
+                        {% if product.image %} 
                         <img class="thumbnail thumbnail-image" src="{{ product.image.url }}">
-                    </a>
+                    {% else %}
+                    <img class="w-100" src = "{{ MEDIA_URL }}noimage.png">
+                    {% endif %}  
+                    </a>   
                     <h5 class="float-left mb-3 mt-1"> {{product.name}} </h5>
                     <p class=".d-print-inline-block float-right mt-1"> €{{product.price}}</p>
              </div>
@@ -55,7 +60,7 @@ Products
             </div>
 
         </div>
-            <!--<a href="{% url 'add_product'%}"> add product</a>-->
+            <a href="{% url 'add_product'%}"> add product</a>
             
     </div>
 </div>
