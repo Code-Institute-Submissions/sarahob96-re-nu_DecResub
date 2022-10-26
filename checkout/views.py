@@ -6,6 +6,8 @@ from bag.contexts import bag_items
 from products.models import Product
 from .forms import CheckoutForm
 from .models import Checkout
+from profiles.models import Profile
+from profiles.forms import ProfileForm
 
 import stripe
 import json
@@ -65,7 +67,24 @@ def order(request):
         currency=settings.STRIPE_CURRENCY,
         )
 
-    checkout_form = CheckoutForm()
+    if request.user.is_authenticated:
+            try:
+                profile = Profile.objects.get(user=request.user)
+                order_form = CheckoutForm(initial={
+                    'name': profile.user.get_full_name,
+                    'email': profile.default_email,
+                    'phone_number': profile.default_phone,
+                    'street_address1': profile.default_address_line_1,
+                    'street_address2': profile.default_address_line_2,
+                    'town': profile.default_town,
+                    'city': profile.default_city,
+                    'postcode': profile.default_postcode,
+                    'country': profile.default_country,
+                })
+            except Profile.DoesNotExist:
+                checkout_form = CheckoutForm()
+            else:
+                checkout_form = CheckoutForm()
 
     #messages error
     template = 'checkout/checkout.html'

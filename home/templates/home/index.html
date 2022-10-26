@@ -5,13 +5,16 @@
     <div>
         <div class="hero">
         
-            <img src="{% static 'images/group-workout2.jpeg'%}" alt="group of girls holding yoga mats">
+            <img src="{% static 'images/group-workout.jpeg'%}" alt="group of girls holding yoga mats">
             <div class="col-6 col-md-4 my-auto hero-text">
-                <h2>
+                <h2 class="hero-text-img text-center">
                     The complete workout uniform
                 </h2>
-                <h3> Search for your perfect everyday fit </h3>
+                <h4 class="text-center"> Search for your perfect everyday fit </h4>
                 <a class="shop-button" href="{% url 'products'%}" role="button"> Shop Now</a>
+
+                <div class="hidden-hero"> <h5> The complete workout uniform </h5>
+                <p> Search for your perfect everyday fit </p></div>
             </div>
         </div>
 
@@ -28,14 +31,14 @@
         <div class="one-whole column">
             <div class="c-container">
                 <a href="{% url 'products' %}?renu_category=sweatshirts">
-                    <img class="category-image" src="{% static 'images/sweatshirt.jpeg'%}"
+                    <img class="category-image" src="{% static 'images/hoody-green.jpeg'%}"
                         alt="group of girls holding yoga mats">
                     <h4 class="category-text"> Sweatshirts</h4>
                 </a>
             </div>
             <div class="c-container">
                 <a href="{% url 'products' %}?renu_category=tops">
-                    <img class="category-image" src="{% static 'images/full-outfit.jpeg'%}"
+                    <img class="category-image" src="{% static 'images/grey-coord.jpeg'%}"
                         alt="group of girls holding yoga mats">
                     <h4 class="category-text"> Tops </h4>
                 </a>
@@ -43,22 +46,22 @@
 
             <div class="c-container">
                 <a href="{% url 'products' %}?renu_category=sports_bras">
-                    <img class="category-image" src="{% static 'images/sports-bra.jpeg'%}"
+                    <img class="category-image" src="{% static 'images/pink-sportsbra.jpeg'%}"
                         alt="group of girls holding yoga mats">
                     <h4 class="category-text"> Sports Bras</h4>
                 </a>
             </div>
             <div class="c-container">
                 <a href="{% url 'products' %}?renu_category=bottoms">
-                    <img class="category-image" src="{% static 'images/leggings.jpeg'%}"
+                    <img class="category-image" src="{% static 'images/blue-leggings.jpeg'%}"
                         alt="group of girls holding yoga mats">
                     <h4 class="category-text"> Bottoms</h4>
                 </a>
             </div>
 
-            <div class="c-container">
+            <div class="c-container hide-small">
                 <a href="{% url 'products' %}?renu_category=accessories">
-                    <img class="category-image" src="{% static 'images/ball.jpeg'%}"
+                    <img class="category-image" src="{% static 'images/yoga-mat.jpeg'%}"
                         alt="group of girls holding yoga mats">
                     <h4 class="category-text"> Accessories </h4>
                 </a>
@@ -75,7 +78,7 @@
 
 <div class="member-div mt-5">
     {% if user.is_authenticated %}
-    <h2 class="text-center"> COMING SOON </h2>
+    <h2 class="text-center coming-soon"> COMING SOON </h2>
     <img class="w-100 new-jacket-home" src="{% static 'images/laura_jacket.jpeg'%}" alt="girl in pink jacket">
     {% else %}
    <a href="{%url 'account_signup'%}"><img class="w-100" src="{% static 'images/member-1.png'%}" alt="women running"></a>
@@ -88,18 +91,18 @@
       <div class="carousel-item active">
         <h4 class="text-center font-italic"> "Beautiful workout wear that's Comfy and Chic" </h4>
         <hr class="w-50">
-        <h3 class="text-center source"> Stellar Magazine </h3>
+        <h3 class="text-center source"> Stellar Magazine <i class="fa-regular fa-heart"></i> </h3>
         
       </div>
       <div class="carousel-item">
         <h4 class="text-center font-italic"> "We LOVE. Everything fits perfectly. We want it all"</h4>
         <hr class=" w-50">
-        <h3 class="text-center source"> Cosmopolitan </h3>
+        <h3 class="text-center source"> Cosmopolitan<i class="fa-regular fa-heart"></i>  </h3>
       </div>
       <div class="carousel-item">
         <h4 class="text-center font-italic"> "Stunning collection of sustainable pieces" </h4>
         <hr class="w-50">
-        <h3 class="text-center source"> British Vogue </h3>
+        <h3 class="text-center source"> British Vogue  <br> <i class="fa-regular fa-heart"></i> </h3>
       </div>
     </div>
 </div>

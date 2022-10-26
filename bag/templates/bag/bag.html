@@ -68,10 +68,11 @@ Shopping bag
         {% endif %}
     </div>
 </div>
+{% include 'products/includes/product_quantity.html' %}
 {% endblock %}
 
 {% block js %}
 {{ block.super }}
 
-{% include 'products/includes/product_quantity.html' %}
+
 {% endblock %}

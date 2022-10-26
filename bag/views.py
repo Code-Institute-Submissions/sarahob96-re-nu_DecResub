@@ -44,17 +44,20 @@ def add_product(request, product_id):
 
 
 def adjust_quantity(request, product_id):
-
-    product = get_object_or_404(Product, pk=product_id)
     qty = int(request.POST.get('qty'))
-    bag = request.session.get('bag', {})
+    size = None
 
-    if qty > 0:
-        bag[product_id] = qty
-        messages.success(request, f'Updated qty')
+    if size:
+        if qty > 0:
+            bag[product_id]['products_by_size'][size] = qty
+        else:
+            del bag[product_id]['products_by_size'][size]
     else:
-        bag.pop(product_id)
+        if qty > 0:
+            bag[product_id] = qty
+        else:
+            bag.pop[product_id]
         messages.success(request, f'Removed item')
-
-        request.session['bag'] = bag
-        return redirect(reverse('shopping_bag'))
+   
+    request.session['bag'] = bag
+    return redirect(reverse('shopping_bag'))

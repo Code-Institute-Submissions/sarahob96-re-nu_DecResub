@@ -35,22 +35,16 @@ Profile
                 <th> Grand Total</th>
             </tr>
         </thead>
-        <tbody>
-            {{orders}}
-            {{ orders.date}}
-             {% for order in orders  %}
-             <tr>
-                <td> 
-                    <a href="{% url 'user_orders' order.order_number%}"> {{ order.order_number }}</a>
-                </td>
+        <tbody> <tr>
+            {{ orders}}
+        <td> {% for order in orders %} </td>
+        {{ order.date }}
+             
+               
              </tr>
+             {% endfor %}
         </tbody>
 
-    <a ref="{% url 'order' order.order_number %}"> order </a>
-    {{ order.order_number }}
-    {{ order.grand_total }}
-    {{ order.date }}
-    {% endfor %}
 </table>
     </div>
     <div class="col-12 col-lg-6">

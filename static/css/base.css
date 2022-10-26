@@ -51,7 +51,7 @@ a{
 }
 .hero-text{
 
-    background-color: #C9A4D5;
+    background-color:#5EBAB1;
     color: white;
     width: 400px;
     height: 230px;
@@ -65,16 +65,19 @@ a{
     border-radius: 5px;
 
 }
-
+.hero-text-img{
+    font-family:'Abril Fatface', cursive; 
+}
 .shop-button{
     border: 2px;
     border-radius: 5px;
     width: 50%;
-    background-color:#5EBAB1;
-    color:white;
+    background-color:#FFE8FF;
+    color: black;
     padding: 10px;
     display: flex;
     justify-content: center;
+    margin:auto;
    
 
 }
@@ -175,7 +178,7 @@ h2{
 .category-image{
  
     width: 100%;
-    height:200px;
+    height:400px;
 
 }
 .categories{
@@ -185,7 +188,6 @@ h2{
 footer{
     margin-top: auto;
     height:200px;
-    padding-top: 30px;
     
 }
 .footer-container{
@@ -218,8 +220,9 @@ hr{
 
 
 .source{
-    font-family: 'Abril Fatface', cursive; 
-    ;
+    font-family: 'Abril Fatface', cursive;
+    color: #5EBAB1; 
+    
 }
 
 
@@ -361,7 +364,9 @@ hr{
     margin-right: 20px;
     display:inline-block;
 }
-
+.coming-soon{
+    font-family:'Abril Fatface', cursive;
+}
 .checkout-btn{
     width: 100%;
     display:inline-block;
@@ -370,7 +375,9 @@ hr{
 #checkout-form{
     width:70%;
 }
-
+.category-text{
+    color:black;
+}
 
 element.style {
     margin-right: 10px;
@@ -401,7 +408,66 @@ element.style {
     margin: auto;
 }
 
+.hidden-hero{
+    display:none;
+}
 .product-review-form{
     width: 70%;
     margin: auto;
 }
+
+@media screen and (max-width: 900px){
+    .hero-text{
+        height:260px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .hero-text{
+        display:none;
+    }
+    .bestseller-img {
+        height: 50vh;
+        }
+}
+@media screen and (min-width:500px) and  (max-width:900px){
+    .hidden-hero{
+        display:block;
+    }
+    .hero-text{
+        display:none;
+    }
+}
+@media screen and (max-width:1000px){
+.hide-small{
+    display: none;
+    
+}
+.c-container{
+    width:25%;
+}
+}
+    
+@media screen and (max-width: 700px){
+
+    .c-container{
+        width:50%;
+    
+    }
+}
+.category-heading{
+    font-size: 25px;
+}
+
+@media screen and (max-width: 300px){
+
+    .c-container{
+        width:100%;
+    
+    }
+}
+@media screen and (max-width: 400px){
+
+    .bestseller-img{
+        height: 30vh
+    }
