@@ -25,12 +25,33 @@ Profile
     <div class="col-12 col-lg-6">
         <h3> My Orders</h3>
 <div>
-        {{orders}}
-    {% for order in orders  %}
+
+    <table>
+        <thead>
+            <tr>
+                <th> Order Number</th>
+                <th> Date Ordered</th>
+                <th> Items</th>
+                <th> Grand Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{orders}}
+            {{ orders.date}}
+             {% for order in orders  %}
+             <tr>
+                <td> 
+                    <a href="{% url 'user_orders' order.order_number%}"> {{ order.order_number }}</a>
+                </td>
+             </tr>
+        </tbody>
+
     <a ref="{% url 'order' order.order_number %}"> order </a>
     {{ order.order_number }}
     {{ order.grand_total }}
+    {{ order.date }}
     {% endfor %}
+</table>
     </div>
     <div class="col-12 col-lg-6">
         <h3> My Reviews </h3>

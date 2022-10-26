@@ -30,7 +30,6 @@ def user_profile(request):
 
 def user_orders(request, order_number):
 
-    orders = profile.orders.all()
     order = get_object_or_404(Checkout, order_number=order_number)
     template = 'checkout/order_success.html'
     context = {
