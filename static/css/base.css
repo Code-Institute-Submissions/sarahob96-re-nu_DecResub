@@ -119,13 +119,16 @@ a:hover{
 
 }
 .navbar-light .navbar-nav .nav-link{
-    color: #5EBAB1;
+    color: black;
     font-weight: 600;
+    font-size:large;
 }
 h2{
     font-weight: 600;
 }
-
+.product-img{
+    width:300px;
+}
 .nav-menu{
     right:0;
     position:absolute;
@@ -190,6 +193,7 @@ footer{
     height:200px;
     
 }
+
 .footer-container{
 
     background-color: #FFE8FF;
@@ -420,6 +424,11 @@ element.style {
     .hero-text{
         height:260px;
     }
+    .search-bar{
+        float:none;
+        
+    }
+   
 }
 
 @media screen and (max-width:500px){
@@ -430,13 +439,17 @@ element.style {
         height: 50vh;
         }
 }
-@media screen and (min-width:500px) and  (max-width:900px){
+@media screen and (min-width:500px) and  (max-width:990px){
     .hidden-hero{
         display:block;
     }
     .hero-text{
         display:none;
     }
+    .product-image-container {
+        margin:10px;
+
+}
 }
 @media screen and (max-width:1000px){
 .hide-small{
@@ -454,9 +467,29 @@ element.style {
         width:50%;
     
     }
-}
+    .product-review-form{
+        width:100%;
+    }
+
 .category-heading{
     font-size: 25px;
+}
+
+.new-jacket{
+    width:100%;
+}
+
+.yoga-block{
+    width:100%;
+    margin:20px;
+    height: 50vh;
+}
+
+.boxing-block{
+    width:100%;
+    margin:10px;
+    height: 50vh;
+}
 }
 
 @media screen and (max-width: 300px){
