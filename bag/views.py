@@ -63,18 +63,40 @@ def adjust_quantity(request, product_id):
     return redirect(reverse('shopping_bag'))
 
 
+# def delete_bag_item(request, product_id):
+
 def delete_bag_item(request, product_id):
+    """Remove the item from the shopping bag"""
 
     try:
-        product = Products.objects.get(pk=product_id)
+        size = None
+        if 'product_size' in request.POST:
+            size = request.POST['product_size']
         bag = request.session.get('bag', {})
-        bag.pop(product_id)
+
+        if size:
+            del bag[product_id]['items_by_size'][size]
+            if not bag[product_id]['items_by_size']:
+                bag.pop(product_id)
+        else:
+            bag.pop(product_id)
+
         request.session['bag'] = bag
-        messages.success(request, f'Removed {product.name} from your bag')
         return HttpResponse(status=200)
 
     except Exception as e:
-        messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
+
+    # try:
+    #     product = Products.objects.get(pk=product_id)
+    #     bag = request.session.get('bag', {})
+    #     bag.pop(product_id)
+    #     request.session['bag'] = bag
+    #     messages.success(request, f'Removed {product.name} from your bag')
+    #     return HttpResponse(status=200)
+
+    # except Exception as e:
+    #     messages.error(request, f'Error removing item: {e}')
+    #     return HttpResponse(status=500)
     
  

@@ -5,7 +5,8 @@ from django.views.decorators.http import require_http_methods, require_POST
 from bag.contexts import bag_items
 from products.models import Product
 from .forms import CheckoutForm
-from .models import Checkout
+from .models import Checkout, Order_number
+from bag.contexts import bag_items
 from profiles.models import Profile
 from profiles.forms import ProfileForm
 
@@ -52,11 +53,9 @@ def order(request):
         checkout_form = CheckoutForm(checkout_details)
 
         if checkout_form.is_valid():
-            order = checkout_form.save()
+            order = checkout_form.save(commit=False)
 
-            request.session['save_details'] = 'save-detail' in request.POST
-            return redirect(reverse('order_successful', args=[order.order_number]))
-
+        
     #messages error
     users_bag = bag_items(request)
     total = users_bag['total']
@@ -100,6 +99,11 @@ def order_successful(request, order_number):
     save_details = request.session.get('save_details')
     checkout_order = get_object_or_404(Checkout, order_number=order_number)
     #success message
+
+    if request.user.is_authenticated:
+        profile = ProfileForm.objects.get(user=request.user)
+        checkout_order.user_profile = profile
+        checkout_order.save()
 
     if 'bag' in request.session:
         del request.session['bag']

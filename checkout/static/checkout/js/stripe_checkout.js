@@ -1,6 +1,6 @@
+var stripe = Stripe("pk_test_51LtcVaK0jrFOpBVy2hvz7S8hYibPrZ7UISeyMK9jQ1RBQVLZUxetcW5B2Z6AP8U1yhtjmL3Edsvhv1TvnsPlOImz00wiIjCmqk");
 var stripePublicKey = $("#id_stripe_public_key").text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
-var stripe = Stripe("pk_test_51LtcVaK0jrFOpBVy2hvz7S8hYibPrZ7UISeyMK9jQ1RBQVLZUxetcW5B2Z6AP8U1yhtjmL3Edsvhv1TvnsPlOImz00wiIjCmqk");
 var elements = stripe.elements();
 
 var style = {
