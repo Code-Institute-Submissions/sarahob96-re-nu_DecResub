@@ -376,6 +376,10 @@ hr{
     display:inline-block;
 }
 
+.main-header-small{
+    display: none;
+}
+
 .likes-btn{
    
     background-color: white
@@ -439,14 +443,7 @@ element.style {
    
 }
 
-@media screen and (max-width:500px){
-    .hero-text{
-        display:none;
-    }
-    .bestseller-img {
-        height: 50vh;
-        }
-}
+
 @media screen and (min-width:500px) and  (max-width:990px){
     .hidden-hero{
         display:block;
@@ -471,11 +468,14 @@ element.style {
     
 @media screen and (max-width: 700px){
 
-    .c-container{
+.main-header-small{
+    display: block;
+}
+.c-container{
         width:50%;
     
     }
-    .product-review-form{
+.product-review-form{
         width:100%;
     }
 
@@ -499,7 +499,18 @@ element.style {
     height: 50vh;
 }
 }
-
+@media screen and (max-width:500px){
+    .hero-text{
+        display:none;
+    }
+    .bestseller-img {
+        height: 50vh;
+        }
+    .main-header-small{
+            display: none;
+        }
+    
+}
 @media screen and (max-width: 300px){
 
     .c-container{
@@ -512,3 +523,6 @@ element.style {
     .bestseller-img{
         height: 30vh
     }
+
+   
+}
