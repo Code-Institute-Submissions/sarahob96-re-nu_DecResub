@@ -62,8 +62,8 @@ def adjust_quantity(request, product_id):
     request.session['bag'] = bag
     return redirect(reverse('shopping_bag'))
 
-def delete_bag_item(request, product_id):
 
+def delete_bag_item(request, product_id):
 
     try:
         product = Products.objects.get(pk=product_id)
@@ -73,8 +73,8 @@ def delete_bag_item(request, product_id):
         messages.success(request, f'Removed {product.name} from your bag')
         return HttpResponse(status=200)
 
-
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
-        return Httpresponse(status=500)
-       
+        return HttpResponse(status=500)
+    
+ 

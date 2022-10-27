@@ -77,17 +77,17 @@ Shopping bag
 {% include 'products/includes/product_quantity.html' %}
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-link').click(function (e) {
+    $('.update-quantity').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
 
     // Remove item and reload on click
-    $('.remove-item').click(function (e) {
+    $('.remove-product').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
+        var productId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('size');
-        var url = `/bag/remove/${itemId}/`;
+        var url = `/bag/remove/${productId}/`;
         var data = { 'csrfmiddlewaretoken': csrfToken, 'size': size};
 
         $.post(url, data)
