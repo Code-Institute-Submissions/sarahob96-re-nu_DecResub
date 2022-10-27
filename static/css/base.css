@@ -376,6 +376,14 @@ hr{
     display:inline-block;
 }
 
+.likes-btn{
+   
+    background-color: white
+    color: white;
+    border: none;
+    outline: none;
+}
+
 #checkout-form{
     width:70%;
 }
