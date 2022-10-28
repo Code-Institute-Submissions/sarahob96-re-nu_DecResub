@@ -260,3 +260,45 @@ The site has the following apps
      - The footer contains links to social media accounts - Facebook, Instagram and Twitter.
      - A input box is also displayed in the footer to allow users to signup to the newsletter.
   
+  <h2> Marketing Strategies </h2>
+ 
+  - A number of marketing questions were asked to my peers and family to gather information that would be deemed as necessary to when setting up a marketing strategy for an activewear site.
+  
+  1) What brands would you usually go to when you're looking for active/comfy clothing?
+       - Women's best
+       - Gymshark
+       - Gym and Coffee
+       - Lulu lemon
+  
+  2) What social media platforms do you mostly find these kind of products on?
+        - Instagram
+        - Tik tok
+        - Youtube Hauls
+  
+  3) What would be a good price point for a sustainable and versatile piece of clothing?
+        - 30 - 50 euro depending on item of clothing
+  
+  
+  4) From all forms of media - social, tv, radio and newspapers, where would you find most brand advertisments?
+         - Social media, mainly content creators.
+  
+  
+  - In today's market, Social media is the biggest platform for advertising a business.
+  - Content creators would be a great choice of marketing for RENU clothing.
+  - Content creators get the product out there, mainly creating video content for the brand.
+  - The target market is also more on the younger side, with most young age groups using social media to find out about the latest brands and trends. 
+  - Tik tok has fast become the most popular social media platform for all forms of content.
+  
+  
+  <h3> Renu Marketing  </h3>
+   A number of marketing techniques were used on site 
+  
+  <h4>  Instagram </h4>
+  An instagram site was created for Renu Apparel
+  
+  <h4> Facebook </h4>
+  A Facebook page was also created for the site.
+  
+  <h4> Subscription Newsletter </h4>
+  A newsletter subscription form was created using MailChimp. This can be found in the footer.
+   
