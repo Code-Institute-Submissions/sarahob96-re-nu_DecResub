@@ -119,10 +119,14 @@ a:hover{
 
 }
 .navbar-light .navbar-nav .nav-link{
-    color: black;
+    color: #5EBAB1;
     font-weight: 600;
     font-size:large;
 }
+.user-profile{
+    color: #C9A4D5;
+}
+
 h2{
     font-weight: 600;
 }
@@ -380,9 +384,12 @@ hr{
     display: none;
 }
 
+.small-hero-text{
+    display:none;
+}
 .likes-btn{
    
-    background-color: white
+    background-color: white;
     color: white;
     border: none;
     outline: none;
@@ -444,7 +451,7 @@ element.style {
 }
 
 
-@media screen and (min-width:500px) and  (max-width:990px){
+@media screen and (min-width:500px) and  (max-width:800px){
     .hidden-hero{
         display:block;
     }
@@ -465,11 +472,14 @@ element.style {
     width:25%;
 }
 }
-    
-@media screen and (max-width: 700px){
+
+
+
+@media screen and (max-width: 650px){
 
 .main-header-small{
     display: block;
+    font-family: 'Abril Fatface', cursive; 
 }
 .c-container{
         width:50%;
@@ -499,6 +509,7 @@ element.style {
     height: 50vh;
 }
 }
+
 @media screen and (max-width:500px){
     .hero-text{
         display:none;

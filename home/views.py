@@ -10,3 +10,4 @@ def error_404(request, *args, **argv):
     """View to return 404 error page 
     """
     return render(request, 'home/404.html')  
+
