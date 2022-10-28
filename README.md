@@ -46,12 +46,13 @@ Link to live Site here
  
  <h2> User Experience </h2>
  
- <h4> The strategy Plane </h4>
+ <h3> The strategy Plane </h3>
  
 RENU apparel is B2C - Business to Consumer business that sells sustainable activewear and accessories. In today's market, sustainable clothing pieces that are versatile and sustainable are extremely popular and cater to a wide audience. A large portion of the target audience for Renu will be women who have an interest in working out/ have an active lifestyle. The target audience will not be restricted however to just women with a very sporty lifetyle as the site also advertise the products as comfortable and sustainable. This also appeals to not only younger sporty women but also older customers who are eco conscious and value comfy clothing.
  
+ <h2> User Stories <h2>
  
- <h4> Admin </h4> 
+ <h3> Admin </h3> 
 
  <hr>
 
@@ -88,7 +89,7 @@ RENU apparel is B2C - Business to Consumer business that sells sustainable activ
   9. As a site owner, I want to ensure only admin accounts have access to modifying products.
 
 
- <h4>Customer </h4>
+ <h3>Customer </h3>
 
  <hr>
 
@@ -133,7 +134,33 @@ RENU apparel is B2C - Business to Consumer business that sells sustainable activ
 20. As a customer, I want to be able to contact the company if I have any queries about my order etc
 
  
-
+  <h3> The Scope Plane </h3>
   
+While designing the project, I wanted the user to have a positive experience while on the site, both UX and mood wise. A website has the ability to influence a persons mood based on the theme/design of the site and the layout used. 
+To provide a positive experience while on the site, the responsive navigation bar and links in the footer allow for the user to access all parts of the site easily.
+  
+ A number of features will be used to provide the user with a positive experience.
+  
+  1. The site navigation bar will include a link to all product categories, the shopping bag, profile, and login/logout/register features 
+  
+ 2. A search bar will be placed in the header of the site to allow the user to search for products on any page of the site.
+  
+ 3. A landing page with a striking hero image that conveys to the user what the site is for.
+  
+ 4. A Custom 404 page that appears if the user stumbles upon a page that is not available
+  
+ 5. A Products page that displays all products, and the option to view specific categories
+  
+ 6. Product information for individual items will be display on the individual product pages.
+  
+  7. A user profile page will display the users information that can be used in future orders.
+  
+  8.  Responsive design so users get a pleasant viewing experience across all devices.
  
+  9. A reviews section that will allow users to leave their opinion of products
+  
+ 10.  A contact page that will let the users reach out to the store.
+ 
+ 
+  
                        
