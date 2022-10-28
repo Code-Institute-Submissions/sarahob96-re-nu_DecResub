@@ -208,6 +208,9 @@ The site has the following apps
   
  The font families used across the site was 'Alegreya Sans SC'' and  'Abril Fatface'. The Abril Fatface font gives a fancy and eye catching look to the site and is used to draw the attention of the user to the main features used on the site.
   
+  <h4> Favicon </h4>
+   - I created a Favicon on the favicon site incorporating the most used colour of the site.
+  
   <h4> Images </h4>
   
   - Images used were gotten across a number of stock photo sites including
@@ -216,7 +219,7 @@ The site has the following apps
      - Unsplash 
      - Pixabay
   
- 
+  
   <h2> Features </h2>
   
   <h3> Current Features </h3>
@@ -301,4 +304,55 @@ The site has the following apps
   
   <h4> Subscription Newsletter </h4>
   A newsletter subscription form was created using MailChimp. This can be found in the footer.
-   
+  
+  
+  <h3> Features to be implemented in the future </h3>
+  
+  The following features could be added to the site in the future:
+  
+  - Discount codes to allow members recieve a discount on purchases
+  - A Gallery feature to show people RENU events
+  - "seen on" feature for photos uploaded by customers wearing renu apparel
+  
+  
+  <h2> Technologies Used </h2>
+  
+  <h3> Frameworks and Extensions </h3>
+  
+  - Github - provides hosting for software development version control using GIT. Contains the repository of this project.
+  
+  - Gitpod - Gitpod hosts the coding space where the project was built before being committed to github repository.
+  
+  - Heroku - Cloud platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+  
+  - Django - High level python web framework used to build the foundations of the project
+  
+  - Bootstrap - a free, open source front-end development framework for the creation of websites and web apps. Bootstrap provides a collection of syntax for template designs.  
+  
+  - Stripe - Allows for payments to be made and recieved over the internet.
+  
+  - jQuery - fast, small, and feature-rich JavaScript library. It is designed to simplify HTML DOM tree traversal and manipulation 
+  
+ - Font awesome - Used for all of the icons throughout the site including social media and delete/edit review buttons
+  
+  
+  <h3>  Database </h3>
+  - Heroku Postgres - Database used on Heroku.
+  
+  <h3> Libraries </h3>
+   - HTML
+   - CSS
+   - Python 
+   - Javascript
+  
+  
+  <h2> Testing </h2>
+  
+  <h3> Code Validators </h3>
+  
+  - HTML code was validated through the W3 validator
+  - CSS code was validated through W3 Jigsaw
+  - Javascript code was validated through JS Hint
+  - Python is normally validated through PEP8. At the time of validating this project, the PEP8 site was down.
+  
+  
