@@ -7,7 +7,8 @@ Renu Go
 <div class="contact-success">
     <div class="row text-center mt-5">
         <div class="col">
-            <h2> Welcome to RENU Go, a community for our members </h2>
+            <h2> Welcome to RENU Go </h2>
+                <h3> a community for our members </h3>
             <p class="mb-5"> We want to reward our Renu-Go members with access to FREE workout events and MORE </p>
 
             {% if user.is_authenticated %}
@@ -52,12 +53,12 @@ Renu Go
                 
     {% else %}
 
-            <h3> Become a RENU go member today for access to our latest workout events and MORE </h3>
+            <h4> Become a RENU go member today for access to our latest workout events and MORE </h4>
 
             <h5><a href="{% url 'account_signup' %}"> Sign up </a> or <a href="{% url 'account_login'%}"> Login now </a> </h5><br>
             <h6><a href="{% url 'products'%}"> Shopping this way </a> </h6>
            
-            <img class=" group-workout-img" src="{% static 'images/group-workout.jpeg'%}" alt="group of girls at a workout">
+            <img class=" group-workout-img p-3" src="{% static 'images/group-workout2.jpeg'%}" alt="group of girls at a workout">
 
          {% endif%}
         </div>

@@ -87,7 +87,7 @@ a:link{
 }
 
 a:hover{
-    color: #FFE8FF!important;
+    color: #C9A4D5  !important;
 }
 .main-nav{
     background-color: White;
@@ -309,13 +309,14 @@ hr{
     width: 70%;
 }
 .group-workout-img{
-    height:400px;
-    width:600px;
+
+    width: 100%;
 }
 
 .new-jacket{
-    height:500px;
-    width:800px;
+
+    width: 90%;
+    padding-bottom: 30px;
 
 }
 .boxing-block{
@@ -520,20 +521,20 @@ element.style {
 }
 
 .new-jacket{
-    width:100%;
+    width: 80%;
+    height: 90%;
 }
 
 .yoga-block{
     width:100%;
-    margin:20px;
-    height: 50vh;
+    height: 650px;
 }
 
 .boxing-block{
     width:100%;
-    margin:10px;
-    height: 50vh;
+    height: 650px;
 }
+
 }
 .newsletter-form{
     background-color: #FFE8FF;
@@ -574,7 +575,9 @@ element.style {
         height: 30vh;
     
     }
-
+    .yoga-img{
+        height:200px;
+    }
    
 }
 @media screen and (max-width: 770px){

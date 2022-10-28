@@ -3,6 +3,7 @@
 
 
 {% block body %}
+{% if user.is_superuser %}
 
 <div class="col-12">
     <form action="{% url 'add_product' %}" method="POST">
@@ -10,5 +11,16 @@
         {{ form|crispy}}
         <button type="submit"> Add Product </button>
     </form>
+
+    {% else %}
+    <div class="pt-5">
+        <h3 class="text-center">  Sorry you have no access </h3>
+        <h5 class="text-center"> Only Store owners can access the product management page </h5>
+    </div>
+    <div>
+        <h3 class="text-center"> <a href="{% url 'products'%}"> Go back shopping </a> </h3>
+        <h3 class="text-center"><a href="{% url 'renu-go'%}"> Check out our next exclusive RENU GO events </a> </h3>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}
