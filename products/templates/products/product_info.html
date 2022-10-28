@@ -93,6 +93,12 @@ Product Information
                     </div>
                 </form>      
         </div>
+        {% if user.is_superuser %}
+<div>
+        <a href="{% url 'edit_product' product.id %}"> Edit product |</a>
+<a href="{% url 'delete_product' product.id %}"> Delete product</a>
+{% endif %}
+</div>
     </div> 
     <hr class="w-100">
     <div class="customer-review-container w-100 text-left" > 
@@ -144,8 +150,7 @@ Product Information
         <p> Please <a href="{% url 'account_login'%}"> login </a> to leave a review <i class="fa-regular fa-heart"></i></p>
         {% endif %}
 </div>
-<a href="{% url 'edit_product' product.id %}"> Edit product</a>
-<a href="{% url 'delete_product' product.id %}"> Delete product</a> 
+ 
 
 <div>
     {% if user.is_authenticated %}
