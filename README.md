@@ -200,6 +200,8 @@ The site has the following apps
   <h4> Colour Scheme </h4>
   
   My main vision for the site was to be bright and energetic to effectively convey the active and positive experience one has when wearing and using the RENU products The colours used on the site therefore were bright but definate. I used Colourspace to generate a palette that was then applied to the site.
+  <img src = "assets/images/color-scheme.png">
+  
   - The light aqua green colour was used most across the site #5EBAB1.
   - A light pink was used throughout the site for the background colours of buttons and in the footer ##FFE8FF.
   - A lilac purple #C9A4D5 was then used sparingly acrossed the site also.
@@ -227,16 +229,24 @@ The site has the following apps
   - Navigation bar
      - The nav bar is one of the main site features as it is visible from across the whole site.   On smaller devices it shrinks down into a collapsable menu that opens into a dropdown menu when clicked on. It contains links to most elements of the site, allowing for easy navigation throughtout the site
   
+  <img src = "assets/images/header-fullscreen.png">
+  
   - Search bar
-     -  The search bar is positioned at the top of the site just below the nav bar. It allows the user to quickly search for an item if they already have something in mind and avoids having to browse. 
+     -  The search bar is positioned at the top of the site just below the nav bar. It allows the user to quickly search for an item if they already have something in mind and avoids having to browse.
+    <img src = "assets/images/search-bar.png">
   
   - Hero Image
     - The striking hero image is displayed to the user as they reach the site. Its a bright and energetic photo that conveys the feeling of the site and the products to the user instantly. The group photo of friends doing a workout conveys the theme of the site instantly to the user. The hero image text also does this stating 'uniform' and 'everyday fit'. Both modern day terms used to describe an outfit. 
-  
+    <img src = "assets/images/hero-img.png">
   
   - Shop by Category
     - Below the hero image is the 'shop by category' section of the home page. On large screens it displays as 5 different sections showing all 5 shopping categories - bottoms, sweatshirts, accessorties, tops and sports bras. On smaller devices this decreases down to 4 cateogories for UX purposes. This quickly and effectively displays to the customer whats on offer from the store.
+  
+    <img src = "assets/images/shop-by-category.png">
 
+ - Most Popular feature
+   - On the home page, there is a 'bestselling' feature. This provides the user with more knowledge of what is popular by other users
+   <img src = "assets/images/most-popular.png">
   
   - About 
      - The link to the about page can be found in the footer. This gives the user a quick synopsis of what the company is all about, allowing the user to feel more connected to the brand, its owners and its eco friendly message.
@@ -244,20 +254,30 @@ The site has the following apps
   - Review
      - The review portion of the site can be found on the individual product pages. Below the product, previously submitted reviews are displayed to all users. However, logged in users can only leave reviews. 
   
+    <img src = "assets/images/reviews.png">
+  
   
   - Renu go - Member Exclusive
     - An incentive to keep customers returning and remaining a loyal customer of the brand.
+  
     - 'RENU go' is the members only page where users can get access to free workouts taking place in dublin across the following  month - December in this case. The two events listed both advertise the event and its details. Exclusive information - including upcoming products are also listed on this page.
+  
+  
+    <img src = "assets/images/renu-go.png">
   
   - Guest
     - Users that remain on site without logging in (guest users) can still make orders and look at reviews but do not have the ability to leave reviews or check out exclusive content.
+    <img src = "assets/images/not-logged-in.png">
   
   - User Account
     - Logged in users have access to the exclusive renu go page and can leave / edit their review.
+    <img src = "assets/images/logged-in-user.png">
   
   - Admin Account
     - Admin users (site owners) have superuser only access to add/delete/edit products on the front end of the site.
     - They also have the ability to remove other users reviews if deemed necessary.
+  
+    <img src = "assets/images/admin.png">
   
   - Footer
      - The footer contains links to social media accounts - Facebook, Instagram and Twitter.
@@ -299,11 +319,15 @@ The site has the following apps
   <h4>  Instagram </h4>
   An instagram site was created for Renu Apparel
   
+   <img src = "assets/images/instagram.png">  
+  
   <h4> Facebook </h4>
   A Facebook page was also created for the site.
+   <img src = "assets/images/facebook.png">
   
   <h4> Subscription Newsletter </h4>
   A newsletter subscription form was created using MailChimp. This can be found in the footer.
+   <img src = "assets/images/newsletter.png">
   
   
   <h3> Features to be implemented in the future </h3>
