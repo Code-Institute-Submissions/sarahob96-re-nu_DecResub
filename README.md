@@ -50,7 +50,10 @@ Link to live Site here
  
 RENU apparel is B2C - Business to Consumer business that sells sustainable activewear and accessories. In today's market, sustainable clothing pieces that are versatile and sustainable are extremely popular and cater to a wide audience. A large portion of the target audience for Renu will be women who have an interest in working out/ have an active lifestyle. The target audience will not be restricted however to just women with a very sporty lifetyle as the site also advertise the products as comfortable and sustainable. This also appeals to not only younger sporty women but also older customers who are eco conscious and value comfy clothing.
  
- <h2> User Stories <h2>
+ <h2> User Stories </h2>
+  
+  - My Kanban board containing the general user stories is [here]( https://github.com/users/sarahob96/projects/2/views/2?layout=board)
+  - List of in detail user stories are below
  
  <h3> Admin </h3> 
 
@@ -225,7 +228,11 @@ The site has the following apps
   <h2> Features </h2>
   
   <h3> Current Features </h3>
-  
+ 
+ Authenicated User
+ <hr>
+  - The 'django-allauth' python package was used on the site to create the login, logout, register and password-change features.
+ 
   - Navigation bar
      - The nav bar is one of the main site features as it is visible from across the whole site.   On smaller devices it shrinks down into a collapsable menu that opens into a dropdown menu when clicked on. It contains links to most elements of the site, allowing for easy navigation throughtout the site
   
@@ -380,3 +387,38 @@ The site has the following apps
   - Python is normally validated through PEP8. At the time of validating this project, the PEP8 site was down.
   
   
+ <h3> Deployment </h3>
+ 
+ - This project was created in gitpod and deployed using Heroku.
+A number of steps were carried out to ensure a successful deployment.
+
+- The final code was pushed to github and then heroku was used.
+
+- On the Heroku website, log in to your account once signed up.
+
+- Click on "create new app" once logged in.
+
+- Give the app a name and choose the correct region, USA or Europe
+
+- Click on the settings tab
+
+- Once in settings, go to the "Config Vars" 
+      - add the KEY:PORT and the VALUE:8000
+      -AWS_ACCESS_KEY_ID
+      -AWS_SECRET_ACCESS_KEY
+      -DATABASE_URL 
+      -SECRET_KEY
+      -STRIPE_PUBLIC_KEY
+      -STRIPE_SECRET_KEY
+      -STRIPE_WH_SECRET
+      -USE_AWS
+ 
+- After, go to the "buildpacks" section and add buildbacks 'Python'.
+
+- Go to the deployment section and click on the 'connect to Github' option
+
+- Choose the repository name you want to deploy and click 'connect'.
+
+- Choose between the 'automatic' and 'manual' deploys
+
+- Finally select the branch to deploy and heroku will build the final live app.
