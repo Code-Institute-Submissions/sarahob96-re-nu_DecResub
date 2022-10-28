@@ -162,5 +162,60 @@ To provide a positive experience while on the site, the responsive navigation ba
  10.  A contact page that will let the users reach out to the store.
  
  
+  <h3> The Structure Plane </h3> 
   
+When the user arrives on site, they will be greeted with a bright and energetic hero image below a clear and concise nav bar. A search bar will be display to the user at the top of the site allowing for the user to quickly find what they are looking for without having to browse.
+The user will have the ability to filter the items by price and name and also look for a product by category of choice.
+  
+Users will have the option to add items to their bag and checkout without having to create an account. However, only signed in 'members' have access to writing reviews and to the exclusive 'renu go' online community. 
+  
+Anytime an item is added to the bag, a user is logged in/out, the user will recieve a pop up message to inform them that the task was completed.
                        
+The site has the following apps
+  1) Home
+  2) Products - contains all product information- including product reviews
+  3) Profile 
+  4) Bag 
+  5) Checkout
+  6) Information - contains the contact us information and the renu go membership page
+  
+  
+  <h3> The Skeleton Plane </h3>
+  
+  - Wireframes here
+  
+  <h4> The Database </h4>
+  
+  - Throughout development I used SQLite as this is the default database used when using django. When deployed on Heroku, PostgreSQL database is used. 
+
+  <h4> Models </h4>
+  
+  The following models are used for the site: 
+  
+  
+  
+  
+  <h3> The Surface Plane </h3>
+  
+  <h4> Colour Scheme </h4>
+  
+  My main vision for the site was to be bright and energetic to effectively convey the active and positive experience one has when wearing and using the RENU products The colours used on the site therefore were bright but definate. I used Colourspace to generate a palette that was then applied to the site.
+  - The light aqua green colour was used most across the site #5EBAB1.
+  - A light pink was used throughout the site for the background colours of buttons and in the footer ##FFE8FF.
+  - A lilac purple #C9A4D5 was then used sparingly acrossed the site also.
+  
+  <h4> Typography </h4>
+  
+ The font families used across the site was 'Alegreya Sans SC'' and  'Abril Fatface'. The Abril Fatface font gives a fancy and eye catching look to the site and is used to draw the attention of the user to the main features used on the site.
+  
+  <h4> Images </h4>
+  
+  - Images used were gotten across a number of stock photo sites including
+     - Shutterstock
+     - Pexels
+     - Unsplash 
+     - Pixabay
+  
+  
+  
+  
