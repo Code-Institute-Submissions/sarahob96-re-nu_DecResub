@@ -578,6 +578,10 @@ element.style {
     .yoga-img{
         height:200px;
     }
+
+    .product-img{
+        width:100%;
+    }
    
 }
 @media screen and (max-width: 770px){

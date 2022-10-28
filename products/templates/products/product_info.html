@@ -46,7 +46,7 @@ Product Information
                       {% with product.sizes as p %}
                     {% if p %}
                     <div>
-                        <select class="form-control" name="product_size" id="id_product_size>">
+                        <select class="form-control mb-3" name="product_size" id="id_product_size>">
                             <option value="4"> Size 4 </option>
                             <option value="6"> Size 6 </option>
                             <option value="8"> Size 8 </option>
@@ -55,28 +55,29 @@ Product Information
                             <option value="14"> Size 14 </option>
                             <option value="16"> Size 16 </option>
                         </select>
+                        <div class="form-group float-left d-print-inline-block">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><p class="pr-2"> QTY: </p>
+                                    <button class="decrement-qty" data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                        <i class="fas fa-minus fa-sm"></i>
+                                    </button>
+                                </div>
+                                <input class="form-control float-left qty_input" type="number" name="qty" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                    
+                    
+            
+                            <div class="input-group-append">
+                                <button class="increment-qty" data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                    <i class="fas fa-plus fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                   {% endif %}
                         <div class="col-12">
-                        <p> QTY</p>
-                            <div class="form-group float-left d-print-inline-block">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <button class="decrement-qty" data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                            <i class="fas fa-minus fa-sm"></i>
-                                        </button>
-                                    </div>
-                                    <input class="form-control float-left qty_input" type="number" name="qty" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                         
-                        
-                
-                                <div class="input-group-append">
-                                    <button class="increment-qty" data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                        <i class="fas fa-plus fa-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <input type="submit" class="btn border ml-4 submit-btn mt-3" value="Add to Bag">
+                            
+                            <input type="submit" class="btn border ml-4 mb-3 submit-btn mt-3" value="Add to Bag">
 
                         </div>
                         </div>
@@ -101,7 +102,7 @@ Product Information
 </div>
     </div> 
     <hr class="w-100">
-    <div class="customer-review-container w-100 text-left" > 
+    <div class="customer-review-container w-100 pl-3 text-left" > 
         <h3 class="pb-4"> Customer Reviews ({{review_count}})</h3>
         {% for review in product_reviews %}
         <div>  
@@ -114,9 +115,6 @@ Product Information
         {% endfor %}
 
         </div>
-{%  if  request.user == review.user  %}
-    <i class=fa-solid fa-pencil></i>
-    {% endif %}
 
     {% if user.is_authenticated %}
     <div class="product-form-container w-100 pt-5">
@@ -147,7 +145,7 @@ Product Information
             <button type="submit" class="btn mt-2 mb-2 submit-btn"> Add Review </button>
         </form>
         {% else %}
-        <p> Please <a href="{% url 'account_login'%}"> login </a> to leave a review <i class="fa-regular fa-heart"></i></p>
+        <p class="p-3"> Please <a href="{% url 'account_login'%}"> login </a> to leave a review <i class="fa-regular fa-heart"></i></p>
         {% endif %}
 </div>
  
