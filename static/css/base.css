@@ -430,6 +430,15 @@ element.style {
 .purple-text{
     color: #A75EC2;
 }
+.green-text{
+    color:#5EBAB1;
+}
+.pink-text{
+    color:#FFE8FF;
+}
+.pink-background{
+    background-color: #FFE8FF;
+}
 
 .order-success-img{
     width:600px;
@@ -519,6 +528,19 @@ element.style {
     height: 50vh;
 }
 }
+.newsletter-form{
+    background-color: #FFE8FF;
+    margin:0 !important;
+    text-align: left;
+
+ 
+}
+.newsletter{
+    width:50%;
+    margin:auto;
+    padding:20px;
+}
+
 
 @media screen and (max-width:500px){
     .hero-text{
@@ -542,8 +564,16 @@ element.style {
 @media screen and (max-width: 400px){
 
     .bestseller-img{
-        height: 30vh
+        height: 30vh;
+    
     }
 
    
+}
+@media screen and (max-width: 770px){
+    .newsletter{
+        width:80%;
+        margin:auto;
+        padding:20px;
+    }
 }
