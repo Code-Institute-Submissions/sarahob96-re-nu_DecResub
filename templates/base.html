@@ -51,9 +51,10 @@
       <div class="block">
         <a class="navbar-brand brand-text nav-icon circle" href="{% url 'home' %}">
           <h2> RE <br> NU</h2>
+  
         </a>
       </div>
-      <h3 class="main-header-small"> Renu Apparel </h3>
+      <h3 class="main-header-small green-text"> Renu Apparel </h3>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +90,7 @@
 
 
           <div class="nav-menu">
-            <li class="nav-item nav-padding dropdown">
+            <li class="nav-item nav-padding pr-2 dropdown">
               <a class="nav-link dropdown-toggle" href="{% url 'profile' %}" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false"><i
                     class="fa-regular fa-user"></i></a>
@@ -99,7 +100,7 @@
                 <a class="dropdown-item user-profile" href="{% url 'account_logout' %}"> Logout</a>
                 <a class="dropdown-item-user-profile" href="{% url 'add_product' %}"> Add Products</a>
                 {% else %}
-                <a class="dropdown-item user-profile" href="{% url 'account_login' %}"> Login</a>
+                <a class="dropdown-item user-profile pr-3" href="{% url 'account_login' %}"> Login</a>
                 <a class="dropdown-item user-profile" href="{% url 'account_signup' %}"> Register</a>
                 {% endif %}
               </div>
@@ -118,7 +119,7 @@
     <form method="GET" class="search-bar" action=" {% url 'products' %}">
               <div class="input-group">
                 <input class="form-control border rounded-0" id="search-box" type="text" name="s"
-                  placeholder="Search RENU">
+                  placeholder="Search">
                 <div class="input-group-append">
                   <button class="form-control btn btn-black border" id="search-box2" type="submit">
                     <span class="icon">

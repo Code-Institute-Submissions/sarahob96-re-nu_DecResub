@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpR
 from .models import Product, Category, Product_review
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.contrib import messages
 from .forms import productForm, AdminProductForm
 from django.contrib import messages
 from django.urls import reverse_lazy
@@ -41,7 +42,7 @@ def all_products(request):
         if 's' in request.GET:
             search_query = request.GET['s']
             if not search_query:
-                message.error(request, 'please enter a search item')
+                messages.error(request, 'please enter a search item')
                 return redirect(reverse('products'))
 
             search_queries = Q(name__icontains=search_query) | Q(product_description__icontains=search_query)
