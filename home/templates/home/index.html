@@ -12,7 +12,7 @@
                 </h2>
                 <h4 class="text-center"> Search for your perfect everyday fit </h4>
                 <a class="shop-button" href="{% url 'products'%}" role="button"> Shop Now</a>
-
+                <div class="small-hero-text"> <h6> Search for your perfect everyday fit</h6></div>
                 <div class="hidden-hero"> <h5> The complete workout uniform </h5>
                 <p> Search for your perfect everyday fit </p></div>
             </div>
@@ -71,7 +71,7 @@
 </div>
 
 <div class="best-seller fluid-container">
-    <a href="">
+    <a href="{% url 'products' %}?renu_category=bottoms">
     <img src="{% static 'images/leggings-edit.jpeg'%}" class="bestseller-img">
     </a>
 </div> 

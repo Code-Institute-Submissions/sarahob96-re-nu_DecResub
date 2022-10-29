@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponseRedirect
 from .models import Product, Category, Product_review
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.contrib import messages
 from .forms import productForm, AdminProductForm
 from django.contrib import messages
 from django.urls import reverse_lazy
@@ -41,7 +42,7 @@ def all_products(request):
         if 's' in request.GET:
             search_query = request.GET['s']
             if not search_query:
-                message.error(request, 'please enter a search item')
+                messages.error(request, 'please enter a search item')
                 return redirect(reverse('products'))
 
             search_queries = Q(name__icontains=search_query) | Q(product_description__icontains=search_query)
@@ -64,12 +65,14 @@ def product_info(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     product_reviews = Product_review.objects.filter(
         product_id=product.id)
+    liked = False
     review_count = product_reviews.count()
      
     context = {
         'product': product,
         'product_reviews': product_reviews,
         'review_count': review_count,
+        'liked': liked
     }
 
     return render(request, 'products/product_info.html', context)
@@ -191,3 +194,12 @@ def delete_product(request, product_id):
     messages.success(request, f' The product was deleted')
     return redirect(reverse('products'))
 
+
+def product_favourites(request, product_id, *args):
+    product = get_object_or_404(Product, pk=product_id)
+    if product.likes.filter(id=request.user.id).exists():
+        product.likes.remove(request.user)
+    else:
+        product.likes.add(request.user)
+
+    return HttpResponseRedirect(reverse('product_info', args=[product_id]))

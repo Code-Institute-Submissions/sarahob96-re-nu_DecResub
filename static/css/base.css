@@ -87,7 +87,7 @@ a:link{
 }
 
 a:hover{
-    color: #A75EC2 !important;
+    color: #C9A4D5  !important;
 }
 .main-nav{
     background-color: White;
@@ -119,10 +119,12 @@ a:hover{
 
 }
 .navbar-light .navbar-nav .nav-link{
-    color: black;
+    color: #5EBAB1;
     font-weight: 600;
     font-size:large;
 }
+
+
 h2{
     font-weight: 600;
 }
@@ -141,11 +143,12 @@ h2{
 }
 
 #search-box{
-    border: 2px solid  #5EBAB1 !important;
+    border: 2px solid  #C9A4D5 !important;
+    border-radius: 2px !important;
 }
 
 #search-box2{
-    border: 2px solid  #5EBAB1 !important;
+    border: 2px solid #C9A4D5 !important;
 }
 
 .fa-search{
@@ -292,17 +295,28 @@ hr{
     height: 200px;
 }
 .contact-us{
-    height: 50vh;
+    height: 85vh;
+    padding-bottom: 20px;
+    display:inline-block;
+    padding-top: 20px;
     
 }
+.contact-container{
+    padding-top: 40px;
+}
+
+.contact-form-container{
+    width: 70%;
+}
 .group-workout-img{
-    height:400px;
-    width:600px;
+
+    width: 100%;
 }
 
 .new-jacket{
-    height:500px;
-    width:800px;
+
+    width: 90%;
+    padding-bottom: 30px;
 
 }
 .boxing-block{
@@ -332,6 +346,8 @@ hr{
     margin:auto;
     width: 20%;
     float: right;
+    padding-bottom: 20px;
+    
     
 }
 .login-form{
@@ -376,6 +392,21 @@ hr{
     display:inline-block;
 }
 
+.main-header-small{
+    display: none;
+}
+
+.small-hero-text{
+    display:none;
+}
+.likes-btn{
+   
+    background-color: white;
+    color: white;
+    border: none;
+    outline: none;
+}
+
 #checkout-form{
     width:70%;
 }
@@ -401,12 +432,27 @@ element.style {
 .purple-text{
     color: #A75EC2;
 }
+.green-text{
+    color:#5EBAB1;
+}
+
+.lilac-text{
+    color:#C9A4D5;
+}
+.pink-text{
+    color:#FFE8FF;
+}
+.pink-background{
+    background-color: #FFE8FF;
+}
 
 .order-success-img{
     width:600px;
     height:400px;
 }
-
+.form-check-label{
+    margin-left: 20px;
+}
 .order-details-container{
     width:50%;
     margin: auto;
@@ -431,15 +477,8 @@ element.style {
    
 }
 
-@media screen and (max-width:500px){
-    .hero-text{
-        display:none;
-    }
-    .bestseller-img {
-        height: 50vh;
-        }
-}
-@media screen and (min-width:500px) and  (max-width:990px){
+
+@media screen and (min-width:500px) and  (max-width:800px){
     .hidden-hero{
         display:block;
     }
@@ -460,14 +499,20 @@ element.style {
     width:25%;
 }
 }
-    
-@media screen and (max-width: 700px){
 
-    .c-container{
+
+
+@media screen and (max-width: 650px){
+
+.main-header-small{
+    display: block;
+    font-family: 'Abril Fatface', cursive; 
+}
+.c-container{
         width:50%;
     
     }
-    .product-review-form{
+.product-review-form{
         width:100%;
     }
 
@@ -476,22 +521,47 @@ element.style {
 }
 
 .new-jacket{
-    width:100%;
+    width: 80%;
+    height: 90%;
 }
 
 .yoga-block{
     width:100%;
-    margin:20px;
-    height: 50vh;
+    height: 650px;
 }
 
 .boxing-block{
     width:100%;
-    margin:10px;
-    height: 50vh;
-}
+    height: 650px;
 }
 
+}
+.newsletter-form{
+    background-color: #FFE8FF;
+    margin:0 !important;
+    text-align: left;
+
+ 
+}
+.newsletter{
+    width:50%;
+    margin:auto;
+    padding:20px;
+}
+
+
+@media screen and (max-width:500px){
+    .hero-text{
+        display:none;
+    }
+    .bestseller-img {
+        height: 50vh;
+        }
+    .main-header-small{
+            display: none;
+        }
+    
+}
 @media screen and (max-width: 300px){
 
     .c-container{
@@ -502,5 +572,28 @@ element.style {
 @media screen and (max-width: 400px){
 
     .bestseller-img{
-        height: 30vh
+        height: 30vh;
+    
     }
+    .yoga-img{
+        height:200px;
+    }
+
+    .product-img{
+        width:100%;
+    }
+   
+}
+@media screen and (max-width: 770px){
+    .newsletter{
+        width:80%;
+        margin:auto;
+        padding:20px;
+    }
+
+    .search-bar{
+        width:40%;
+    }
+    
+}
+

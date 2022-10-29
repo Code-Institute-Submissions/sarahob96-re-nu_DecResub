@@ -47,12 +47,15 @@
   <header class="container-fluid">
 
 
-    <nav class="navbar navbar-expand-lg navbar-light main-nav">
+    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light main-nav">
       <div class="block">
         <a class="navbar-brand brand-text nav-icon circle" href="{% url 'home' %}">
           <h2> RE <br> NU</h2>
+  
         </a>
       </div>
+      <h3 class="main-header-small green-text"> Renu Apparel </h3>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -87,17 +90,18 @@
 
 
           <div class="nav-menu">
-            <li class="nav-item nav-padding dropdown">
+            <li class="nav-item nav-padding pr-2 dropdown">
               <a class="nav-link dropdown-toggle" href="{% url 'profile' %}" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false"><i
                     class="fa-regular fa-user"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% if user.is_authenticated %}
-                <a class="dropdown-item" href="{% url 'profile' %}"> Profile </a>
-                <a class="dropdown-item" href="{% url 'account_logout' %}"> Logout</a>
+                <a class="dropdown-item user-profile" href="{% url 'profile' %}"> Profile </a>
+                <a class="dropdown-item user-profile" href="{% url 'account_logout' %}"> Logout</a>
+                <a class=" pl-4 dropdown-item-user-profile" href="{% url 'add_product' %}"> Product Admin </a>
                 {% else %}
-                <a class="dropdown-item" href="{% url 'account_login' %}"> Login</a>
-                <a class="dropdown-item" href="{% url 'account_signup' %}"> Register</a>
+                <a class="dropdown-item user-profile pr-3" href="{% url 'account_login' %}"> Login</a>
+                <a class="dropdown-item user-profile" href="{% url 'account_signup' %}"> Register</a>
                 {% endif %}
               </div>
             </li>
@@ -115,7 +119,7 @@
     <form method="GET" class="search-bar" action=" {% url 'products' %}">
               <div class="input-group">
                 <input class="form-control border rounded-0" id="search-box" type="text" name="s"
-                  placeholder="Search RENU">
+                  placeholder="Search">
                 <div class="input-group-append">
                   <button class="form-control btn btn-black border" id="search-box2" type="submit">
                     <span class="icon">
@@ -152,7 +156,42 @@
   <footer class="text-center">
 
     <div class="footer-container">
-      <section class="mt-5">
+      <div class= "newsletter">
+        <!-- Begin Mailchimp Signup Form -->
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:600px;}
+
+  </style>
+  <div id="mc_embed_signup" class="w-100">
+      <form class="newsletter-form" action="https://gitpod.us18.list-manage.com/subscribe/post?u=485804024c4d5c99fce09cc1a&amp;id=68599c9dcb&amp;f_id=00df73e7f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+          <h2 class="green-text"> Newsletter </h2>
+          
+  <div class="mc-field-group">
+    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+  </label>
+    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+    <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+  </div>
+    <div id="mce-responses" class="clear foot ">
+      <div class="response" id="mce-error-response" style="display:none"></div>
+      <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_485804024c4d5c99fce09cc1a_68599c9dcb" tabindex="-1" value=""></div>
+          <div class="optionalParent">
+              <div class="clear foot">
+                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+        
+              </div>
+          </div>
+      </div>
+  </form>
+  </div>
+  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+  <!--End mc_embed_signup-->
+  </div>
+      <section>
         <div class="row text-center d-flex justify-content-center pt-5">
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
@@ -176,14 +215,14 @@
       <hr class="my-5 w-50">
 
       <section class="text-center mb-5">
-        <a href="" class="me-4">
+        <a href="https://www.facebook.com/profile.php?id=100087386826741" class="me-4" target="_blank">
           <i class="fab fa-facebook-f"></i>
         </a>
         <a href="" class="me-4">
           <i class="fab fa-twitter"></i>
         </a>
 
-        <a href="" class="me-4">
+        <a href="https://www.instagram.com/renu_apparel_/" class="me-4" target="_blank">
           <i class="fab fa-instagram"></i>
         </a>
 
