@@ -9,11 +9,20 @@ Shopping bag
 {% block body %}
 
 <div class="pt-3">
-    <h2 class="text-center"> Shopping bag</h2> 
-    {% if bag_contents %}
+    
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center"> Shopping bag</h2> 
+             <h5 class="text-center"> {{ product_count }} Items </h5>
+             <hr class="w-50">
+        </div>
+    </div>
+
+    <div class="row">
+       <div class="col">
+   {% if bag_items %}
+       
   
-        <h5 class="text-center"> {{ product_count }} Items </div>
-    <hr class="black w-50 pb-3">
     <div class="cart-container">
        
         <table class="table-responsive shopping-table ml-5 mr-5 text-center">
@@ -30,7 +39,7 @@ Shopping bag
                 </tr>
             </thead>
           
-            {% for contents in bag_contents %}
+        {% for contents in bag_items %}
             <tr>
                 {% if contents.product.image %}
                 <td class="table-image">
@@ -39,45 +48,50 @@ Shopping bag
                     <img class="w-100" src = "{{ MEDIA_URL }}noimage.png">
                 </td>
                 {% endif %}
-                <td> {{ contents.product.name}}<br> <span class="text-muted">Item code:{{contents.product.sku}}</span></p> </td>
-               <td> {% if contents.product.sizes %}{{ contents.size }}{%else%}ONE-SIZE{% endif %}</td>
-                <td>{{ contents.qty}} </td>
-                <td>{% include "bag/bag-quantity.html" %}</td>
-                <td>€{{ contents.product.price }} </td>
-                <td> €{{ contents.product.price | individual_total:contents.qty}}</td>
+                <td><p> {{ contents.product.name}}<br> <span class="text-muted">Item code:{{contents.product.sku}}</span></p> </td>
+               <td> <p>{% if contents.product.sizes %}{{ contents.size }}{%else%}ONE-SIZE{% endif %} </p></td>
+                <td><p>{{ contents.qty}} </p></td>
+                <td> {% include "bag/bag-quantity.html" %}</td>
+                <td><p>     €{{ contents.product.price }} </p> </td>
+                <td><p> €{{ contents.product.price | individual_total:contents.qty }}</p></td>
+
                
             </tr>
              {% endfor %}
         </table>
         <div class="bag-total float-right">
-        <h5> Delivery Cost: €5.00 </h5>
+        <h5> Delivery : {{ delivery_cost|floatformat:2}}</h5>
         <h5>Bag Total: €{{ total|floatformat:2 }}</h5>
         <h4><strong>Grand Total :€{{ grand_total |floatformat:2}}  </strong></h4>
         </div>
         <div class="mt-5 pl-5 checkout-btn">
             <a href="{% url 'products' %}" class="shopping-link  mr-5"> Continue Shopping </a>
-            <a href="{% url 'checkout' %}" class="checkout-link float-right"> Checkout <i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="" class="checkout-link float-right"> Checkout <i class="fa-solid fa-cart-shopping"></i></a>
         </div>
-       
         {% else %}
-        <div class="text-center">
-        <h5> You have no items in your shopping bag </h5>
-        <br>
-        <a href="{% url 'products' %}"> <h3> Shop now </h3> </a>
-        </div>
-        {% endif %}
+
+        <div>
+              
+            <h5> You have no items in your shopping bag </h5>
+    <br>
+    <a href="{% url 'products' %}"> <h3> Shop now </h3> </a>
+    </div>
+{% endif %}
+    
+        
     </div>
 </div>
+
 
 {% endblock %}
 
 {% block js %}
 {{ block.super }}
 
-{% include 'products/includes/product_quantity.html' %}
+<!--{% include 'products/includes/product_quantity.html' %}
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-quantity').click(function (e) {
+    $('.adjust-quantity').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
@@ -96,4 +110,7 @@ Shopping bag
             });
     })
 </script>
+
 {% endblock %}
+-->
+

@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Profile
 from .forms import ProfileForm
 from django.contrib import messages
-from checkout.models import Checkout
+#from checkout.models import Checkout
 
 # Create your views here.
 

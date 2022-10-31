@@ -10,10 +10,10 @@ urlpatterns = [
     path('', include('home.urls')),
     path('products/', include('products.urls')),
     path('bag/', include('bag.urls')),
-    path('checkout', include('checkout.urls')),
-    path('profiles', include('profiles.urls')),
-    path('information', include('information.urls')),
-    path('reviews', include('reviews.urls'))
+    path('checkout/', include('checkout.urls')),
+    path('profiles/', include('profiles.urls')),
+    path('information/', include('information.urls')),
+    path('reviews/', include('reviews.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 
 handler404 = 're_nu_apparel.views.handler404'
