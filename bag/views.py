@@ -39,4 +39,52 @@ def add_to_bag(request, product_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+    
 
+def adjust_quantity(request, product_id):
+
+    qty = int(request.POST.get('qty'))
+    size = None
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
+    bag = request.session.get('bag', {})
+
+    if size:
+        if qty > 0:
+            bag[product_id]['products_by_size'][size] = qty
+        else:
+            del bag[product_id]['products_by_size'][size]
+            if not bag[product_id]['products_by_size']:
+                bag.pop(product_id)
+    else:
+        if qty > 0:
+            bag[product_id] = qty
+        else:
+            bag.pop(product_id)
+
+    request.session['bag'] = bag
+    return redirect(reverse('shopping_bag'))
+
+
+def delete_bag_item(request, product_id):
+    """Remove the item from the shopping bag"""
+
+    try:
+        product = get_object_or_404(Product, pk=product_id)
+        size = None
+        if 'product_size' in request.POST:
+            size = request.POST['product_size']
+        bag = request.session.get('bag', {})
+
+        if size:
+            del bag[product_id]['products_by_size'][size]
+            if not bag[product_id]['products_by_size']:
+                bag.pop(product_id)
+        else:
+            bag.pop(product_id)
+
+        request.session['bag'] = bag
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        return HttpResponse(status=500)

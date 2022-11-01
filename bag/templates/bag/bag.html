@@ -30,11 +30,11 @@ Shopping bag
                 <tr>
                     <th></th>
                     <th> Item</th>
-                    <th> Size</th>
-                    <th> Quantity</th>
-                    <th></th>
-                    <th> Price</th>
+                    <th> Quantity </th>
+                    <th> Price </th>
+                    <th> </th>
                     <th> Total </th>
+                   
 
                 </tr>
             </thead>
@@ -49,16 +49,20 @@ Shopping bag
                     <img class="w-100" src = "{{ MEDIA_URL }}noimage.png">
                 </td>
                 {% endif %}
-                <td><p> {{ contents.product.name}}<br> <span class="text-muted">Item code:{{contents.product.sku}}</span></p> </td>
-               <td> <p>{% if contents.product.has_sizes %}{{ contents.size }}{%else%}ONE-SIZE{% endif %} </p></td>
+                <td><p> {{ contents.product.name}}<br> <span class="text-muted">{{contents.product.sku}}</span></p> 
+                <p> Size: {% if contents.product.has_sizes %}{{ contents.size }}{%else%}ONE-SIZE{% endif %} </p></td>
                 <td><p>{{ contents.qty}} </p></td>
-                <td> {% include "bag/bag-quantity.html" %}</td>
                 <td><p>     €{{ contents.product.price }} </p> </td>
-                <td><p> €{{ contents.product.price | individual_total:contents.qty }}</p></td>
 
-               
+                    <td class="py-3 w-25">
+                        {% include "bag/bag-quantity.html" %}
+                
+                    </td>
+                <td><p> €{{ contents.product.price | individual_total:contents.qty }}</p></td>
+                <td> </td>
+    {% endfor %}
             </tr>
-             {% endfor %}
+            
         </table>
         <div class="bag-total float-right">
         <h5> Delivery : {{ delivery_cost|floatformat:2}}</h5>
@@ -89,7 +93,7 @@ Shopping bag
 {% block js %}
 {{ block.super }}
 
-<!--{% include 'products/includes/product_quantity.html' %}
+{% include 'products/includes/product_quantity.html' %}
 <script type="text/javascript">
     // Update quantity on click
     $('.adjust-quantity').click(function (e) {
@@ -113,5 +117,5 @@ Shopping bag
 </script>
 
 {% endblock %}
--->
+
 
