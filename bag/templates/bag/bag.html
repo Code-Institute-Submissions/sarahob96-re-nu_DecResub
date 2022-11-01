@@ -40,6 +40,7 @@ Shopping bag
             </thead>
           
         {% for contents in bag_items %}
+     
             <tr>
                 {% if contents.product.image %}
                 <td class="table-image">
@@ -49,7 +50,7 @@ Shopping bag
                 </td>
                 {% endif %}
                 <td><p> {{ contents.product.name}}<br> <span class="text-muted">Item code:{{contents.product.sku}}</span></p> </td>
-               <td> <p>{% if contents.product.sizes %}{{ contents.size }}{%else%}ONE-SIZE{% endif %} </p></td>
+               <td> <p>{% if contents.product.has_sizes %}{{ contents.size }}{%else%}ONE-SIZE{% endif %} </p></td>
                 <td><p>{{ contents.qty}} </p></td>
                 <td> {% include "bag/bag-quantity.html" %}</td>
                 <td><p>     €{{ contents.product.price }} </p> </td>

@@ -11,32 +11,29 @@ def bag_contents(request):
     product_count = 0
     bag = request.session.get('bag', {})
     
-    # for product_id, qty in bag.items():
-    #     product = get_object_or_404(Product, pk=product_id)
-    #     total += qty * product.price
-    #     product_count += qty
-     
-    #     print(qty)
-    #     print(product.price)
-    #     print((qty)*(product.price))
-    #     print(total)
-        
-    #     bag_items.append({
-    #       'product_id': product_id,
-    #       'qty': qty,
-    #       'product': product,
-    #          })
-
-    for product_id, qty in bag.items():
-        if isinstance(qty, int):
+    for product_id, data in bag.items():
+        if isinstance(data, int):
             product = get_object_or_404(Product, pk=product_id)
-            total += qty * product.price
-            product_count += qty
+            total += data * product.price
+            product_count += data
             bag_items.append({
                 'product_id': product_id,
-                'qty': qty,
+                'qty': data,
                 'product': product,
             })
+
+        else:
+            product = get_object_or_404(Product, pk=product_id)
+            for size, qty in data['products_by_size'].items():
+                total += qty * product.price
+                product_count += qty
+                bag_items.append({
+                    'product_id': product_id,
+                    'qty': qty,
+                    'product': product,
+                    'size': size,
+                })
+ 
 
     if total < settings.FREE_DELIVERY:
         delivery_cost = total * Decimal(settings.STANDARD_DELIVERY / 100)
