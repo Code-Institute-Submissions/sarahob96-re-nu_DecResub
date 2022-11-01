@@ -1,7 +1,14 @@
-var stripePublicKey = $("#id_stripe_public_key").text().slice(1, -1);
-var clientSecret = $('#id_client_secret').text().slice(1, -1);
+var stripe_public_Key = $("#id_stripe_public_key").text().slice(1, -1);
+var client_secret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe("pk_test_51LtcVaK0jrFOpBVy2hvz7S8hYibPrZ7UISeyMK9jQ1RBQVLZUxetcW5B2Z6AP8U1yhtjmL3Edsvhv1TvnsPlOImz00wiIjCmqk");
 var elements = stripe.elements();
+
+
+var stripeCard = elements.create('card', {
+    style: style
+});
+stripeCard.mount('#stripe-card');
+
 
 var style = {
     base: {
@@ -19,13 +26,10 @@ var style = {
     }
 };
 
-var stripeCard = elements.create('card', {
-    style: style
-});
-stripeCard.mount('#stripe-card');
 
 
-/* stripeCard.addEventListener('change', function (event) {
+
+ stripeCard.addEventListener('change', function (event) {
     var cardError = document.getElementById('card-error-message');
     if (event.error) {
 
@@ -36,7 +40,7 @@ stripeCard.mount('#stripe-card');
         cardError.textContent = '';
     }
 });
-
+/*
 // stripe documentation
 
 var form = document.getElementById('checkout-form');

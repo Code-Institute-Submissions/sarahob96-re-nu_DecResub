@@ -1,36 +1,16 @@
-#from django.shortcuts import render, get_object_or_404, reverse, redirect, HttpResponse
-#from django.conf import settings
-#from django.views.decorators.http import require_http_methods, require_POST
-
-#from bag.contexts import bag_items
-#from products.models import Product
-##from .forms import CheckoutForm
-#from .models import Checkout, Order_number
-#from bag.contexts import bag_items
-#from profiles.models import Profile
-#from profiles.forms import ProfileForm
-
-#import stripe
-#import json
-
-#@require_POST
-#def cache_checkout(request):
-#    try:
-      #  pid = request.POST.get('client_secret').split('_secret')[0]
-       # stripe.api_key = settings.STRIPE_SECRET_KEY
-       # stripe.PaymentIntent.modify(pid, metadata={
-          #  'bag': json.dumps(request.session.get('bag', {})),
-           # 'save_details': request.POST.get('save_details'),
-           # 'username': request.user,
-     #   })
-        #return HttpResponse(status=200)
-   # except Exception as e:
-       
-      #  return HttpResponse(content=e, status=400)
-# error
+from django.shortcuts import render, get_object_or_404, reverse, redirect, HttpResponse
+from django.conf import settings
+from django.views.decorators.http import require_http_methods, require_POST
 
 
+from products.models import Product
+from .forms import CheckoutForm
+from .models import Checkout, Order_number
+from profiles.models import Profile
+from profiles.forms import ProfileForm
 
+import stripe
+import json
 
 
     ##stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -151,3 +131,19 @@
 #
    # }
    # return render(request, template, context)
+
+
+def checkout(request):
+   bag = request.session.get('bag', {})
+   if not bag:
+      messages.error(request, "There's nothing in your bag")
+      return redirect(reverse('products'))
+
+   checkout_form = CheckoutForm()
+   template = "checkout/checkout.html"
+   context = {
+      'checkout_form': checkout_form,
+      'stripe_public_key': 'pk_test_51LtcVaK0jrFOpBVy2hvz7S8hYibPrZ7UISeyMK9jQ1RBQVLZUxetcW5B2Z6AP8U1yhtjmL3Edsvhv1TvnsPlOImz00wiIjCmqk',
+      'client_secret': 'test client_secret',
+   }
+   return render(request, template, context)
