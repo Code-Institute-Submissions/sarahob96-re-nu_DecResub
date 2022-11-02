@@ -7,8 +7,8 @@ Order Success
 
 <div class="pt-5 order-success text-center">
 <h3 class="purple-text">Thanks for ordering from RENU Apparel</h3>
-<p> order #{{ checkout_order.order_number}} <br>
-You will recieve confirmation of your order at {{ checkout_order.email }}.</p>
+<p> order #{{ order.order_number}} <br>
+You will recieve confirmation of your order at {{ order.email }}.</p>
 
 <div class="confirmation-border pt-4">
 
@@ -18,13 +18,13 @@ You will recieve confirmation of your order at {{ checkout_order.email }}.</p>
 <p class="order-details">
     Date : {{order.date}} <br>
     Name : {{order.name}} <br>
-    Email : {{checkout_order.email}}<br>
-    Address Line 1 : {{checkout_order.address_line_1}}<br>
-    Address Line 2 : {{checkout_order.address_line_2}}<br>
-    Town: {{checkout_order.town}}<br>
-    City:{{checkout_order.city}}<br>
-    Postcode:{{checkout_order.postcode}}<br>
-    Country:{{checkout_order.country}}<br>
+    Email : {{order.email}}<br>
+    Address Line 1 : {{order.address_line_1}}<br>
+    Address Line 2 : {{order.address_line_2}}<br>
+    Town: {{order.town}}<br>
+    City:{{order.city}}<br>
+    Postcode:{{order.postcode}}<br>
+    Country:{{order.country}}<br>
 </p>
 </div>
 </div>
