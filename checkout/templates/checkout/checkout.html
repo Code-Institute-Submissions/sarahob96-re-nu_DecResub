@@ -37,7 +37,7 @@ Checkout
         </tr>
          {% endfor %}
         </table>
-        <div> <p class="pl-5"><strong> Grand Total (incl Delivery) €{{grand_total}} </strong></p></div>
+        <div> <p class="pl-5"><strong> Grand Total (incl Delivery) €{{grand_total | floatformat:2 }} </strong></p></div>
     <div class="col-md-12">
         <div class="col-12">
             <h4 class="pt-3"> Fill out the form below to checkout and complete your order</h4>
@@ -69,7 +69,7 @@ Checkout
                 <button type="submit" class="btn back-btn"> Back to cart</button>
 
                 <button id="submit-btn" type="submit" class="btn submit-btn "> Complete Payment </button> 
-                <p class="total-alert"> <strong> <i class="fa-solid fa-circle-exclamation"></i> Your card will be charged €{{grand_total}} </strong> </p>
+                <p class="total-alert"> <strong> <i class="fa-solid fa-circle-exclamation"></i> Your card will be charged €{{grand_total | floatformat:2 }} </strong> </p>
                     </div>
 
             </form>

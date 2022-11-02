@@ -307,6 +307,13 @@ hr{
     padding-top: 40px;
 }
 
+.add-product-form{
+    padding: 20px 100px 0 100px;
+}
+.profile-form{
+    width: 50%;
+    margin: auto;
+}
 .contact-form-container{
     width: 70%;
 }

@@ -5,11 +5,14 @@
 {% block body %}
 {% if user.is_superuser %}
 
+
+
 <div class="col-12">
-    <form action="{% url 'add_product' %}" method="POST">
+    <h2 class="text-center"> Add a product </h2>
+    <form action="{% url 'add_product' %}" method="POST" class="add-product-form">
         {% csrf_token %}
         {{ form|crispy}}
-        <button type="submit"> Add Product </button>
+        <button type="submit" class="submit-btn mb-4 mt-4"> Add Product </button>
     </form>
 
     {% else %}

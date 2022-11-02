@@ -13,6 +13,8 @@ Shopping bag
     <div class="row">
         <div class="col">
             <h2 class="text-center"> Shopping bag</h2> 
+            
+            {% if bag_items %}
              <h5 class="text-center"> {{ product_count }} Items </h5>
              <hr class="w-50">
         </div>
@@ -20,7 +22,7 @@ Shopping bag
 
     <div class="row">
        <div class="col">
-   {% if bag_items %}
+ 
        
   
     <div class="cart-container">
@@ -75,11 +77,11 @@ Shopping bag
         </div>
         {% else %}
 
-        <div>
+        <div class="pb-5">
               
-            <h5> You have no items in your shopping bag </h5>
+            <h5 class="text-center pt-4"> You have no items in your shopping bag </h5>
     <br>
-    <a href="{% url 'products' %}"> <h3> Shop now </h3> </a>
+    <a  class="text-center" href="{% url 'products' %}"> <h3> Shop now </h3> </a>
     </div>
 {% endif %}
     

@@ -5,9 +5,9 @@ Order Success
 {% endblock%}
 {% block body %}
 
-<div class="pt-5 order-success text-center">
+<div class="pt-5 order-success text-center pb-3">
 <h3 class="purple-text">Thanks for ordering from RENU Apparel</h3>
-<p> order #{{ order.order_number}} <br>
+<p> <strong> order #{{ order.order_number}} </strong><br>
 You will recieve confirmation of your order at {{ order.email }}.</p>
 
 <div class="confirmation-border pt-4">
@@ -57,9 +57,9 @@ You will recieve confirmation of your order at {{ order.email }}.</p>
 </table>
 </div>
 
-<h5> We can't wait to see you in RENU </h5>
-<h6 class="purple-text"> Tag us on instagram <strong> #renuapparel #weloverenu #renugo </strong> </h6>
-<div>
+<h5 class="pt-3"> We can't wait to see you in RENU </h5>
+<h6 class="purple-text pt-3"> Tag us on instagram <strong> #renuapparel #weloverenu #renugo </strong> </h6>
+<div class="pt-2 pb-3">
     <img class="order-success-img"src="{% static 'images/yoga-group.jpeg'%}" alt="group of girls with yoga mats">
 </div>
 
