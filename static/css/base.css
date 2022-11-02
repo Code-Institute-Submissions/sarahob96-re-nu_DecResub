@@ -314,7 +314,10 @@ hr{
 
     width: 100%;
 }
-
+.banner-div{
+    background-color: #FFE8FF;
+    padding:0;
+}
 .new-jacket{
 
     width: 90%;
