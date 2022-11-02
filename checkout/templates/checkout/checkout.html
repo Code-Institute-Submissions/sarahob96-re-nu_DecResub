@@ -52,7 +52,7 @@ Checkout
                 <input class="form-check-input " type="checkbox" id="save_details" name="save_details"
                     checked>
                 {% else %}
-                <a href="{%url 'accounts_signup'%}">
+                <a href="{%url 'account_signup'%}">
                     Register an account
                 </a>
 
@@ -64,6 +64,7 @@ Checkout
                 <div id="stripe-card"></div>
 
                 <div id="card-error-message"></div>
+                <input type="hidden" value = "{{ client_secret }}" name="client_secret">
                 <div class="pt-4">
                 <button type="submit" class="btn back-btn"> Back to cart</button>
 

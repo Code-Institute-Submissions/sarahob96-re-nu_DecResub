@@ -6,10 +6,10 @@ from .models import Order_number
 @receiver(post_save, sender=Order_number)
 def update_order_on_save(sender, instance, created, **kwargs):
 
-    instance.checkout.update_total()
+    instance.order.update_total_cost()
 
 
 @receiver(post_delete, sender=Order_number)
 def update_order_on_delete(sender, instance, **kwargs):
 
-    instance.checkout.update_total()
+    instance.order.update_total_cost()

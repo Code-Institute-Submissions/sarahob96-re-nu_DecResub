@@ -21,4 +21,4 @@ class CheckoutForm(forms.ModelForm):
             'city': 'City',
             'postcode': 'Postcode',
             "country": 'Country',
-    }
+        }

@@ -1,7 +1,7 @@
 import uuid
 from django.db import models
 from django.db.models import Sum
-from django.conf import Settings
+from django.conf import settings
 from django_countries.fields import CountryField
 from products.views import Product
 
@@ -30,7 +30,13 @@ class Checkout(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total_cost(self):
-        self.total = self.order.aggregate(Sum('order_total'))['order_total_total__sum'] or 0
+        self.total = self.ordernumber.aggregate(Sum('order_total'))['order_total__sum']
+        if self.total < settings.FREE_DELIVERY:
+            self.delivery_cost = self.total * settings.STANDARD_DELIVERY * 100
+        else:
+            self.delivery_cost = 0
+        self.grand_total = self.total + self.delivery_cost
+        self.save()
     
             
     def save(self, *args, **kwargs):

@@ -170,7 +170,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-FREE_DELIVERY = 40
+FREE_DELIVERY = 60
 STANDARD_DELIVERY = 20
 # Stripe
 
