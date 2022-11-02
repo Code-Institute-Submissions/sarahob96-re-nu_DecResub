@@ -153,7 +153,7 @@ def order_successful(request, order_number):
     if request.user.is_authenticated:
         profile = Profile.objects.get(user=request.user)
         # Attach the user's profile to the order
-        order.user_profile = profile
+        order.profile = profile
         order.save()
 
         # Save the user's info

@@ -225,7 +225,9 @@ hr{
 
 }
 
-
+.order-summary-table{
+    margin:auto;
+}
 .source{
     font-family: 'Abril Fatface', cursive;
     color: #5EBAB1; 

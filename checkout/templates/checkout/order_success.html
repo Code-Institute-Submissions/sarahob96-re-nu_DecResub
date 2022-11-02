@@ -27,6 +27,34 @@ You will recieve confirmation of your order at {{ order.email }}.</p>
     Country:{{order.country}}<br>
 </p>
 </div>
+<div class="product-summary">
+  <h4>  Product Summary </h4>
+
+
+<table class="table-striped table-bordered order-summary-table">
+    <thead>
+        <tr>
+        <th> </th>
+        <th> Product </th>
+        <th> Quantity </th>
+        <th> Size </th>
+        <th> Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        {% for product in order.ordernumber.all %}
+        <td></td>
+        <td> {{product.product.name}}  </td>
+        <td> {{ product.qty}}</td>
+       <td> {{ product.product.size }} </td>
+       <td> {{ product.order_total }}</td>
+        
+        {% endfor %}
+        <td> {{order.grand_total}}</td>
+        </tr>
+        </tbody>
+</table>
 </div>
 
 <h5> We can't wait to see you in RENU </h5>
