@@ -8,16 +8,16 @@ Checkout
 {% endblock %}
 {% block body %}
 
-<div class="checkout-container p-4">
+<div class="checkout-container p-2">
 <div>
     <h2 class="text-center"> Checkout </h2>
     <hr class="black w-50 pb-3">
     
-<div class="row">
+<div class="row table-responsive">
 
-<h4 class="text-black text-center pl-3 pb-3"> Checkout Summary ({{ product_count }})  </h4>
+<h4 class="text-black pl-5 pb-3"> Checkout Summary ({{ product_count }})  </h4>
            
-    <table class="table-responsive shopping-table ml-5 mr-5 text-center">
+    <table class="table-responsive shopping-table ml-5 mr-5 text-center table table-sm table-bordered table-striped table-hover">
         <thead>
             <tr>
                 <th></th>
@@ -26,18 +26,21 @@ Checkout
 
             </tr>
         </thead>
-      
-        {% for contents in bag_contents %}
+      <tbody>
+        {% for contents in bag_items %}
         <tr>
             <td class="table-image">
                 <img class="img-fluid w-100" src="{{ contents.product.image.url }}">
             </td>
-            <td> {{ contents.product.name}}({{ contents.qty}})  <span class="text-muted"><br>Item code:{{contents.product.sku}}</span></p> </td>
+            <td> {{ contents.product.name}} <br>Qty({{ contents.qty}})  <span class="text-muted"><br>Item code:{{contents.product.sku}}</span>
+            <br>
+            Size: {% if contents.product.has_sizes %}{{ contents.size}}{% else %} ONE-SIZE {% endif %}</p>  </td>
             <td> {{ contents.product.price | individual_total:contents.qty}}</td>
         </tr>
          {% endfor %}
+         </tbody>
         </table>
-        <div> <p class="pl-5"><strong> Grand Total (incl Delivery) €{{grand_total | floatformat:2 }} </strong></p></div>
+        <div> <h4 class="pl-5 pb-3"><strong> Grand Total </strong>(incl Delivery) <strong> €{{grand_total | floatformat:2 }} </strong></h4></div>
     <div class="col-md-12">
         <div class="col-12">
             <h4 class="pt-3"> Fill out the form below to checkout and complete your order</h4>
