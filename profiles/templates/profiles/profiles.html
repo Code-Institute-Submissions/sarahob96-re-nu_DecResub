@@ -46,7 +46,7 @@ Profile
                             </td>
                             <td>{{ order.date }}</td>
             
-                            <td>${{ order.grand_total }}</td>
+                            <td>${{ order.grand_total| floatformat:2 }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>

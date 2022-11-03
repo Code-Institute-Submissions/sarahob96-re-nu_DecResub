@@ -3,6 +3,7 @@ from django_countries.fields import CountryField
 from django.dispatch import receiver 
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
+from products.models import Product
 # Create your models here.
 
 class Profile(models.Model):
@@ -26,3 +27,15 @@ def get_user_profile_details(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
     instance.profile.save()
+
+
+#class user_wishlist(models.Model):
+    
+    #products = models.ManyToManyField(Product, blank=True)
+    #user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    #def __str__(self):
+
+     #   return self.user.username
+
+
