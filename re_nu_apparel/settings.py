@@ -126,10 +126,12 @@ WSGI_APPLICATION = 're_nu_apparel.wsgi.application'
 
 # Database
 if 'DATABASE_URL' in os.environ:
+    print("Postgres")
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
+    print("SQLite")
     DATABASES = {
        'default': {
             'ENGINE': 'django.db.backends.sqlite3',
