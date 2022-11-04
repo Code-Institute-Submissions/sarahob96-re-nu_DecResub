@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,6 @@ SECRET_KEY = 'django-insecure-71npb1%(7h(#!j-#jhx8klp0p#r2x^5@y0icbt-j2m4q8c5c*(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -92,6 +92,13 @@ TEMPLATES = [
         },
     },
 ]
+
+CSRF_TRUSTED_ORIGINS = ['https://renu-apparel.herokuapp.com/', 'https://8000-sarahob96-renu-sdfsk255t3b.ws-eu74.gitpod.io']
+
+
+ALLOWED_HOSTS = ['renu-apparel.herokuapp.com', 'localhost']
+
+
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = [
@@ -116,15 +123,26 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 're_nu_apparel.wsgi.application'
 
-
 # Database
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+       'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
+        }
+
+
+    }
+
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse('postgres://sduyltqwacdaxp:ad578bb6fb187d70524b95a7962bdbb765652fb72a2586ff4b6bca0c11fd3c40@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/d1sg4fegk1e17k')
 }
 
 

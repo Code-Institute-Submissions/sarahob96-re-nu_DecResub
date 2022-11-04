@@ -11,7 +11,7 @@ from profiles.models import Profile
 class Checkout(models.Model):
 
     profile = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, related_name='user_orders')
-    order_number = models.CharField(max_length=20, null=False, editable=False)
+    order_number = models.CharField(max_length=40, null=False, editable=False)
     date = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=40, null=False, blank=False)
     email = models.EmailField(max_length=80, null=False, blank=False)

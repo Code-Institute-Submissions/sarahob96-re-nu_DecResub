@@ -1,0 +1,1 @@
+web: gunicorn re_nu_apparel.wsgi:application
