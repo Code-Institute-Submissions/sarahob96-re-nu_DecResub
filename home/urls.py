@@ -6,5 +6,3 @@ urlpatterns = [
     path('', views.index, name="home"),
 
 ]
-
-error_404 = 'home.views.error_404'
