@@ -1,411 +1,411 @@
 [
-   {
-      "model":"products.category",
-      "pk":1,
-      "fields":{
-         "name":"sale",
-         "category_name":"Sale"
-      }
-   },
-   {
-      "model":"products.category",
-      "pk":2,
-      "fields":{
-         "name":"bottoms",
-         "category_name":"Bottoms"
-      }
-   },
-   {
-      "model":"products.category",
-      "pk":3,
-      "fields":{
-         "name":"sports_bras",
-         "category_name":"Sports Bra"
-      }
-   },
-   {
-      "model":"products.category",
-      "pk":4,
-      "fields":{
-         "name":"tops",
-         "category_name":"Tops"
-      }
-   },
-   {
-      "model":"products.category",
-      "pk":5,
-      "fields":{
-         "name":"accessories",
-         "category_name":"Accessories"
-      }
-   },
-   {
-      "model":"products.category",
-      "pk":6,
-      "fields":{
-         "name":"sweatshirts",
-         "category_name":"Sweatshirts"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":1,
-      "fields":{
-         "category":2,
-         "name":"The Lucy Legging",
-         "sku":"RB202201",
-         "product_description":"Buttery-soft fabric,  100% squat-proof and a functional fit. Our Lucy legging is our bestseller. It the classic essential legging designed for all-day comfort. A wardrobe staple that can be used for a workout or just lounging.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"39.99",
-         "image_url":null,
-         "image":"legging.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":2,
-      "fields":{
-         "category":6,
-         "name":"The Lauren Hoodie",
-         "sku":"RS202202",
-         "product_description":"Add the RENU Forest hoodie to your wardrobe for a cosy go-to. Featuring a super soft material with a front pocket and a drawstring hood. Take it to the gym or pair with jeans to dress it up.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"29.99",
-         "image_url":null,
-         "image":"hoody-green.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":4,
-      "fields":{
-         "category":5,
-         "name":"The Hanton Waterbottle",
-         "sku":"RA202204",
-         "product_description":"Our Hanton Waterbottle has a sleek, high-shine finish. It’s leak-proof design keeps contents hot for up to twelve hours and cold for up to twenty-four hours. A great option for when you're out and about, whether that means summer/winter gym sessions or for general use. \r\n\r\nAvailable in Orange, Pink and Turquoise.",
-         "has_sizes":false,
-         "rating":null,
-         "price":"19.99",
-         "image_url":null,
-         "image":"waterbottle.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":5,
-      "fields":{
-         "category":6,
-         "name":"The Addie Sweatshirt",
-         "sku":"RS202205",
-         "product_description":"A simple hoodie can be your best friend in your wardrobe. The Addie Sweatshirt can be thrown over an outfit for a touch of practicality, styled to be your hero piece, or even just your go-to lounge item.  Versatile on every level, functional and crafted from soft-touch fabric for added comfort. \r\n\r\nSize up for an oversized fit.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"28.99",
-         "image_url":null,
-         "image":"sweatshirt1.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":6,
-      "fields":{
-         "category":2,
-         "name":"Power Legging",
-         "sku":"RB202206",
-         "product_description":"Our Power legging is the perfect Multi-sport gym legging,  designed for every workout. Super stretchy fabric with flattering seams to sculpt the bum. They are sweat-wicking and quick-drying for all sports.\r\n\r\nModel wears size S and is 178cm/5'10\" tall.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"49.99",
-         "image_url":null,
-         "image":"blue-leggings.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":7,
-      "fields":{
-         "category":3,
-         "name":"The Rachel Sports Bra",
-         "sku":"RSB202207",
-         "product_description":"Your training requires the right amount of support. Our Rachel Sports Bra is lightweight, breathable and features comfortable cups and supportive straps. Layer your look under a top or wear alone with your favourite leggings or shorts.\r\n\r\n- Model is 5'10\" and wears size S",
-         "has_sizes":true,
-         "rating":null,
-         "price":"24.99",
-         "image_url":null,
-         "image":"sports-bra-new.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":8,
-      "fields":{
-         "category":3,
-         "name":"The Juliette Sports Bra",
-         "sku":"RSB202215",
-         "product_description":"Seamless designs mean comfort and confidence from workout to time out. Our Juliette Sports Bra is Looser and more inclusive silhouettes mean more ways to wear and more wearers to wear it. Sweat-wicking tech mean you’ll be cool, dry and focused on the days you’re moving more.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"29.99",
-         "image_url":null,
-         "image":"pink-sportsbra.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":9,
-      "fields":{
-         "category":3,
-         "name":"The Evie Sports Bra",
-         "sku":"RSB202208",
-         "product_description":"Wide, comfy straps in a classic racerback design, the Evie Sports Bra feels snug and secure while you move. Smooth, lightweight fabric wicks sweat to keep you dry, comfortable and focused. For every rep, step and jump – know that you’re supported.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"22.99",
-         "image_url":null,
-         "image":"navy-sportsbra.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":10,
-      "fields":{
-         "category":2,
-         "name":"The Lily Short",
-         "sku":"RB202209",
-         "product_description":"Our Essential Lightweight Training Shorts are built for everyday performance.\r\n\r\nThe Lily Short is designed to be as unrestrictive as possible, they feature mesh pockets and a woven fabric for maximum mobility. The waistband is fitted with internal drawcords for a custom fit that you can be comfy in all day long.\r\n\r\n89% Polyester 11% Elastane",
-         "has_sizes":true,
-         "rating":null,
-         "price":"21.99",
-         "image_url":null,
-         "image":"shorts.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":11,
-      "fields":{
-         "category":5,
-         "name":"Renu Exercise Ball",
-         "sku":"RA202210",
-         "product_description":"Extremely useful for all kinds of sessions, exercise balls provide endless workouts. The RENU exercise ball is designed with strong vinyl which prevents slipping, this is an essential accessory. This balls arrives deflated, with an air pump provided.\r\n\r\nDiam: 65 cm. Weight: 150kgs. Inflated to 65cm",
-         "has_sizes":false,
-         "rating":null,
-         "price":"14.99",
-         "image_url":null,
-         "image":"ball.edit.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":12,
-      "fields":{
-         "category":5,
-         "name":"Renu Dumbells",
-         "sku":"RA202211",
-         "product_description":"Our set of RENU Dumbells come with 2x2.5kg and 2x5kg weights.\r\n\r\nThese dumbbells are perfect for performing high intensity upper and lower body circuits which include bicep curls, shoulder presses, rowing movements, lunges and goblet squats",
-         "has_sizes":false,
-         "rating":null,
-         "price":"55.99",
-         "image_url":null,
-         "image":"dumbells1.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":13,
-      "fields":{
-         "category":5,
-         "name":"Renu Bands Bundle",
-         "sku":"RA202212",
-         "product_description":"Take your workouts to the next level with our Renu bands Bundle, featuring our light, medium and heavyweight  bands.\r\n\r\nLight Blue- Light resistance: 25lb, length: 33cm\r\n\r\nYellow - Medium resistance: 38.5lb, length: 38cm\r\n\r\nGrey- Heavy resistance: 55lb, length: 43cm",
-         "has_sizes":false,
-         "rating":null,
-         "price":"19.99",
-         "image_url":null,
-         "image":"bands_iHnzV9I.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":14,
-      "fields":{
-         "category":6,
-         "name":"The Marie sweat",
-         "sku":"RS202213",
-         "product_description":"Our Marie Sweat features Ultra soft, mid weight cotton blend fleece with brushed interior for extra warmth, Crossover hood with drawcord adjust.\r\n\r\nWash garment inside out, Machine wash cold with like colors and Use only non chlorine bleach when needed.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"29.99",
-         "image_url":null,
-         "image":"blue-jumper.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":15,
-      "fields":{
-         "category":5,
-         "name":"Renu Workout Bundle",
-         "sku":"RA202214",
-         "product_description":"The RENU workout bundle includes:\r\n\r\nAn Exercise mat\r\nA sweat towel\r\n2 x 2.5kg dumbells\r\n1 x Exercise ball\r\n\r\nCurrently only available in candy pink.\r\nTeal coming soon!",
-         "has_sizes":false,
-         "rating":null,
-         "price":"64.99",
-         "image_url":null,
-         "image":"bundle.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":16,
-      "fields":{
-         "category":2,
-         "name":"The Audrey jogger",
-         "sku":"RB202216",
-         "product_description":"Our Yoga Jogger is soft to touch, slim fitting and designed with yoga & pilates in mind. Both lightweight and breathable with added stretch for unrestricted movement, you can't go wrong. \r\n\r\nAvailable in candy pink.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"29.99",
-         "image_url":null,
-         "image":"pink-yoga_lq8kxGu.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":17,
-      "fields":{
-         "category":4,
-         "name":"Marnie crop top",
-         "sku":"RT202217",
-         "product_description":"SOFT, COMFORTABLE COVERAGE. The Yoga Crop Top adds sweat-wicking technology to soft, breathable fabric for lasting comfort. Its open neckline and side hem vents let you move freely from your first pose to your last.  Soft Feel: Lightweight, breathable fabric feels incredibly soft against your skin.\r\n\r\nPerfect for Yoga and Pilates.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"19.99",
-         "image_url":null,
-         "image":"yoga-new.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":18,
-      "fields":{
-         "category":4,
-         "name":"The Tara tank top",
-         "sku":"RT202218",
-         "product_description":"The Tara Tank is designed for all the ways you work out—from yoga to HIIT to long runs. This top defines luxury with buttery-soft and smooth fabric that breathes to keep you dry and cool.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"15.99",
-         "image_url":null,
-         "image":"green-coord.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":19,
-      "fields":{
-         "category":2,
-         "name":"The Tia legging",
-         "sku":"RB202219",
-         "product_description":"Our Olive legging will work to keep you dry and comfortable while you push through the intensity of your toughest workouts. Soft, stretchy fabric hugs your body for gentle yet durable support. \r\n\r\nThis product is made from at least 50% recycled polyester fibres.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"26.99",
-         "image_url":null,
-         "image":"olive.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":20,
-      "fields":{
-         "category":4,
-         "name":"hannah tank top",
-         "sku":"RT202220",
-         "product_description":"Our Coral Tank ticks all the boxes. Soft, lightweight fabric (with plenty of stretch) wicks sweat and dries fast. It's also incredibly breathable with hits of mesh blended into a smooth and virtually seamless design. Feel confident knowing you can take on any workout in comfort. \r\n\r\nThis product is made with at least 75% recycled nylon fibres.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"15.99",
-         "image_url":null,
-         "image":"coral-top.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":21,
-      "fields":{
-         "category":2,
-         "name":"The Alice legging",
-         "sku":"RT202221",
-         "product_description":"Our Essential Mint leggings are made with cotton-rich, soft-touch fabric for easy, everyday wear. For additional comfort, we've designed these with a high-waisted wide waistband for a flattering fit that offers support.\r\n\r\nThe Essentials range is designed with the day-to-day in mind, whether you're training or taking time off.\r\n\r\nFabric: 95% Cotton 5% Elastane\r\n\r\nModel is 5'9 and wears size L",
-         "has_sizes":true,
-         "rating":null,
-         "price":"18.99",
-         "image_url":null,
-         "image":"mint.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":22,
-      "fields":{
-         "category":3,
-         "name":"The LEO Sports Bra",
-         "sku":"RSB202222",
-         "product_description":"Stay supported in the Power Mesh Grey Sports Bra, with removable cups and a breathable mesh back, you’ll be fit to fly through any workout.\r\n\r\n88% nylon 12% elastane",
-         "has_sizes":true,
-         "rating":null,
-         "price":"19.99",
-         "image_url":null,
-         "image":"grey-coord.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":23,
-      "fields":{
-         "category":2,
-         "name":"Grey 7/8 legging",
-         "sku":"RB202223",
-         "product_description":"7/8 leggings initially designed for fitness, that are perfect for everyday life.\r\nA morning toning workout; a work meeting; an active walk between noon and 2; a quick stop at the shop to top up the fridge; time at home with the family or out with friends: our Grey 7/8 legging are perfect for all.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"19.99",
-         "image_url":null,
-         "image":"grey_top.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":24,
-      "fields":{
-         "category":4,
-         "name":"The Michelle Co-ord",
-         "sku":"RT202224",
-         "product_description":"Our Michelle Sports Bra and Legging Co-ord gives us workout chic. Exercise in style or relax in style. \r\n\r\nThis RENU bundle is for a limited time only.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"45.99",
-         "image_url":null,
-         "image":"co-ord.jpeg"
-      }
-   },
-   {
-      "model":"products.product",
-      "pk":25,
-      "fields":{
-         "category":4,
-         "name":"The Emma Co-ord",
-         "sku":"RT202225",
-         "product_description":"A perfect combo for every workout. The Violet Co-Ord is the ideal gym outfit. Workout in style or add a sweatshirt for more of a lounge style.",
-         "has_sizes":true,
-         "rating":null,
-         "price":"59.99",
-         "image_url":null,
-         "image":"purple-coord.jpeg"
-      }
-   }
-  
-]
+    {
+       "model":"products.category",
+       "pk":1,
+       "fields":{
+          "name":"sale",
+          "category_name":"Sale"
+       }
+    },
+    {
+       "model":"products.category",
+       "pk":2,
+       "fields":{
+          "name":"bottoms",
+          "category_name":"Bottoms"
+       }
+    },
+    {
+       "model":"products.category",
+       "pk":3,
+       "fields":{
+          "name":"sports_bras",
+          "category_name":"Sports Bra"
+       }
+    },
+    {
+       "model":"products.category",
+       "pk":4,
+       "fields":{
+          "name":"tops",
+          "category_name":"Tops"
+       }
+    },
+    {
+       "model":"products.category",
+       "pk":5,
+       "fields":{
+          "name":"accessories",
+          "category_name":"Accessories"
+       }
+    },
+    {
+       "model":"products.category",
+       "pk":6,
+       "fields":{
+          "name":"sweatshirts",
+          "category_name":"Sweatshirts"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":1,
+       "fields":{
+          "category":2,
+          "name":"The Lucy Legging",
+          "sku":"RB202201",
+          "product_description":"Buttery-soft fabric,  100% squat-proof and a functional fit. Our Lucy legging is our bestseller. It the classic essential legging designed for all-day comfort. A wardrobe staple that can be used for a workout or just lounging.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"39.99",
+          "image_url":null,
+          "image":"legging.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":2,
+       "fields":{
+          "category":6,
+          "name":"The Lauren Hoodie",
+          "sku":"RS202202",
+          "product_description":"Add the RENU Forest hoodie to your wardrobe for a cosy go-to. Featuring a super soft material with a front pocket and a drawstring hood. Take it to the gym or pair with jeans to dress it up.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"29.99",
+          "image_url":null,
+          "image":"hoody-green.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":4,
+       "fields":{
+          "category":5,
+          "name":"The Hanton Waterbottle",
+          "sku":"RA202204",
+          "product_description":"Our Hanton Waterbottle has a sleek, high-shine finish. It’s leak-proof design keeps contents hot for up to twelve hours and cold for up to twenty-four hours. A great option for when you're out and about, whether that means summer/winter gym sessions or for general use. \r\n\r\nAvailable in Orange, Pink and Turquoise.",
+          "has_sizes":false,
+          "rating":null,
+          "price":"19.99",
+          "image_url":null,
+          "image":"waterbottle.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":5,
+       "fields":{
+          "category":6,
+          "name":"The Addie Sweatshirt",
+          "sku":"RS202205",
+          "product_description":"A simple hoodie can be your best friend in your wardrobe. The Addie Sweatshirt can be thrown over an outfit for a touch of practicality, styled to be your hero piece, or even just your go-to lounge item.  Versatile on every level, functional and crafted from soft-touch fabric for added comfort. \r\n\r\nSize up for an oversized fit.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"28.99",
+          "image_url":null,
+          "image":"sweatshirt1.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":6,
+       "fields":{
+          "category":2,
+          "name":"Power Legging",
+          "sku":"RB202206",
+          "product_description":"Our Power legging is the perfect Multi-sport gym legging,  designed for every workout. Super stretchy fabric with flattering seams to sculpt the bum. They are sweat-wicking and quick-drying for all sports.\r\n\r\nModel wears size S and is 178cm/5'10\" tall.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"49.99",
+          "image_url":null,
+          "image":"blue-leggings.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":7,
+       "fields":{
+          "category":3,
+          "name":"The Rachel Sports Bra",
+          "sku":"RSB202207",
+          "product_description":"Your training requires the right amount of support. Our Rachel Sports Bra is lightweight, breathable and features comfortable cups and supportive straps. Layer your look under a top or wear alone with your favourite leggings or shorts.\r\n\r\n- Model is 5'10\" and wears size S",
+          "has_sizes":true,
+          "rating":null,
+          "price":"24.99",
+          "image_url":null,
+          "image":"sports-bra-new.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":8,
+       "fields":{
+          "category":3,
+          "name":"The Juliette Sports Bra",
+          "sku":"RSB202215",
+          "product_description":"Seamless designs mean comfort and confidence from workout to time out. Our Juliette Sports Bra is Looser and more inclusive silhouettes mean more ways to wear and more wearers to wear it. Sweat-wicking tech mean you’ll be cool, dry and focused on the days you’re moving more.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"29.99",
+          "image_url":null,
+          "image":"pink-sportsbra.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":9,
+       "fields":{
+          "category":3,
+          "name":"The Evie Sports Bra",
+          "sku":"RSB202208",
+          "product_description":"Wide, comfy straps in a classic racerback design, the Evie Sports Bra feels snug and secure while you move. Smooth, lightweight fabric wicks sweat to keep you dry, comfortable and focused. For every rep, step and jump – know that you’re supported.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"22.99",
+          "image_url":null,
+          "image":"navy-sportsbra.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":10,
+       "fields":{
+          "category":2,
+          "name":"The Lily Short",
+          "sku":"RB202209",
+          "product_description":"Our Essential Lightweight Training Shorts are built for everyday performance.\r\n\r\nThe Lily Short is designed to be as unrestrictive as possible, they feature mesh pockets and a woven fabric for maximum mobility. The waistband is fitted with internal drawcords for a custom fit that you can be comfy in all day long.\r\n\r\n89% Polyester 11% Elastane",
+          "has_sizes":true,
+          "rating":null,
+          "price":"21.99",
+          "image_url":null,
+          "image":"shorts.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":11,
+       "fields":{
+          "category":5,
+          "name":"Renu Exercise Ball",
+          "sku":"RA202210",
+          "product_description":"Extremely useful for all kinds of sessions, exercise balls provide endless workouts. The RENU exercise ball is designed with strong vinyl which prevents slipping, this is an essential accessory. This balls arrives deflated, with an air pump provided.\r\n\r\nDiam: 65 cm. Weight: 150kgs. Inflated to 65cm",
+          "has_sizes":false,
+          "rating":null,
+          "price":"14.99",
+          "image_url":null,
+          "image":"ball.edit.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":12,
+       "fields":{
+          "category":5,
+          "name":"Renu Dumbells",
+          "sku":"RA202211",
+          "product_description":"Our set of RENU Dumbells come with 2x2.5kg and 2x5kg weights.\r\n\r\nThese dumbbells are perfect for performing high intensity upper and lower body circuits which include bicep curls, shoulder presses, rowing movements, lunges and goblet squats",
+          "has_sizes":false,
+          "rating":null,
+          "price":"55.99",
+          "image_url":null,
+          "image":"dumbells1.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":13,
+       "fields":{
+          "category":5,
+          "name":"Renu Bands Bundle",
+          "sku":"RA202212",
+          "product_description":"Take your workouts to the next level with our Renu bands Bundle, featuring our light, medium and heavyweight  bands.\r\n\r\nLight Blue- Light resistance: 25lb, length: 33cm\r\n\r\nYellow - Medium resistance: 38.5lb, length: 38cm\r\n\r\nGrey- Heavy resistance: 55lb, length: 43cm",
+          "has_sizes":false,
+          "rating":null,
+          "price":"19.99",
+          "image_url":null,
+          "image":"bands_iHnzV9I.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":14,
+       "fields":{
+          "category":6,
+          "name":"The Marie sweat",
+          "sku":"RS202213",
+          "product_description":"Our Marie Sweat features Ultra soft, mid weight cotton blend fleece with brushed interior for extra warmth, Crossover hood with drawcord adjust.\r\n\r\nWash garment inside out, Machine wash cold with like colors and Use only non chlorine bleach when needed.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"29.99",
+          "image_url":null,
+          "image":"blue-jumper.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":15,
+       "fields":{
+          "category":5,
+          "name":"Renu Workout Bundle",
+          "sku":"RA202214",
+          "product_description":"The RENU workout bundle includes:\r\n\r\nAn Exercise mat\r\nA sweat towel\r\n2 x 2.5kg dumbells\r\n1 x Exercise ball\r\n\r\nCurrently only available in candy pink.\r\nTeal coming soon!",
+          "has_sizes":false,
+          "rating":null,
+          "price":"64.99",
+          "image_url":null,
+          "image":"bundle.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":16,
+       "fields":{
+          "category":2,
+          "name":"The Audrey jogger",
+          "sku":"RB202216",
+          "product_description":"Our Yoga Jogger is soft to touch, slim fitting and designed with yoga & pilates in mind. Both lightweight and breathable with added stretch for unrestricted movement, you can't go wrong. \r\n\r\nAvailable in candy pink.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"29.99",
+          "image_url":null,
+          "image":"pink-yoga_lq8kxGu.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":17,
+       "fields":{
+          "category":4,
+          "name":"Marnie crop top",
+          "sku":"RT202217",
+          "product_description":"SOFT, COMFORTABLE COVERAGE. The Yoga Crop Top adds sweat-wicking technology to soft, breathable fabric for lasting comfort. Its open neckline and side hem vents let you move freely from your first pose to your last.  Soft Feel: Lightweight, breathable fabric feels incredibly soft against your skin.\r\n\r\nPerfect for Yoga and Pilates.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"19.99",
+          "image_url":null,
+          "image":"yoga-new.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":18,
+       "fields":{
+          "category":4,
+          "name":"The Tara tank top",
+          "sku":"RT202218",
+          "product_description":"The Tara Tank is designed for all the ways you work out—from yoga to HIIT to long runs. This top defines luxury with buttery-soft and smooth fabric that breathes to keep you dry and cool.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"15.99",
+          "image_url":null,
+          "image":"green-coord.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":19,
+       "fields":{
+          "category":2,
+          "name":"The Tia legging",
+          "sku":"RB202219",
+          "product_description":"Our Olive legging will work to keep you dry and comfortable while you push through the intensity of your toughest workouts. Soft, stretchy fabric hugs your body for gentle yet durable support. \r\n\r\nThis product is made from at least 50% recycled polyester fibres.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"26.99",
+          "image_url":null,
+          "image":"olive.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":20,
+       "fields":{
+          "category":4,
+          "name":"hannah tank top",
+          "sku":"RT202220",
+          "product_description":"Our Coral Tank ticks all the boxes. Soft, lightweight fabric (with plenty of stretch) wicks sweat and dries fast. It's also incredibly breathable with hits of mesh blended into a smooth and virtually seamless design. Feel confident knowing you can take on any workout in comfort. \r\n\r\nThis product is made with at least 75% recycled nylon fibres.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"15.99",
+          "image_url":null,
+          "image":"coral-top.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":21,
+       "fields":{
+          "category":2,
+          "name":"The Alice legging",
+          "sku":"RT202221",
+          "product_description":"Our Essential Mint leggings are made with cotton-rich, soft-touch fabric for easy, everyday wear. For additional comfort, we've designed these with a high-waisted wide waistband for a flattering fit that offers support.\r\n\r\nThe Essentials range is designed with the day-to-day in mind, whether you're training or taking time off.\r\n\r\nFabric: 95% Cotton 5% Elastane\r\n\r\nModel is 5'9 and wears size L",
+          "has_sizes":true,
+          "rating":null,
+          "price":"18.99",
+          "image_url":null,
+          "image":"mint.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":22,
+       "fields":{
+          "category":3,
+          "name":"The LEO Sports Bra",
+          "sku":"RSB202222",
+          "product_description":"Stay supported in the Power Mesh Grey Sports Bra, with removable cups and a breathable mesh back, you’ll be fit to fly through any workout.\r\n\r\n88% nylon 12% elastane",
+          "has_sizes":true,
+          "rating":null,
+          "price":"19.99",
+          "image_url":null,
+          "image":"grey-coord.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":23,
+       "fields":{
+          "category":2,
+          "name":"Grey 7/8 legging",
+          "sku":"RB202223",
+          "product_description":"7/8 leggings initially designed for fitness, that are perfect for everyday life.\r\nA morning toning workout; a work meeting; an active walk between noon and 2; a quick stop at the shop to top up the fridge; time at home with the family or out with friends: our Grey 7/8 legging are perfect for all.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"19.99",
+          "image_url":null,
+          "image":"grey_top.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":24,
+       "fields":{
+          "category":4,
+          "name":"The Michelle Co-ord",
+          "sku":"RT202224",
+          "product_description":"Our Michelle Sports Bra and Legging Co-ord gives us workout chic. Exercise in style or relax in style. \r\n\r\nThis RENU bundle is for a limited time only.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"45.99",
+          "image_url":null,
+          "image":"co-ord.jpeg"
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":25,
+       "fields":{
+          "category":4,
+          "name":"The Emma Co-ord",
+          "sku":"RT202225",
+          "product_description":"A perfect combo for every workout. The Violet Co-Ord is the ideal gym outfit. Workout in style or add a sweatshirt for more of a lounge style.",
+          "has_sizes":true,
+          "rating":null,
+          "price":"59.99",
+          "image_url":null,
+          "image":"purple-coord.jpeg"
+       }
+    }
+   
+ ]
