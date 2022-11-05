@@ -1,4 +1,4 @@
-
+[
    {
       "model":"products.category",
       "pk":1,
@@ -406,5 +406,6 @@
          "image_url":null,
          "image":"purple-coord.jpeg"
       }
-   },
+   }
   
+]
