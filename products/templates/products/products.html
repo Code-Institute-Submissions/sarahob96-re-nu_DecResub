@@ -70,10 +70,6 @@ Products
 </div>
 
 
-
-
-
-
 <script type="text/javascript">
     $('#sorting').change(function () {
         var selector = $(this);
@@ -89,7 +85,7 @@ Products
 
             window.location.replace(sorter);
         } else {
-            sorter.searchParams.delete("sort")
+            sorter.searchParams.delete("sort");
             sorter.searchParams.delete("direction");
 
             window.location.replace(sorter);
