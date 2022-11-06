@@ -34,7 +34,7 @@ You will recieve confirmation of your order at {{ order.email }}.</p>
 <table class="table-striped table-bordered order-summary-table">
     <thead>
         <tr>
-        <th> </th>
+      
         <th> Product </th>
         <th> Quantity </th>
         <th> Size </th>
@@ -42,18 +42,16 @@ You will recieve confirmation of your order at {{ order.email }}.</p>
         </tr>
     </thead>
     <tbody>
+    {% for product in order.ordernumber.all %}
         <tr>
-        {% for product in order.ordernumber.all %}
-        <td></td>
         <td> {{product.product.name}}  </td>
         <td> {{ product.qty}}</td>
        <td> {{ product.product.size }} </td>
        <td> {{ product.order_total }}</td>
-        
-        {% endfor %}
-        <td> {{order.grand_total | floatformat:2 }}</td>
-        </tr>
+         </tr>
+       {% endfor %}   
         </tbody>
+        <p> {{order.grand_total | floatformat:2 }}</p>
 </table>
 </div>
 
