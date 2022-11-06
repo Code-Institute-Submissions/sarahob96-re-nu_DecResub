@@ -69,9 +69,11 @@ def renu_form_review(request):
     return render(request, "information/renu-go.html", {'renu_reviews': renu_reviews,
                                                     'form': form})
 
+
 def product_admin(request):
     
     return render(request, 'home/product_admin.html')
+
 
 def about_page(request):
 
