@@ -482,6 +482,14 @@ element.style {
     width: 50%;
     margin:auto;
 }
+
+.footer-heading{
+    font-family: 'Abril Fatface', cursive;
+}
+.footer-anchor{
+    font-family: 'Abril Fatface', cursive;
+}
+
 @media screen and (max-width: 900px){
     .hero-text{
         height:260px;
