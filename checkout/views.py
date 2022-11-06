@@ -137,6 +137,7 @@ def checkout_order(request):
         'client_secret': intent.client_secret,
         'checkout_form': checkout_form,
         'stripe_public_key': stripe_public_key,
+        'total': total,
         
     }
 
