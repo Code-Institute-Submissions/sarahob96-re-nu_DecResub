@@ -30,7 +30,7 @@ Shopping bag
         <table class="table-responsive shopping-table ml-5 mr-5 text-center table table-sm  table-striped table-hover">
             <thead>
                 <tr>
-                    <th></th>
+                    <th class="small-screen"></th>
                     <th> Item</th>
                     <th> Size </th>
                     <th> Quantity </th>
@@ -45,7 +45,7 @@ Shopping bag
             <tbody>
             <tr>
                 {% if contents.product.image %}
-                <td class="table-image">
+                <td class="table-image small-screen">
                     <img class="img-fluid w-100" src="{{ contents.product.image.url }}">
                     {% else %}
                     <img class="w-100" src = "{{ MEDIA_URL }}noimage.png">

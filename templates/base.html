@@ -61,7 +61,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse navbar-border" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse navbar-border main-nav" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
@@ -84,13 +84,13 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'products' %}?renu_category=accessories"> Accessories </a>
           </li>
-          <li class="nav-item pl-3">
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'renu-go'%}"> Renu Go</a>
           </li>
 
 
           <div class="nav-menu">
-            <li class="nav-item nav-padding pr-2 dropdown">
+            <li class="nav-item nav-padding pr-3 dropdown">
               <a class="nav-link dropdown-toggle" href="{% url 'profile' %}" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false"><i
                     class="fa-regular fa-user"></i></a>
@@ -108,7 +108,7 @@
 
             <li class="nav-item"><a class="nav-link" href="{% url 'shopping_bag' %}"><i
                   class="fa-solid fa-bag-shopping"></i>
-                {% if bag_contents %} <span class="rounded-pill">{{ product_count }}</span>
+                {% if bag_items %} <span class="rounded-pill">{{ product_count }}</span>
                 {% endif %}
               </a></li>
           </div>
@@ -116,7 +116,7 @@
       </div>
     </nav>
     <div>
-    <form method="GET" class="search-bar" action=" {% url 'products' %}">
+    <form method="GET" class="search-bar pt-4" action=" {% url 'products' %}">
               <div class="input-group">
                 <input class="form-control border rounded-0" id="search-box" type="text" name="s"
                   placeholder="Search">

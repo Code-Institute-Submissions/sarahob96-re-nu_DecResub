@@ -334,7 +334,6 @@ hr{
 .boxing-block{
     border-radius: 10px;
     width:70%;
-    height:50vh;
     background-color: #FFE8FF;
     margin: auto;
 }
@@ -347,7 +346,6 @@ hr{
 
     border-radius: 10px;
     width:70%;
-    height:50vh;
     background-color: #5EBAB1;
     margin:auto;
 }
@@ -511,14 +509,16 @@ element.style {
 }
 }
 
-
+@media screen and (max-width: 767px){
+    .main-header-small{
+        display: block;
+        font-family: 'Abril Fatface', cursive; 
+    }
+}
 
 @media screen and (max-width: 650px){
 
-.main-header-small{
-    display: block;
-    font-family: 'Abril Fatface', cursive; 
-}
+
 .c-container{
         width:50%;
     
@@ -546,7 +546,7 @@ element.style {
     height: 650px;
 }
 
-}
+
 .newsletter-form{
     background-color: #FFE8FF;
     margin:0 !important;
@@ -560,7 +560,12 @@ element.style {
     padding:20px;
 }
 
+.profile-form{
+    width: 80%;
+    margin:auto;
+}
 
+}
 @media screen and (max-width:500px){
     .hero-text{
         display:none;
@@ -568,11 +573,14 @@ element.style {
     .bestseller-img {
         height: 50vh;
         }
-    .main-header-small{
-            display: none;
-        }
-    
+   
+    .order-success-img {
+        width: 100%;
+        height: 300px;
 }
+}
+
+
 @media screen and (max-width: 300px){
 
     .c-container{
@@ -581,6 +589,10 @@ element.style {
     }
 }
 @media screen and (max-width: 400px){
+
+    .main-header-small{
+        display: none;
+    }
 
     .bestseller-img{
         height: 30vh;
@@ -630,5 +642,18 @@ element.style {
 @media screen and (max-width: 441px){
     .back-btn{
         margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width:400px){
+    .contact-details-container{
+        margin-top:80px;
+    }
+}
+
+@media screen and (max-width:767px){
+
+    .main-nav{
+        padding-top: 60px;
     }
 }
