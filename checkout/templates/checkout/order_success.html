@@ -35,10 +35,10 @@ You will recieve confirmation of your order at {{ order.email }}.</p>
     <thead>
         <tr>
       
-        <th> Product </th>
-        <th> Quantity </th>
-        <th> Size </th>
-        <th> Total</th>
+        <th class="p-4"> Product </th>
+        <th class="p-4"> Quantity </th>
+        <th class="p-4"> Size </th>
+        <th class="p-4"> Total</th>
         </tr>
     </thead>
     <tbody>
@@ -52,7 +52,7 @@ You will recieve confirmation of your order at {{ order.email }}.</p>
        {% endfor %}   
         </tbody>
 </table> 
-<div> <h4> Order Total:{{ bag.grand_total | floatformat:2 }}</h4>
+<div class="pt-3"> <h5> Order Total:{{ order.grand_total | floatformat:2 }}</h5>
     </div>
 </div>
 
