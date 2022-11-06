@@ -20,7 +20,6 @@ class AdminCategory(admin.ModelAdmin):
     )
 
 
-
 class ReviewAdmin(admin.ModelAdmin):
     """Admin Panel display for Product Model"""
     list_display = (
@@ -29,7 +28,6 @@ class ReviewAdmin(admin.ModelAdmin):
         'user',
         'rating',
         'review',
-        
     )
 
 

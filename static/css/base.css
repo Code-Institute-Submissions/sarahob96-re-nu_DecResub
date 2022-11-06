@@ -370,7 +370,7 @@ hr{
 
 .password-redo{
     margin:auto;
-    width: 40;
+    width: 40%;
 }
 
 .cart-container{
@@ -406,13 +406,6 @@ hr{
 
 .small-hero-text{
     display:none;
-}
-.likes-btn{
-   
-    background-color: white;
-    color: white;
-    border: none;
-    outline: none;
 }
 
 #checkout-form{
@@ -486,6 +479,7 @@ element.style {
 .footer-heading{
     font-family: 'Abril Fatface', cursive;
 }
+
 .footer-anchor{
     font-family: 'Abril Fatface', cursive;
 }

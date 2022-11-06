@@ -12,7 +12,7 @@ class contact_form(forms.ModelForm):
 
 
 class clubReviewForm(forms.ModelForm):
-    
+
     class Meta:
         model = renuReview
         fields = ['name', 'your_experience', 'rating']

@@ -5,6 +5,7 @@ from django.contrib.auth import get_user
 
 # Create your views here.
 
+
 def form_contact(request):
     """user contact form """
 
@@ -35,10 +36,12 @@ def form_contact(request):
 def contact_success(request):
 
     return render(request, 'information/contact-success.html')
-      
+
+
 def renu_go(request):
 
     return render(request, 'information/renu-go.html')
+
 
 def renu_form_review(request):
     """
@@ -66,12 +69,13 @@ def renu_form_review(request):
             form = clubReviewForm(initial={'name': name})
 
     renu_reviews = Review.objects.all()
-    return render(request, "information/renu-go.html", {'renu_reviews': renu_reviews,
-                                                    'form': form})
+    return render(request, "information/renu-go.html",
+                           {'renu_reviews': renu_reviews,
+                            'form': form})
 
 
 def product_admin(request):
-    
+
     return render(request, 'home/product_admin.html')
 
 

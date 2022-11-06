@@ -9,7 +9,7 @@ Delete review
 
 <form method="post" class="mx-auto pt-5">
     {% csrf_token %}
-    <p></p> You are about to delete your review </p>
+    <p> You are about to delete your review </p>
     <input type="submit" value="Delete review" class="btn btn-danger btn-del pr-4 mr-2">
     <a href="{% url 'products' %}" class="btn submit-btn dlt-btn btn-cancel">Cancel</a>
 </form>

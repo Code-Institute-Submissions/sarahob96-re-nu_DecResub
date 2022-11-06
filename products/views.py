@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse,\
+     HttpResponseRedirect
 from .models import Product, Category, Product_review
 from django.db.models import Q
 from django.db.models.functions import Lower
@@ -22,7 +23,7 @@ def all_products(request):
             sorting = request.GET['sort']
             sort = sorting
             if sorting == 'name':
-                sorting= 'lower_name'
+                sorting = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
             if sorting == 'renu_category':
                 sorting = 'category__name'
@@ -45,7 +46,8 @@ def all_products(request):
                 messages.error(request, 'please enter a search item')
                 return redirect(reverse('products'))
 
-            search_queries = Q(name__icontains=search_query) | Q(product_description__icontains=search_query)
+            search_queries = Q(name__icontains=search_query) | Q(
+                 product_description__icontains=search_query)
             products = products.filter(search_queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -66,15 +68,16 @@ def product_info(request, product_id):
     product_reviews = Product_review.objects.filter(
         product_id=product.id)
     review_count = product_reviews.count()
-     
+
     context = {
         'product': product,
         'product_reviews': product_reviews,
         'review_count': review_count,
-      
+
     }
 
     return render(request, 'products/product_info.html', context)
+
 
 def product_review(request, product_id):
 
@@ -128,12 +131,12 @@ def update_review(request, review_id):
             form.save()
             messages.success(request, "Your review was updated")
             return redirect(reverse('product_info', args=[product.id]))
-        else: 
+        else:
             messages.error(request, 'sorry, we cannot update your review')
-            
+
     else:
         form = productForm(instance=all_reviews)
-    
+
     template = 'products/update_review.html'
     context = {
         'form': form,
@@ -151,17 +154,18 @@ def add_product(request):
             product = form.save()
             messages.success(request, f' Product has been successfully added')
             return redirect(reverse('product_info', args=[product.id]))
-        
+
         else:
-            messages.error(request, f' There was an error adding product, please try again')
+            messages.error
+            (request, f' There was an error adding product, please try again')
 
     else:
         form = AdminProductForm()
-        
+
         context = {
             'form': form,
         }
-    
+
     return render(request, 'products/add_product.html', context)
 
 
@@ -172,21 +176,22 @@ def edit_product(request, product_id):
         form = AdminProductForm(request.POST, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, f' product has been successfully updated')
-           
+            messages.success
+            (request, f' product has been successfully updated')
+
             return redirect(reverse('product_info', args=[product.id]))
-        
+
         else:
-            messages.error(request, f' There was an error editing product, please try again')
+            messages.error(request, f' There was an error, please try again')
 
     else:
         form = AdminProductForm(instance=product)
-        
+
         context = {
             'form': form,
             'product': product,
         }
-    
+
     return render(request, 'products/edit_product.html', context)
 
 

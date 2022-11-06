@@ -40,10 +40,10 @@ Shopping bag
 
                 </tr>
             </thead>
-          
-        {% for contents in bag_items %}
             <tbody>
-            <tr>
+               
+            <tr> 
+                {% for contents in bag_items %}
                 {% if contents.product.image %}
                 <td class="table-image small-screen">
                     <img class="img-fluid w-100" src="{{ contents.product.image.url }}">

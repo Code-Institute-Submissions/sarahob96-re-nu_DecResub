@@ -6,16 +6,17 @@ from checkout.models import Checkout
 
 # Create your views here.
 
+
 def user_profile(request):
 
     profile = get_object_or_404(Profile, user=request.user)
-    
+
     if request.method == "POST":
         form = ProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
             messages.success(request, "Your profile has been updated")
-  
+
     form = ProfileForm(instance=profile)
     orders = profile.user_orders.all()
 
@@ -24,7 +25,7 @@ def user_profile(request):
         'profile': profile,
         'form': form,
         'orders': orders,
-        'profile_page': True 
+        'profile_page': True
     }
     return render(request, template, context)
 

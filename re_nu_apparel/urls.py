@@ -14,6 +14,6 @@ urlpatterns = [
     path('profiles/', include('profiles.urls')),
     path('information/', include('information.urls')),
     path('reviews/', include('reviews.urls'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 're_nu_apparel.views.handler404'

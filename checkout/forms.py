@@ -5,7 +5,8 @@ from .models import Checkout
 class CheckoutForm(forms.ModelForm):
     class Meta:
         model = Checkout
-        fields = ('name', 'email', 'phone', 'address_line_1', 'address_line_2', 'town', 'city', 'postcode', 'country', )
+        fields = ('name', 'email', 'phone', 'address_line_1', 'address_line_2',
+                  'town', 'city', 'postcode', 'country', )
 
     def __init__(self, *args, **kwargs):
 

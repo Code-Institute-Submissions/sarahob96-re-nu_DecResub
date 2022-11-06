@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.contrib import admin
 from .models import renuReview
 
+
 @admin.register(renuReview)
 class RenuReviewAdmin(admin.ModelAdmin):
     list_display = (
@@ -12,4 +13,3 @@ class RenuReviewAdmin(admin.ModelAdmin):
         'date',
         'rating',
     )
-

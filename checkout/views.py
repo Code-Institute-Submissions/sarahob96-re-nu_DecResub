@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect, HttpResponse
+from django.shortcuts import render, get_object_or_404, reverse, redirect,\
+     HttpResponse
 from django.conf import settings
 from django.views.decorators.http import require_http_methods, require_POST
 from django.contrib import messages
@@ -12,6 +13,7 @@ from profiles.forms import ProfileForm
 import stripe
 import json
 global intent
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -47,12 +49,12 @@ def checkout_order(request):
             'city': request.POST['city'],
             'address_line_1': request.POST['address_line_1'],
             'address_line_2': request.POST['address_line_2'],
-           
+
         }
 
         checkout_form = CheckoutForm(form_data)
         if checkout_form.is_valid():
-            
+
             order = checkout_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
@@ -79,7 +81,7 @@ def checkout_order(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in your bag wasn't found"
                         "Please call us for assistance!")
                     )
                     order.delete()
@@ -87,7 +89,8 @@ def checkout_order(request):
 
             # Save the info to the user's profile if all is well
             request.session['save_details'] = 'save-details' in request.POST
-            return redirect(reverse('order_successful', args=[order.order_number]))
+            return redirect
+            (reverse('order_successful', args=[order.order_number]))
         else:
             print('form invalid')
             messages.error(request, 'There was an error with your form. \
@@ -95,10 +98,11 @@ def checkout_order(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request, "There's nothing in your bag")
             return redirect(reverse('products'))
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # prefill the form with info the user maintains in their profile
+
         if request.user.is_authenticated:
             try:
                 profile = Profile.objects.get(user=request.user)
@@ -138,7 +142,7 @@ def checkout_order(request):
         'checkout_form': checkout_form,
         'stripe_public_key': stripe_public_key,
         'total': total,
-        
+
     }
 
     return render(request, template, context)
@@ -185,4 +189,3 @@ def order_successful(request, order_number):
     }
 
     return render(request, template, context)
-

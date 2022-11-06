@@ -10,66 +10,72 @@ Products
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3 mb-3 w-100 d-print-block">
-         
-            <h2> Products  </h2>
+
+            <h2> Products </h2>
             <h4>
-                 {% for c in active_category %}
-                 {{ c.get_category_name }}
-                 {% endfor %}
+                {% for c in active_category %}
+                {{ c.get_category_name }}
+                {% endfor %}
             </h4>
-          
+
             <hr class="w-50 mb-1">
         </div>
-        </div>
     </div>
+</div>
 
-    <div class="w-100 mb-3">
+<div class="w-100 mb-3">
     <div class="dropdown-sort-products d-print-block w-20 float-right mr-5">
-        <select id="sorting" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">>
-            <option value="reset" disabled {% if current_sorting == 'None_None' %}selected{% endif %}>Sort products by</option>
-            <option value="price_ascending" {% if current_sorting == 'price_ascending' %}selected{% endif %}>Price (low to high)</option>
-            <option value="price_descending" {% if current_sorting == 'price_descending' %}selected{% endif %}>Price (high to low)</option>
-            <option value="name_ascending" {% if current_sorting == 'name_ascending' %}selected{% endif %}> Name (A-Z)</option>
-            <option value="name_descending" {% if current_sorting == 'name_descending' %}selected{% endif %}> Name (Z-A)</option>
+        <select id="sorting"
+            class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+            <option value="reset" disabled {% if current_sorting == 'None_None' %}selected{% endif %}>Sort products by
+            </option>
+            <option value="price_ascending" {% if current_sorting == 'price_ascending' %}selected{% endif %}>Price(low
+                to high)</option>
+            <option value="price_descending" {% if current_sorting == 'price_descending' %}selected{% endif %}>
+                Price(high to low)</option>
+            <option value="name_ascending" {% if current_sorting == 'name_ascending' %}selected{% endif %}> Name (A-Z)
+            </option>
+            <option value="name_descending" {% if current_sorting == 'name_descending' %}selected{% endif %}> Name (Z-A)
+            </option>
         </select>
     </div>
-    </div>
-    
-    <div class="row">
+</div>
+
+<div class="row">
 
 
-        <div class="col product-image text-center">
-            
-            <div class="row product-image-container">
-                {% for product in products %}
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 text-center">
-                    <div class="w-60">
-                       
-                  <a href="{% url 'product_info' product.id %}">
-                        {% if product.image %} 
-                        <img class="thumbnail thumbnail-image" src="{{ product.image.url }}">
-                    {% else %}
-                    <img class="w-100" src = "{{ MEDIA_URL }}noimage.png">
-                    {% endif %}  
-                    </a>   
+    <div class="col product-image text-center">
+
+        <div class="row product-image-container">
+            {% for product in products %}
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 text-center">
+                <div class="w-60">
+
+                    <a href="{% url 'product_info' product.id %}">
+                        {% if product.image %}
+                        <img class="thumbnail thumbnail-image" src="{{ product.image.url }}" alt="{{product.product}}">
+                        {% else %}
+                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{product.product}}">
+                        {% endif %}
+                    </a>
                     <h5 class="float-left mb-3 mt-1"> {{product.name}} </h5>
                     <p class=".d-print-inline-block float-right mt-1"> €{{product.price}}</p>
-             </div>
                 </div>
-                {% endfor %}
             </div>
-
+            {% endfor %}
         </div>
-            
+
     </div>
+
 </div>
 
 
 
 
-<script type="text/javascript">
 
-    $('#sorting').change(function() {
+
+<script type="text/javascript">
+    $('#sorting').change(function () {
         var selector = $(this);
         var sorter = new URL(window.location);
 
@@ -82,16 +88,14 @@ Products
             sorter.searchParams.set("direction", direction);
 
             window.location.replace(sorter);
-        }
-        else{
+        } else {
             sorter.searchParams.delete("sort")
             sorter.searchParams.delete("direction");
-            
+
             window.location.replace(sorter);
         }
 
     });
-
 </script>
 
 

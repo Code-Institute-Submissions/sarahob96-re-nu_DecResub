@@ -1,5 +1,5 @@
 from decimal import Decimal
-from django.conf import settings 
+from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
@@ -10,7 +10,7 @@ def bag_contents(request):
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
-    
+
     for product_id, data in bag.items():
         if isinstance(data, int):
             product = get_object_or_404(Product, pk=product_id)
@@ -33,7 +33,6 @@ def bag_contents(request):
                     'product': product,
                     'size': size,
                 })
- 
 
     if total < settings.FREE_DELIVERY:
         delivery_cost = total * Decimal(settings.STANDARD_DELIVERY / 100)
@@ -42,8 +41,8 @@ def bag_contents(request):
         delivery_cost = 0
         free_delivery_remainder = 0
 
-    grand_total = delivery_cost + total 
-    bag = request.session.get('bag', {})  
+    grand_total = delivery_cost + total
+    bag = request.session.get('bag', {})
 
     context = {
         'bag_items': bag_items,
@@ -56,5 +55,3 @@ def bag_contents(request):
     }
 
     return context
-
-
