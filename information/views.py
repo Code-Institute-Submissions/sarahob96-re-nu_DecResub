@@ -72,3 +72,12 @@ def renu_form_review(request):
 def product_admin(request):
     
     return render(request, 'home/product_admin.html')
+
+def about_page(request):
+
+    return render(request, 'information/about.html')
+
+
+def help_page(request):
+
+    return render(request, 'information/help.html')

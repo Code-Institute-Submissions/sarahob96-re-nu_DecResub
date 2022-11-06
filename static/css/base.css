@@ -477,7 +477,11 @@ element.style {
 .q-para{
     text-indent: 2em;
 }
-
+.founders-img{
+    height: 500px;
+    width: 50%;
+    margin:auto;
+}
 @media screen and (max-width: 900px){
     .hero-text{
         height:260px;
