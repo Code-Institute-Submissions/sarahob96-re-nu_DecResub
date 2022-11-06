@@ -46,13 +46,14 @@ You will recieve confirmation of your order at {{ order.email }}.</p>
         <tr>
         <td> {{product.product.name}}  </td>
         <td> {{ product.qty}}</td>
-       <td> {{ product.product.size }} </td>
+       <td> {{ product.product_size }} </td>
        <td> {{ product.order_total }}</td>
          </tr>
        {% endfor %}   
         </tbody>
-        <p> {{order.grand_total | floatformat:2 }}</p>
-</table>
+</table> 
+<div> <h4> Order Total:{{ grand_total | floatformat:2 }}</h4>
+    </div>
 </div>
 
 <h5 class="pt-3"> We can't wait to see you in RENU </h5>
