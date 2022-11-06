@@ -474,6 +474,9 @@ element.style {
     width: 70%;
     margin: auto;
 }
+.q-para{
+    text-indent: 2em;
+}
 
 @media screen and (max-width: 900px){
     .hero-text{
