@@ -1,6 +1,6 @@
 <h1> RENU APPAREL  </h1>
 
-<IMG>
+  <img src = "assets/images/multi-device-renu.png">
  
  <h2> About </
 This site has been created as part of the Code Institute Diploma. Project 5 demonstrates a full stack e-commerce site build using Django, Python, CSS, HTML and Javascript. 
@@ -194,10 +194,32 @@ The site has the following apps
   <h4> Models </h4>
   
   The following models are used for the site: 
+  <h3> The Order model </h3>
+    <img src = "assets/images/order-model.png">  
   
+  <h3> Product Model </h3>
+    <img src = "assets/images/product-model.png"> 
+    
+  <h3> Contact Model </h3>
+    <img src = "assets/images/contact-model].png">
+    
+  <h3> Checkout Model </h3>
+    <img src = "assets/images/checkout-model.png"> 
+    
+  <h3> Category Model </h3>
+    <img src = "assets/images/category-model.png">
+    
+   <h3> Order Model </h3>
+     <img src = "assets/images/order-model.png">   
+     
+  <h3> Profiles Model </h3>
   
-  
-  
+  <h3> Testimonials Model </h3>
+    <img src = "assets/images/testimonial-model.png">  
+    
+  <h3> Review Model </h3>
+    
+    
   <h3> The Surface Plane </h3>
   
   <h4> Colour Scheme </h4>
