@@ -2,11 +2,12 @@
 
   <img src = "assets/images/multi-device-renu.png">
  
- <h2> About </
+ <h2> About </h2>
 This site has been created as part of the Code Institute Diploma. Project 5 demonstrates a full stack e-commerce site build using Django, Python, CSS, HTML and Javascript. 
 The business created for the purpose of the project is RENU Apparel, a sustainable sports clothing and lifestyle brand. 
-  
-Link to live Site here
+ 
+
+<br> Link to live Site [here](https://renu-apparel.herokuapp.com/)
 
   <h2> Table of Contents </h2>
   
@@ -190,8 +191,11 @@ The site has the following apps
   <h4> The Database </h4>
   
   - Throughout development I used SQLite as this is the default database used when using django. When deployed on Heroku, PostgreSQL database is used. 
+  
+  <h5> Database Schema </h5>
+  <img src = "assets/images/schema.png">  
 
-  <h4> Models </h4>
+  <h3> Models </h3>
   
   The following models are used for the site: 
   <h3> The Order model </h3>
@@ -213,12 +217,13 @@ The site has the following apps
      <img src = "assets/images/order-model.png">   
      
   <h3> Profiles Model </h3>
+  <img src = "assets/images/Profile-model.png"> 
   
   <h3> Testimonials Model </h3>
     <img src = "assets/images/testimonial-model.png">  
     
   <h3> Review Model </h3>
-    
+    <img src = "assets/images/review-model.png">
     
   <h3> The Surface Plane </h3>
   
@@ -399,28 +404,44 @@ The site has the following apps
    - Javascript
   
   
-  <h2> Testing </h2>
+  <h2> Manual Testing </h2>
   
   <h3> Code Validators </h3>
   
-  - HTML code was validated through the W3 validator
-  - CSS code was validated through W3 Jigsaw
-  - Javascript code was validated through JS Hint
-  - Python is normally validated through PEP8. At the time of validating this project, the PEP8 site was down.
+- HTML code was validated through the [W3 validator](https://validator.w3.org/). No major errors were returned for my HTML code  
+- CSS code was validated through [W3 Jigsaw](https://jigsaw.w3.org/css-validator/)  
+- Javascript code was validated through [JS Hint](https://jshint.com/)
+- Python is normally validated through PEP8. At the time of validating this project, the PEP8 site was down. The Python code was checked through the problems panel through github.
+
+<h3> Responsive Testing </h3>
+
+- This project was tested for it's responsiveness on a number of devices including:
+  - Iphone 13
+  - Iphone 8
+  - Macbook Pro 13"
+  - Google developer tools - All screen sizes from 375 px and up.
   
+
+<h3> Search Engine Optimisation (SE0) </h3>
+ - Search engine optimization (SEO) is the practice of orienting your website to rank higher on a search engine results page so that your site gains more traffic. The aim is appear on the first page of Google results for search terms to reach a larger target audience. 
   
- <h3> Deployment </h3>
+ The following meta keyword were used in my code to attract the right target audience and gain the most traffic.
+  -sustainable, workout, activewear, loungewear, sports-bra, sweatshirts, bottoms, tops, renugo, dublin, irish, workout-classes, renu, renu-apparel, workout-uniform"
+ 
+<h3> Deployment </h3>
  
  - This project was created in gitpod and deployed using Heroku.
 A number of steps were carried out to ensure a successful deployment.
 
-- The final code was pushed to github and then heroku was used.
+- The final code was pushed to github and then connected to Heroku Database.
 
 - On the Heroku website, log in to your account once signed up.
 
 - Click on "create new app" once logged in.
 
 - Give the app a name and choose the correct region, USA or Europe
+
+- Before Deployment, import os and dj_database_url at the top of settings.py. Ensure dj_database_url and psychopg2 are installed using pip. Freeze requirements into  the requirements.txt file. 
 
 - Click on the settings tab
 
@@ -432,15 +453,60 @@ A number of steps were carried out to ensure a successful deployment.
       -SECRET_KEY
       -STRIPE_PUBLIC_KEY
       -STRIPE_SECRET_KEY
-      -STRIPE_WH_SECRET
       -USE_AWS
+  
+ - Get the database URL from here and use to connect the database to the app on github. 
  
-- After, go to the "buildpacks" section and add buildbacks 'Python'.
+- Migrate all information from the sqlite db to the postgres db using a json file that had all db information stored on it. I used this file to render my product and category information. 
 
-- Go to the deployment section and click on the 'connect to Github' option
+- Gunicorn was installed and also added to requirements.txt.
+
+- A Procfile was created and "web: gunicorn re_nu_apparel.wsgi:application" was added to it.
+
+- Disable static so heroku can deploy the site without static files.
+
+-  Go to the deployment section and click on the 'connect to Github' option
 
 - Choose the repository name you want to deploy and click 'connect'.
 
 - Choose between the 'automatic' and 'manual' deploys
 
 - Finally select the branch to deploy and heroku will build the final live app.
+
+- Files were pushed using "git push heroku main" after logging into the heroku CLI through "heroku login -i".
+
+AWS - Amazon web services was used to store all media and static files.
+- I created an account and searched for the S3 service.
+- Here, I 'created a bucket' and gave it public access.
+- I followed the rest of steps listed by code institute on this [page](https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf)
+- Once my site was connected to AWS storage service, I ensured my DEBUG was set to development only so it could not be used on my deployed site.
+- When all final changes were made in gitpod, I did a final 'git push heroku main' to ensure the live site was the latest version.
+  
+<h3> Credits </h3>
+  
+The Code Institute project - Boutique Ado was used to help build my project. I adapted models and views to suit my site as needed.
+  
+- I used a number of sports clothing sites including [Nike](https://www.nike.com/ie/?cp=72550463143_search_%7cnike%7c10564798947%7c107421904514%7ce%7cc%7cEN%7cpure%7c452146885339&ds_rl=1252249&gclid=CjwKCAiA9qKbBhAzEiwAS4yeDSCQ0_-lTRoTkFRFyhLSEM2XzUOxz9JqrBam84U56u-caiP3RaCxuhoCbMMQAvD_BwE&gclsrc=aw.ds), [Lulu lemon](https://www.eu.lululemon.com/en-lu/home?CID=Google_IRL_SRCH_Branded_lululemon&gclid=CjwKCAiA9qKbBhAzEiwAS4yeDYNnXDaiGT6mIsS5yPyX7vIjfpOD7TXWOn9HQtgpvzQR7OnKa8lX9hoCaP8QAvD_BwE&gclsrc=aw.ds) and [gym plus coffee](https://gympluscoffee.com/collections/womens?gclid=CjwKCAiA9qKbBhAzEiwAS4yeDci01O-m5p7Ie96SymiOgo1rzawB_l3js_kIXNoDtZ9fbsca6Ce3LBoCY7sQAvD_BwE) to get product descriptions for my products.
+  
+- A sitemap was generated on [XML Sitemap Generator](https://www.xml-sitemaps.com/details-renu-apparel.herokuapp.com-3deb2a24e.html).
+- Stack overflow and the Code institute slack group chats came in very useful with specific issues.
+  
+ <h4> Media </h4>
+  
+Images were sourced from:
+ - [shutterstock](https://www.shutterstock.com/explore/eu-stock-assets?c3apidt=p11181026076&gclid=CjwKCAiA9qKbBhAzEiwAS4yeDfr383MfpXWkxs2sNZ86ta6tPij_v5XLUdRgYc8BWcsrJdDZr8vTGBoC5y4QAvD_BwE&gclsrc=aw.ds&kw=shutterstock)
+ - [Pexels](https://www.pexels.com/) 
+ - [Unsplash](https://unsplash.com/)
+ - [Pixabay](https://pixabay.com/)  
+ - [Favicon](https://favicon.io/) was used to create the site icon image 
+ 
+<h4> Style </h4>
+  
+  - [Google fonts](https://fonts.google.com/about)
+  - [Font Awesome](https://fontawesome.com/)
+  - [Bootstrap](https://getbootstrap.com/)
+  - [Colorspace](https://mycolor.space/)
+
+<h2> Acknowledgements </h2>
+  
+  I'd like to thank all those who have supported me while completing this project and all previous ones also. Thank you to all the tutors at the Code Institute for helping me sort issues that I could not figure out. It's been a tough but rewarding course and I have gained so much knowledge and have learned so much.
