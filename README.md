@@ -404,7 +404,146 @@ The site has the following apps
    - Javascript
   
   
-  <h2> Manual Testing </h2>
+  <h2> Manual Testing - Features </h2>
+  
+  <h2> User Stories </h2>
+  
+
+"As an Ecommerce site owner, I want to be able to update a product not only through the admin but also easily through the front end on the site."
+
+- This feature is accessible on the individual product pages for admin/superusers only. They can edit these products easily from the front end rather than through the admin panel.
+ 
+
+" As a site owner, I want to easily add a new product to the site through the front end of the site."
+
+- This feature is available only to admin users. Once a user is logged in they will see in the profile menu an option for product admin. Regular customers will be greeted with a message to say the feature is for admin only. Admin users can then add products directly from the front end.
+
+
+" As a site owner, I want to be able to delete a product from each individual product page so products that are out of season/not available can be removed easily."
+
+- This feature is available also through the individual product pages. Admin users only will get the pop up option to delete the individual products.
+- 
+
+" As a site owner, I want to offer an incentive to members of the renugo community."
+
+ - This feature was fulfilled by offering free workout classes and exclusive information such as products coming soon. All customers can become a member once registered with the site.
+
+
+" As a site owner, I want to provide a user friendly experience to customers, allowing them to easily move around the site."
+
+- The navigation bar is pivotal to this user story being a success. The nav bar is seen at the top of all pages and allows the user access to travel around the site easily. 
+
+ 
+" As a site owner, I want to offer a number of ways for customers to get in touch."
+
+ - The customer can get in touch via a contact form. A Phone number and links to social media pages are also given.
+
+
+"As a site owner, I want to offer users a way to sign up to a newsletter to stay up to date on the latest RENU news."
+
+- A newsletter signup box is available at the bottom of the page in the footer.
+
+
+ <hr>
+
+" As a customer, I want to be aware of what is on offer immediately after landing on the home page."
+
+- The eye catching hero image and hero text immediately conveys the message of the site. The 'shop by category' feature on the homepage also tells the user very quickly what products/types of products are on offer.
+
+
+" As a customer, I want to navigate easily around the site so I can find what I'm looking for quickly"
+
+- The navbar allows the user to travel around the site effectively with no issues
+
+
+" As a customer, I want to see what products are available to me and individual product descriptions"
+
+- All products available are on show for the customer. Each product has their own description giving the user further insight.
+
+
+" As a customer, I want to be able to sort products by price/name to help my search"
+
+- The user can sort products by price( low to high, high to low) and from A-Z, Z-A
+
+
+"As a customer, I want to be able to choose my specific size when buying clothing items"
+- All clothing has the option to choose a size. Only accessories are one sized.
+
+
+"As a customer, I want to be able to add products to the shopping bag and see a bag preview."
+
+- A bag preview appears through a success toast when the user adds products to the shopping bag.
+
+
+"As a customer, I want to be able to adjust the item quantity in my shopping bag before reaching the checkout."
+
+- Their is a cart adjustment feature prior to checkout where the user can adjust the quantity of an item or delete it completely from the bag.
+
+
+"As a customer, I want to be able to easily checkout my items via the checkout form."
+
+- Once the user completes the checkout form and enters card details, they are brought to the order success page.
+
+
+" As a customer, I want to view my order confirmation after purchase."
+
+- Through the users profile, they can view previous orders, items and order total.
+
+
+" As a customer, I want to be able to purchase without having an account if it is a one time purchase "
+- Users can purchase without having an account but none of their information including orders will be saved. 
+
+
+" As a customer, I want to be able to easily register an account"
+
+- Customers can easily register for an account through the profile tab at the top of the page and also by clicking on the "renu go member" image on the home page. The option to sign up is also available through numerous sections of the site where non members cannot access certain features.
+
+ 
+"As a customer, I want to sort through specific categories to narrow down my search
+
+- Products are offered on the nav bar through categories aswell as 'all products'. The shop by category feature is also seen on the home page below the hero image.
+
+
+"As a customer, I want to be able to use a search function to type in key words to find what I'm looking for"
+
+- The search bar can be found on top of the site on the far right on large screens, center on small screens. The user can enter keywords that will bring up products with related product names/descriptions.
+ 
+ 
+" As a customer, I want to sign up to the site newsletter so I can keep up to date with the latest news/offers."
+
+- Users can successfully sign up to the newsletter by entering a valid email in the small pop up form in the footer.
+ 
+ 
+ 
+"As a customer, I want to be offered an incentive to shop and return a happy customer"
+
+- Users can easily sign up to become a member of renu-go where free classes and special offers will be advertised.
+
+
+" As a customer, I want to be able to read reviews on other products to keep informed on my purchases"
+
+- Reviews left by other customers will be seen by all users, giving them the chance to make informative decisions before purchasing items.
+ 
+ 
+"As a customer, I want to write a review of products I have recieved to inform other customers"
+
+- Customers - members only can leave product reviews underneath all products to help inform other users about the product
+
+
+"As a customer, I want to be able to edit or delete my review I have posted"
+
+- Customers have the options to edit and delete their own reviews only.
+ 
+ 
+"As a customer, I want to be able to follow the site on social media "
+
+- Social media links are provided in the footer- FB, instagram and twitter.
+ 
+ 
+"As a customer, I want to be able to contact the company if I have any queries about my order etc"
+
+- An easy to use contact form is available for email queries. A phone number and options to social accounts are also on the site.
+  
   
   <h3> Code Validators </h3>
   
