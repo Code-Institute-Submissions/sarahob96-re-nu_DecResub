@@ -1,5 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect,\
-     HttpResponse
+from django.shortcuts import render, get_object_or_404, reverse, redirect, HttpResponse
 from django.conf import settings
 from django.views.decorators.http import require_http_methods, require_POST
 from django.contrib import messages
@@ -89,8 +88,7 @@ def checkout_order(request):
 
             # Save the info to the user's profile if all is well
             request.session['save_details'] = 'save-details' in request.POST
-            return redirect
-            (reverse('order_successful', args=[order.order_number]))
+            return redirect(reverse('order_successful', args=[order.order_number]))
         else:
             print('form invalid')
             messages.error(request, 'There was an error with your form. \

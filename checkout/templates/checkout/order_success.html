@@ -47,12 +47,12 @@ You will recieve confirmation of your order at {{ order.email }}.</p>
         <td> {{product.product.name}}  </td>
         <td> {{ product.qty}}</td>
        <td> {{ product.product_size }} </td>
-       <td> {{ product.order_total }}</td>
+       <td> €{{ product.order_total }}</td>
          </tr>
        {% endfor %}   
         </tbody>
 </table> 
-<div class="pt-3"> <h5> Order Total:{{ total | floatformat:2 }}</h5>
+<div class="pt-3"> <h5> Order Total:€{{ order.grand_total | floatformat:2 }}</h5>
     </div>
 </div>
 

@@ -38,7 +38,7 @@ class Checkout(models.Model):
         self.total = \
             self.ordernumber.aggregate(Sum('order_total'))['order_total__sum']
         if self.total < settings.FREE_DELIVERY:
-            self.delivery_cost = self.total * settings.STANDARD_DELIVERY * 100
+            self.delivery_cost = self.total * settings.STANDARD_DELIVERY / 100
         else:
             self.delivery_cost = 0
         self.grand_total = self.total + self.delivery_cost
