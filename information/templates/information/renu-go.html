@@ -8,8 +8,9 @@ Renu Go
     <div class="row text-center mt-5">
         <div class="col">
             <h2 class="pl-2 pr-2"> Welcome to RENU Go </h2>
-                <h3> a community for our members </h3>
-            <p class="mb-5 pr-2 pl-2"> We want to reward our Renu-Go members with access to FREE workout events and MORE </p>
+            <h3> a community for our members </h3>
+            <p class="mb-5 pr-2 pl-2"> We want to reward our Renu-Go members with access to FREE workout events and MORE
+            </p>
 
             {% if user.is_authenticated %}
             <div class="mb-5">
@@ -17,53 +18,145 @@ Renu Go
 
                 <div class="mb-3 boxing-block row">
                     <div class="col">
-                           <h2 class="pt-3"> Boxing </h2>
-                            <img class="boxing-img pl-4" src="{% static 'images/boxing.jpeg'%}" alt="girl doing boxing">
-                            <div class="pt-5">
+                        <h2 class="pt-3"> Boxing </h2>
+                        <img class="boxing-img pl-4" src="{% static 'images/boxing.jpeg'%}" alt="girl doing boxing">
+                        <div class="pt-5">
                             <p> <strong>When</strong>: Tuesday 6th December 2022 at 7PM </p>
                             <p> <strong>Where</strong>: Head on Boxing Academy, Dublin </p>
                             <p> <strong>Cost</strong>: FREE</p>
                             <p> Bring Water and a sweat towel </p>
-                            <p> RENU items will be there to purchase on the day!</p> 
-                            </div>
+                            <p> RENU items will be there to purchase on the day!</p>
+                        </div>
                     </div>
-                </div>  
+                </div>
                 <div class=" mb-4 yoga-block row">
-                    <div class="col"> 
-                       <h2 class="pt-3">  Yoga </h2>
-                        <img class="yoga-img pl-3 float-right pt-5"src="{% static 'images/yoga.jpeg'%}" alt="girl doing yoga">
+                    <div class="col">
+                        <h2 class="pt-3"> Yoga </h2>
+                        <img class="yoga-img pl-3 float-right pt-5" src="{% static 'images/yoga.jpeg'%}"
+                            alt="girl doing yoga">
                         <div class="pt-5">
-                        <p> <strong>When</strong>: Thurs 15th December 2022 at 7PM </p>
+                            <p> <strong>When</strong>: Thurs 15th December 2022 at 7PM </p>
                             <p> <strong>Where</strong>: Arnotts level 2 </p>
                             <p> <strong>Cost</strong>: FREE</p>
                             <p> Bring Water and a sweat towel </p>
-                            <p> RENU pop-up shop located in Arnotts on level 1</p> 
-                            </div>
+                            <p> RENU pop-up shop located in Arnotts on level 1</p>
+                        </div>
                     </div>
 
                 </div>
             </div>
         </div>
-        
-            <div class="w-100">
+
+        <div class="w-100">
             <h3> * New product Sneak Peak *</h3>
             <img class="new-jacket" src="{% static 'images/laura_jacket.jpeg'%}" alt="girl wearing pink jacket">
+        </div>
+
+
+        {% else %}
+
+        <h4> Become a RENU go member today for access to our latest workout events and MORE </h4>
+
+        <h5><a href="{% url 'account_signup' %}"> Sign up </a> or <a href="{% url 'account_login'%}"> Login now </a>
+        </h5><br>
+        <h6><a href="{% url 'products'%}"> Shopping this way </a> </h6>
+
+        <img class=" group-workout-img p-3" src="{% static 'images/group-workout2.jpeg'%}"
+            alt="group of girls at a workout">
+
+        {% endif%}
+
+        <div class="reviews container-fluid p-5">
+            <div class="row">
+                <div class="col testimonial-section">
+                    <h3 class="text-center review-heading pt-5"> Testimonials </h3>
+                    <h5 class="text-center pt-2 sub-heading"> Look what our amazing RENU GO attendees have said about our events..
+                    </h5>
+                    <div class="testimonial-text owl-carousel review-1 review personal-info text-center">
+                              {% for review in renu_form_review %}
+                        <div >
+
+                            <hr class="w-50">
+                            <p class="font-italic">
+                                {{ review.your_experience }}</p>
+                            <hr>
+
+                            <p>
+                                <i class="fa-solid fa-star"></i> {{review.rating}} / 5
+                            </p>
+
+                            <p> Posted by <span class="font-italic"> {{review.name}}</span> on {{review.date}} </p>
+                        </div>
+                        {% endfor %}
+
+                    </div>
                 </div>
 
-                
-    {% else %}
+                <div class="col review-image">
 
-            <h4> Become a RENU go member today for access to our latest workout events and MORE </h4>
+                </div>
+            </div>
 
-            <h5><a href="{% url 'account_signup' %}"> Sign up </a> or <a href="{% url 'account_login'%}"> Login now </a> </h5><br>
-            <h6><a href="{% url 'products'%}"> Shopping this way </a> </h6>
-           
-            <img class=" group-workout-img p-3" src="{% static 'images/group-workout2.jpeg'%}" alt="group of girls at a workout">
 
-         {% endif%}
-        </div>
+            <hr>
+
+            <div class="review-form">
+
+                <h3 class="m-4 text-center"> We would love to hear about your experience at our RENU go events</h3>
+                {% if user.is_authenticated %}
+                <h4 class="text-center pt-20"> Submit your review here</h4>
+                <div class="align-items-center justify-content-center d-flex">
+                    <div class="review-form-container">
+                        <form action="{% url 'renu-form' %}" class="renu-review-form " method="POST">
+
+                            {% csrf_token %}
+                            <div>
+                                Name:
+                                <input type="text" class="form-control" name="name" required>
+                                <br>
+                                Your Experience:
+                                <textarea name="your_experience" class="form-control" rows="5" required></textarea>
+                                <br>
         
+                                <label for="rating"> Rating <i class="fa-solid fa-star"></i> </label>
+                                <select name="rating" id="rating">
+                                    <option value="5">5</option>
+                                    <option value="4">4</option>
+                                    <option value="3">3</option>
+                                    <option value="2">2</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+        
+                            <button type="submit" class="btn mt-2 mb-2 submit-btn"> Add Review </button>
+                        </form>
+                        {% else %}
+                        <div class="text-center">
+                            <h4> <a href="{% url 'account_login'%}">Login</a> to leave a review</h4>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
+
+
+{% endblock %}
+
+{% block js %}
+
+<script>
+    $(".testimonial-text").owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        items:1,
+    });
+</script>
 
 
 {% endblock %}

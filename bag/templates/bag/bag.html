@@ -41,10 +41,11 @@ Shopping bag
                 </tr>
             </thead>
             <tbody>
-               
-            <tr> 
                 {% for contents in bag_items %}
                 {% if contents.product.image %}
+            <tr> 
+               
+                
                 <td class="table-image small-screen">
                     <img class="img-fluid w-100" src="{{ contents.product.image.url }}">
                     {% else %}
@@ -109,9 +110,9 @@ Shopping bag
     $('.remove-product').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var productId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('size');
+        var size = $(this).data('product_size');
         var url = `/bag/remove/${productId}/`;
-        var data = { 'csrfmiddlewaretoken': csrfToken, 'size': size};
+        var data = { 'csrfmiddlewaretoken': csrfToken, 'product_size': size};
 
         $.post(url, data)
             .done(function () {

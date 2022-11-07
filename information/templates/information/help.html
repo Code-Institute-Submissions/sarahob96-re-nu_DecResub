@@ -4,40 +4,42 @@
 Help
 {% endblock %}
 {% block body %}
-<div class="help-container">
-<div class="FAQ">
-    <h3> FAQS</h3>
-    <p> Frequently asked questions are listed below. <br>
-        If you have any further questions, please don't hestitate to <a href="{% url 'form_contact'%}">contact</a> us! </p>
+<div class="help-container pl-4">
+    <div class="FAQ">
+        <h3> FAQS</h3>
+        <p> Frequently asked questions are listed below. <br>
+            If you have any further questions, please don't hestitate to <a href="{% url 'form_contact'%}">contact</a>
+            us! </p>
 
-</div>
-<div class="delivery-q">
-    <h3>
-        Orders and Delivery
-    </h3>
-    <h5> How much does shipping cost? </h5>
-    <p class="q-para"> Shipping is free over €60. Under 60, delivery is calculated as 10% of the order total to account for heavier parcels</p><br>
-    <h5> Do you ship internationally?</h5>
-    <p class="q-para"> Yes, we ship worldwide! </p><br>
-    <h5> What payment methods do we accept?</h5>
-    <p class="q-para"> We currently accept Visa, Mastercard and all major creditcards. We do not offer <br> 
-    gift vouchers at this time.</p><br>
-    <h5> Are custom charges included in the order total? </h5>
-    <p class="q-para"> Yes, all charges are included in the final total.</p><br>
+    </div>
+    <div class="delivery-q">
+        <h3 class="pb-3">
+            Orders and Delivery
+        </h3>
+        <h5> How much does shipping cost? </h5>
+        <p> - Shipping is free over €60. Under 60, delivery is calculated as 10% of the order total to
+            account for heavier parcels</p><br>
+        <h5> Do you ship internationally?</h5>
+        <p> - Yes, we ship worldwide! </p><br>
+        <h5> What payment methods do we accept?</h5>
+        <p> - We currently accept Visa, Mastercard and all major creditcards. We do not offer <br>
+            gift vouchers at this time.</p><br>
+        <h5> Are custom charges included in the order total? </h5>
+        <p> - Yes, all charges are included in the final total.</p><br>
 
-</div>
-<div class="returns-q">
-    <h3> Returns </h3>
-    <h5> What's your return policy?</h5>
-    <p class="q-para"> Returns are free once made within 10 working days of recieving your order.<br>
-    Items must be unused and in the correct packaging on return. </p><br>
-    <h5> How do I return an order?</h5>
-    <p class="q-para"> Please follow Return details given with your order. <br>
-    Use the free post returns label when posting back to us!</p><br>
-    <h5> Is their returns on sale items?</h5>
-    <p class="q-para"> There is a refund on sale items as we are aware you cannot try these. <br>
-    Sale items purchased in our pop up shop are not refundable!</p><br>
- 
-</div>
+    </div>
+    <div class="returns-q">
+        <h3 class="pb-3"> Returns </h3>
+        <h5> What's your return policy?</h5>
+        <p class="q-para"> Returns are free once made within 10 working days of recieving your order.<br>
+            Items must be unused and in the correct packaging on return. </p><br>
+        <h5> How do I return an order?</h5>
+        <p class="q-para"> Please follow Return details given with your order. <br>
+            Use the free post returns label when posting back to us!</p><br>
+        <h5> Is their returns on sale items?</h5>
+        <p class="q-para"> There is a refund on sale items as we are aware you cannot try these. <br>
+            Sale items purchased in our pop up shop are not refundable!</p><br>
+
+    </div>
 </div>
 {% endblock %}

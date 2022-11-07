@@ -8,7 +8,6 @@ Order Number: {{ order.order_number }}
 Order date: {{ order.date }}
 
 Order Total: {{order.total}}
-Delivery: 5.00
 Grand Total: {{order.grand_total}}
 
 Delivery Details:

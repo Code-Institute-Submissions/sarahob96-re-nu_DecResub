@@ -84,7 +84,7 @@ def delete_bag_item(request, product_id):
         if 'product_size' in request.POST:
             size = request.POST['product_size']
         bag = request.session.get('bag', {})
-
+        print(size)
         if size:
             del bag[product_id]['products_by_size'][size]
             if not bag[product_id]['products_by_size']:

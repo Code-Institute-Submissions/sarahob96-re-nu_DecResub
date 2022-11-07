@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -25,7 +25,7 @@ class renuReview(models.Model):
 
     STARS = ((1, "one"), (2, "two"), (3, "three"), (4, "four"), (5, "five"))
 
-    name = models.CharField(max_length=20)
+    name = models.ForeignKey(User, on_delete=models.CASCADE)
     your_experience = models.TextField(max_length=400)
     date = models.DateField(auto_now_add=True)
     rating = models.IntegerField(choices=STARS)

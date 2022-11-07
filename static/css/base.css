@@ -468,11 +468,14 @@ element.style {
     margin: auto;
 }
 .q-para{
-    text-indent: 2em;
+    list-style-type: square;
 }
-.founders-img{
-    height: 500px;
-    width: 50%;
+.founder-img{
+    padding: 50px;
+    width:100%;
+   
+}
+.about-container{
     margin:auto;
 }
 

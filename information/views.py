@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from .forms import contact_form, clubReviewForm
 from .models import renuReview, contact
 from django.contrib.auth import get_user
+from django.contrib import messages
 
 # Create your views here.
 
@@ -47,31 +48,27 @@ def renu_form_review(request):
     """
     form view that saves review left by user
     """
-
-    form = clubReviewForm()
-
     if request.method == 'POST':
-        renu_fields = {
-
-            'name': request.POST['name'],
-            'rating': request.POST['rating'],
-            'your_experience': request.POST['your_experience']
-        }
-        form = clubReviewForm(renu_fields)
-
+        form = clubReviewForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect("information/contact-success.html")
-
+            data = renuReview()
+            data.rating = form.cleaned_data['rating']
+            data.your_experience = form.cleaned_data['your_experience']
+            data.name = request.user
+            data.save()
+            messages.success(
+                request, 'Thanks, your renu-go review has been submitted.')
+            return redirect(reverse('renu-form'))
+        else:
+            messages.error(
+                request, "Sorry, your review could not be submitted.")
+            return redirect(reverse('renu-form'))
     else:
-        if request.user.is_authenticated:
-            name = get_user(request)
-            form = clubReviewForm(initial={'name': name})
+        form = clubReviewForm()
 
-    renu_reviews = Review.objects.all()
-    return render(request, "information/renu-go.html",
-                           {'renu_reviews': renu_reviews,
-                            'form': form})
+    template = 'information/renu-go.html'
+
+    return render(request, template)
 
 
 def product_admin(request):
