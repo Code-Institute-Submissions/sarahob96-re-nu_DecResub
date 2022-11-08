@@ -328,7 +328,12 @@ The site has the following apps
   - Footer
      - The footer contains links to social media accounts - Facebook, Instagram and Twitter.
      - A input box is also displayed in the footer to allow users to signup to the newsletter.
-  
+   <img src = "assets/images/footer-1.png">
+   
+   - 404 page
+    <img src = "assets/images/404.png">
+    
+    
   <h2> Marketing Strategies </h2>
  
   - A number of marketing questions were asked to my peers and family to gather information that would be deemed as necessary to when setting up a marketing strategy for an activewear site.
