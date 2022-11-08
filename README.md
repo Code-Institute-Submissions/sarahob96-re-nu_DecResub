@@ -2,11 +2,12 @@
 
   <img src = "assets/images/multi-device-renu.png">
  
- <h2> About </
+ <h2> About </h2>
 This site has been created as part of the Code Institute Diploma. Project 5 demonstrates a full stack e-commerce site build using Django, Python, CSS, HTML and Javascript. 
 The business created for the purpose of the project is RENU Apparel, a sustainable sports clothing and lifestyle brand. 
-  
-Link to live Site here
+ 
+
+<br> Link to live Site [here](https://renu-apparel.herokuapp.com/)
 
   <h2> Table of Contents </h2>
   
@@ -190,8 +191,11 @@ The site has the following apps
   <h4> The Database </h4>
   
   - Throughout development I used SQLite as this is the default database used when using django. When deployed on Heroku, PostgreSQL database is used. 
+  
+  <h5> Database Schema </h5>
+  <img src = "assets/images/schema.png">  
 
-  <h4> Models </h4>
+  <h3> Models </h3>
   
   The following models are used for the site: 
   <h3> The Order model </h3>
@@ -213,12 +217,13 @@ The site has the following apps
      <img src = "assets/images/order-model.png">   
      
   <h3> Profiles Model </h3>
+  <img src = "assets/images/Profile-model.png"> 
   
   <h3> Testimonials Model </h3>
     <img src = "assets/images/testimonial-model.png">  
     
   <h3> Review Model </h3>
-    
+    <img src = "assets/images/review-model.png">
     
   <h3> The Surface Plane </h3>
   
@@ -399,28 +404,185 @@ The site has the following apps
    - Javascript
   
   
-  <h2> Testing </h2>
+  <h2> Manual Testing - Features </h2>
+  
+   <img src = "assets/images/testing.png">
+  
+  <h2> User Stories </h2>
+  
+
+"As an Ecommerce site owner, I want to be able to update a product not only through the admin but also easily through the front end on the site."
+
+- This feature is accessible on the individual product pages for admin/superusers only. They can edit these products easily from the front end rather than through the admin panel.
+ 
+
+" As a site owner, I want to easily add a new product to the site through the front end of the site."
+
+- This feature is available only to admin users. Once a user is logged in they will see in the profile menu an option for product admin. Regular customers will be greeted with a message to say the feature is for admin only. Admin users can then add products directly from the front end.
+
+
+" As a site owner, I want to be able to delete a product from each individual product page so products that are out of season/not available can be removed easily."
+
+- This feature is available also through the individual product pages. Admin users only will get the pop up option to delete the individual products.
+- 
+
+" As a site owner, I want to offer an incentive to members of the renugo community."
+
+ - This feature was fulfilled by offering free workout classes and exclusive information such as products coming soon. All customers can become a member once registered with the site.
+
+
+" As a site owner, I want to provide a user friendly experience to customers, allowing them to easily move around the site."
+
+- The navigation bar is pivotal to this user story being a success. The nav bar is seen at the top of all pages and allows the user access to travel around the site easily. 
+
+ 
+" As a site owner, I want to offer a number of ways for customers to get in touch."
+
+ - The customer can get in touch via a contact form. A Phone number and links to social media pages are also given.
+
+
+"As a site owner, I want to offer users a way to sign up to a newsletter to stay up to date on the latest RENU news."
+
+- A newsletter signup box is available at the bottom of the page in the footer.
+
+
+ <hr>
+
+" As a customer, I want to be aware of what is on offer immediately after landing on the home page."
+
+- The eye catching hero image and hero text immediately conveys the message of the site. The 'shop by category' feature on the homepage also tells the user very quickly what products/types of products are on offer.
+
+
+" As a customer, I want to navigate easily around the site so I can find what I'm looking for quickly"
+
+- The navbar allows the user to travel around the site effectively with no issues
+
+
+" As a customer, I want to see what products are available to me and individual product descriptions"
+
+- All products available are on show for the customer. Each product has their own description giving the user further insight.
+
+
+" As a customer, I want to be able to sort products by price/name to help my search"
+
+- The user can sort products by price( low to high, high to low) and from A-Z, Z-A
+
+
+"As a customer, I want to be able to choose my specific size when buying clothing items"
+- All clothing has the option to choose a size. Only accessories are one sized.
+
+
+"As a customer, I want to be able to add products to the shopping bag and see a bag preview."
+
+- A bag preview appears through a success toast when the user adds products to the shopping bag.
+
+
+"As a customer, I want to be able to adjust the item quantity in my shopping bag before reaching the checkout."
+
+- Their is a cart adjustment feature prior to checkout where the user can adjust the quantity of an item or delete it completely from the bag.
+
+
+"As a customer, I want to be able to easily checkout my items via the checkout form."
+
+- Once the user completes the checkout form and enters card details, they are brought to the order success page.
+
+
+" As a customer, I want to view my order confirmation after purchase."
+
+- Through the users profile, they can view previous orders, items and order total.
+
+
+" As a customer, I want to be able to purchase without having an account if it is a one time purchase "
+- Users can purchase without having an account but none of their information including orders will be saved. 
+
+
+" As a customer, I want to be able to easily register an account"
+
+- Customers can easily register for an account through the profile tab at the top of the page and also by clicking on the "renu go member" image on the home page. The option to sign up is also available through numerous sections of the site where non members cannot access certain features.
+
+ 
+"As a customer, I want to sort through specific categories to narrow down my search
+
+- Products are offered on the nav bar through categories aswell as 'all products'. The shop by category feature is also seen on the home page below the hero image.
+
+
+"As a customer, I want to be able to use a search function to type in key words to find what I'm looking for"
+
+- The search bar can be found on top of the site on the far right on large screens, center on small screens. The user can enter keywords that will bring up products with related product names/descriptions.
+ 
+ 
+" As a customer, I want to sign up to the site newsletter so I can keep up to date with the latest news/offers."
+
+- Users can successfully sign up to the newsletter by entering a valid email in the small pop up form in the footer.
+ 
+ 
+ 
+"As a customer, I want to be offered an incentive to shop and return a happy customer"
+
+- Users can easily sign up to become a member of renu-go where free classes and special offers will be advertised.
+
+
+" As a customer, I want to be able to read reviews on other products to keep informed on my purchases"
+
+- Reviews left by other customers will be seen by all users, giving them the chance to make informative decisions before purchasing items.
+ 
+ 
+"As a customer, I want to write a review of products I have recieved to inform other customers"
+
+- Customers - members only can leave product reviews underneath all products to help inform other users about the product
+
+
+"As a customer, I want to be able to edit or delete my review I have posted"
+
+- Customers have the options to edit and delete their own reviews only.
+ 
+ 
+"As a customer, I want to be able to follow the site on social media "
+
+- Social media links are provided in the footer- FB, instagram and twitter.
+ 
+ 
+"As a customer, I want to be able to contact the company if I have any queries about my order etc"
+
+- An easy to use contact form is available for email queries. A phone number and options to social accounts are also on the site.
+  
   
   <h3> Code Validators </h3>
   
-  - HTML code was validated through the W3 validator
-  - CSS code was validated through W3 Jigsaw
-  - Javascript code was validated through JS Hint
-  - Python is normally validated through PEP8. At the time of validating this project, the PEP8 site was down.
+- HTML code was validated through the [W3 validator](https://validator.w3.org/). No major errors were returned for my HTML code  
+- CSS code was validated through [W3 Jigsaw](https://jigsaw.w3.org/css-validator/)  
+- Javascript code was validated through [JS Hint](https://jshint.com/)
+- Python is normally validated through PEP8. At the time of validating this project, the PEP8 site was down. The Python code was checked through the problems panel through github.
+
+<h3> Responsive Testing </h3>
+
+- This project was tested for it's responsiveness on a number of devices including:
+  - Iphone 13
+  - Iphone 8
+  - Macbook Pro 13"
+  - Google developer tools - All screen sizes from 375 px and up.
   
+
+<h3> Search Engine Optimisation (SE0) </h3>
+ - Search engine optimization (SEO) is the practice of orienting your website to rank higher on a search engine results page so that your site gains more traffic. The aim is appear on the first page of Google results for search terms to reach a larger target audience. 
   
- <h3> Deployment </h3>
+ The following meta keyword were used in my code to attract the right target audience and gain the most traffic.
+  -sustainable, workout, activewear, loungewear, sports-bra, sweatshirts, bottoms, tops, renugo, dublin, irish, workout-classes, renu, renu-apparel, workout-uniform"
+ 
+<h3> Deployment </h3>
  
  - This project was created in gitpod and deployed using Heroku.
 A number of steps were carried out to ensure a successful deployment.
 
-- The final code was pushed to github and then heroku was used.
+- The final code was pushed to github and then connected to Heroku Database.
 
 - On the Heroku website, log in to your account once signed up.
 
 - Click on "create new app" once logged in.
 
 - Give the app a name and choose the correct region, USA or Europe
+
+- Before Deployment, import os and dj_database_url at the top of settings.py. Ensure dj_database_url and psychopg2 are installed using pip. Freeze requirements into  the requirements.txt file. 
 
 - Click on the settings tab
 
@@ -432,15 +594,60 @@ A number of steps were carried out to ensure a successful deployment.
       -SECRET_KEY
       -STRIPE_PUBLIC_KEY
       -STRIPE_SECRET_KEY
-      -STRIPE_WH_SECRET
       -USE_AWS
+  
+ - Get the database URL from here and use to connect the database to the app on github. 
  
-- After, go to the "buildpacks" section and add buildbacks 'Python'.
+- Migrate all information from the sqlite db to the postgres db using a json file that had all db information stored on it. I used this file to render my product and category information. 
 
-- Go to the deployment section and click on the 'connect to Github' option
+- Gunicorn was installed and also added to requirements.txt.
+
+- A Procfile was created and "web: gunicorn re_nu_apparel.wsgi:application" was added to it.
+
+- Disable static so heroku can deploy the site without static files.
+
+-  Go to the deployment section and click on the 'connect to Github' option
 
 - Choose the repository name you want to deploy and click 'connect'.
 
 - Choose between the 'automatic' and 'manual' deploys
 
 - Finally select the branch to deploy and heroku will build the final live app.
+
+- Files were pushed using "git push heroku main" after logging into the heroku CLI through "heroku login -i".
+
+AWS - Amazon web services was used to store all media and static files.
+- I created an account and searched for the S3 service.
+- Here, I 'created a bucket' and gave it public access.
+- I followed the rest of steps listed by code institute on this [page](https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf)
+- Once my site was connected to AWS storage service, I ensured my DEBUG was set to development only so it could not be used on my deployed site.
+- When all final changes were made in gitpod, I did a final 'git push heroku main' to ensure the live site was the latest version.
+  
+<h3> Credits </h3>
+  
+The Code Institute project - Boutique Ado was used to help build my project. I adapted models and views to suit my site as needed.
+  
+- I used a number of sports clothing sites including [Nike](https://www.nike.com/ie/?cp=72550463143_search_%7cnike%7c10564798947%7c107421904514%7ce%7cc%7cEN%7cpure%7c452146885339&ds_rl=1252249&gclid=CjwKCAiA9qKbBhAzEiwAS4yeDSCQ0_-lTRoTkFRFyhLSEM2XzUOxz9JqrBam84U56u-caiP3RaCxuhoCbMMQAvD_BwE&gclsrc=aw.ds), [Lulu lemon](https://www.eu.lululemon.com/en-lu/home?CID=Google_IRL_SRCH_Branded_lululemon&gclid=CjwKCAiA9qKbBhAzEiwAS4yeDYNnXDaiGT6mIsS5yPyX7vIjfpOD7TXWOn9HQtgpvzQR7OnKa8lX9hoCaP8QAvD_BwE&gclsrc=aw.ds) and [gym plus coffee](https://gympluscoffee.com/collections/womens?gclid=CjwKCAiA9qKbBhAzEiwAS4yeDci01O-m5p7Ie96SymiOgo1rzawB_l3js_kIXNoDtZ9fbsca6Ce3LBoCY7sQAvD_BwE) to get product descriptions for my products.
+  
+- A sitemap was generated on [XML Sitemap Generator](https://www.xml-sitemaps.com/details-renu-apparel.herokuapp.com-3deb2a24e.html).
+- Stack overflow and the Code institute slack group chats came in very useful with specific issues.
+  
+ <h4> Media </h4>
+  
+Images were sourced from:
+ - [shutterstock](https://www.shutterstock.com/explore/eu-stock-assets?c3apidt=p11181026076&gclid=CjwKCAiA9qKbBhAzEiwAS4yeDfr383MfpXWkxs2sNZ86ta6tPij_v5XLUdRgYc8BWcsrJdDZr8vTGBoC5y4QAvD_BwE&gclsrc=aw.ds&kw=shutterstock)
+ - [Pexels](https://www.pexels.com/) 
+ - [Unsplash](https://unsplash.com/)
+ - [Pixabay](https://pixabay.com/)  
+ - [Favicon](https://favicon.io/) was used to create the site icon image 
+ 
+<h4> Style </h4>
+  
+  - [Google fonts](https://fonts.google.com/about)
+  - [Font Awesome](https://fontawesome.com/)
+  - [Bootstrap](https://getbootstrap.com/)
+  - [Colorspace](https://mycolor.space/)
+
+<h2> Acknowledgements </h2>
+  
+  I'd like to thank all those who have supported me while completing this project and all previous ones also. Thank you to all the tutors at the Code Institute for helping me sort issues that I could not figure out. It's been a tough but rewarding course and I have gained so much knowledge and have learned so much.
