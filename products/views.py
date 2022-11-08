@@ -11,7 +11,7 @@ from django.urls import reverse_lazy
 
 
 def all_products(request):
-
+    """products view """
     products = Product.objects.all()
     search_query = None
     categories = None
@@ -63,7 +63,7 @@ def all_products(request):
 
 
 def product_info(request, product_id):
-
+    """ Displays product info """
     product = get_object_or_404(Product, pk=product_id)
     product_reviews = Product_review.objects.filter(
         product_id=product.id)
@@ -80,7 +80,7 @@ def product_info(request, product_id):
 
 
 def product_review(request, product_id):
-
+    """ Displays product review """
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = productForm(request.POST)
@@ -147,7 +147,7 @@ def update_review(request, review_id):
 
 
 def add_product(request):
-
+    """ add product """
     if request.method == 'POST':
         form = AdminProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -170,7 +170,7 @@ def add_product(request):
 
 
 def edit_product(request, product_id):
-
+    """ edit product info"""
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = AdminProductForm(request.POST, instance=product)
@@ -196,6 +196,7 @@ def edit_product(request, product_id):
 
 
 def delete_product(request, product_id):
+    """Delete product"""
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, f' The product was deleted')

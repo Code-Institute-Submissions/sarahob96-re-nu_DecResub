@@ -10,7 +10,7 @@ from profiles.models import Profile
 
 
 class Checkout(models.Model):
-
+    # Order checkout model
     profile = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True,
                                 related_name='user_orders')
     order_number = models.CharField(max_length=40, null=False, editable=False)
@@ -55,6 +55,7 @@ class Checkout(models.Model):
 
 
 class Order_number(models.Model):
+    # Order line model used for creating order
     order = models.ForeignKey(Checkout, null=False, blank=False,
                               on_delete=models.CASCADE,
                               related_name='ordernumber')

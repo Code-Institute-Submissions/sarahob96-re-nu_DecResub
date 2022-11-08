@@ -8,7 +8,7 @@ from checkout.models import Checkout
 
 
 def user_profile(request):
-
+    """ renders users profile"""
     profile = get_object_or_404(Profile, user=request.user)
 
     if request.method == "POST":
@@ -31,7 +31,7 @@ def user_profile(request):
 
 
 def user_orders(request, order_number):
-
+    """ Displays users order """
     order = get_object_or_404(Checkout, order_number=order_number)
     template = 'checkout/order_success.html'
     context = {

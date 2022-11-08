@@ -66,97 +66,13 @@ Renu Go
 
         {% endif%}
 
-        <div class="reviews container-fluid p-5">
-            <div class="row">
-                <div class="col testimonial-section">
-                    <h3 class="text-center review-heading pt-5"> Testimonials </h3>
-                    <h5 class="text-center pt-2 sub-heading"> Look what our amazing RENU GO attendees have said about our events..
-                    </h5>
-                    <div class="testimonial-text owl-carousel review-1 review personal-info text-center">
-                              {% for review in renu_form_review %}
-                        <div >
-
-                            <hr class="w-50">
-                            <p class="font-italic">
-                                {{ review.your_experience }}</p>
-                            <hr>
-
-                            <p>
-                                <i class="fa-solid fa-star"></i> {{review.rating}} / 5
-                            </p>
-
-                            <p> Posted by <span class="font-italic"> {{review.name}}</span> on {{review.date}} </p>
-                        </div>
-                        {% endfor %}
-
-                    </div>
-                </div>
-
-                <div class="col review-image">
-
-                </div>
-            </div>
-
-
-            <hr>
-
-            <div class="review-form">
-
-                <h3 class="m-4 text-center"> We would love to hear about your experience at our RENU go events</h3>
-                {% if user.is_authenticated %}
-                <h4 class="text-center pt-20"> Submit your review here</h4>
-                <div class="align-items-center justify-content-center d-flex">
-                    <div class="review-form-container">
-                        <form action="{% url 'renu-form' %}" class="renu-review-form " method="POST">
-
-                            {% csrf_token %}
-                            <div>
-                                Name:
-                                <input type="text" class="form-control" name="name" required>
-                                <br>
-                                Your Experience:
-                                <textarea name="your_experience" class="form-control" rows="5" required></textarea>
-                                <br>
-        
-                                <label for="rating"> Rating <i class="fa-solid fa-star"></i> </label>
-                                <select name="rating" id="rating">
-                                    <option value="5">5</option>
-                                    <option value="4">4</option>
-                                    <option value="3">3</option>
-                                    <option value="2">2</option>
-                                    <option value="1">1</option>
-                                </select>
-                            </div>
-        
-                            <button type="submit" class="btn mt-2 mb-2 submit-btn"> Add Review </button>
-                        </form>
-                        {% else %}
-                        <div class="text-center">
-                            <h4> <a href="{% url 'account_login'%}">Login</a> to leave a review</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                </div>
-
-            </div>
-        </div>
     </div>
+</div>
+
+</div>
+</div>
 </div>
 
 
 {% endblock %}
 
-{% block js %}
-
-<script>
-    $(".testimonial-text").owlCarousel({
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        items:1,
-    });
-</script>
-
-
-{% endblock %}

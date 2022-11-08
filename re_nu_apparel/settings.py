@@ -25,9 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '91umyyh6m%)p3rylglatstox02fv&m3)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#'DEVELOPMENT' in os.environ
-
+DEBUG = 'DEVELOPMENT' in os.environ
 
 
 # Application definition
@@ -86,7 +84,7 @@ TEMPLATES = [
                 'bag.contexts.bag_contents',
 
             ],
-            'builtins': [ 
+            'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
 
@@ -198,20 +196,20 @@ if 'USE_AWS' in os.environ:
         'CacheControl': 'max-age=94608000',
     }
 
-    #Bucket Config
+    # Bucket Config
     AWS_STORAGE_BUCKET_NAME = "renu-apparel"
     AWS_S3_REGION_NAME = "us-east-1"
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-    #static/media files
+    # static/media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'media'
 
-    #override static and media urls in production
+    # override static and media urls in production
     STATIC_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
@@ -236,7 +234,6 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
 
 
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

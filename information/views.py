@@ -35,7 +35,7 @@ def form_contact(request):
 
 
 def contact_success(request):
-
+    """Contact success page """
     return render(request, 'information/contact-success.html')
 
 
@@ -77,10 +77,10 @@ def product_admin(request):
 
 
 def about_page(request):
-
+    """ renders about page """
     return render(request, 'information/about.html')
 
 
 def help_page(request):
-
+    """ renders help page """
     return render(request, 'information/help.html')
