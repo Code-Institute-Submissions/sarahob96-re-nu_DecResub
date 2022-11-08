@@ -208,7 +208,7 @@ The site has the following apps
   - Throughout development I used SQLite as this is the default database used when using django. When deployed on Heroku, PostgreSQL database is used. 
   
   <h5> Database Schema </h5>
-  <img src = "assets/images/schema.png">  
+  <img src = "assets/images/schema-1.png">  
 
   <h3> Models </h3>
   
@@ -301,7 +301,7 @@ The site has the following apps
      - The review portion of the site can be found on the individual product pages. Below the product, previously submitted reviews are displayed to all users. However, logged in users can only leave reviews. 
   
     <img src = "assets/images/reviews.png">
-  
+    <img src = "assets/images/product-info.png">
   
   - Renu go - Member Exclusive
     - An incentive to keep customers returning and remaining a loyal customer of the brand.
@@ -328,7 +328,12 @@ The site has the following apps
   - Footer
      - The footer contains links to social media accounts - Facebook, Instagram and Twitter.
      - A input box is also displayed in the footer to allow users to signup to the newsletter.
-  
+   <img src = "assets/images/footer-1.png">
+   
+   - 404 page
+    <img src = "assets/images/404.png">
+    
+    
   <h2> Marketing Strategies </h2>
  
   - A number of marketing questions were asked to my peers and family to gather information that would be deemed as necessary to when setting up a marketing strategy for an activewear site.
