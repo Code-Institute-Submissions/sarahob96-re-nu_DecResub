@@ -186,7 +186,22 @@ The site has the following apps
   
   <h3> The Skeleton Plane </h3>
   
-  - Wireframes here
+  <h4> Wireframes </h4>
+  
+  MAIN PAGE 
+  <img src = "assets/images/home-wireframe.png">  
+  
+  PRODUCT PAGE
+  <img src = "assets/images/product-wireframe.png">  
+  
+  PRODUCT INFORMATION
+  <img src = "assets/images/product-info-wireframe.png">   
+  
+  BAG 
+  <img src = "assets/images/BAG-wireframe.png">    
+  
+  CHECKOUT
+  <img src = "assets/images/Checkout-wireframe.png">   
   
   <h4> The Database </h4>
   
@@ -204,10 +219,10 @@ The site has the following apps
   <h3> Product Model </h3>
     <img src = "assets/images/product-model.png"> 
     
-  <h3> Contact Model </h3>
+  <h3> Contact Model (custom) </h3>
     <img src = "assets/images/contact-model].png">
     
-  <h3> Checkout Model </h3>
+  <h3> Checkout Model (custom- adapted) </h3>
     <img src = "assets/images/checkout-model.png"> 
     
   <h3> Category Model </h3>
@@ -217,12 +232,9 @@ The site has the following apps
      <img src = "assets/images/order-model.png">   
      
   <h3> Profiles Model </h3>
-  <img src = "assets/images/Profile-model.png"> 
-  
-  <h3> Testimonials Model </h3>
-    <img src = "assets/images/testimonial-model.png">  
+  <img src = "assets/images/Profile-model.png">  
     
-  <h3> Review Model </h3>
+  <h3> Review Model (custom) </h3>
     <img src = "assets/images/review-model.png">
     
   <h3> The Surface Plane </h3>
@@ -408,7 +420,7 @@ The site has the following apps
   
    <img src = "assets/images/testing.png">
   
-  <h2> User Stories </h2>
+  <h2> User Stories - Validation </h2>
   
 
 "As an Ecommerce site owner, I want to be able to update a product not only through the admin but also easily through the front end on the site."
@@ -562,6 +574,10 @@ The site has the following apps
   - Macbook Pro 13"
   - Google developer tools - All screen sizes from 375 px and up.
   
+<h3> Bugs </h3>
+
+- Currently there are a few minor 'line to long' python errors. These have been left where code was affected when the text was moved to the next line.
+
 
 <h3> Search Engine Optimisation (SE0) </h3>
  - Search engine optimization (SEO) is the practice of orienting your website to rank higher on a search engine results page so that your site gains more traffic. The aim is appear on the first page of Google results for search terms to reach a larger target audience. 
