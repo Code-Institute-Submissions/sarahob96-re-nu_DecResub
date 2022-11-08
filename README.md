@@ -406,6 +406,8 @@ The site has the following apps
   
   <h2> Manual Testing - Features </h2>
   
+   <img src = "assets/images/testing.png">
+  
   <h2> User Stories </h2>
   
 
