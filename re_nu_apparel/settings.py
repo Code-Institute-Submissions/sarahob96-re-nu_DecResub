@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 import dj_database_url
 
+if os.path.exists("env.py"):
+    import env
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -93,7 +96,7 @@ TEMPLATES = [
     },
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://renu-apparel.herokuapp.com/', 'https://8000-sarahob96-renu-sdfsk255t3b.ws-eu74.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://renu-apparel.herokuapp.com/', 'https://sarahob96-renu-fxzggoiyqe5.ws-eu77.gitpod.io/']
 
 
 ALLOWED_HOSTS = ['renu-apparel.herokuapp.com', 'localhost']
@@ -142,9 +145,9 @@ else:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-DATABASES = {
-    'default': dj_database_url.parse('postgres://sduyltqwacdaxp:ad578bb6fb187d70524b95a7962bdbb765652fb72a2586ff4b6bca0c11fd3c40@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/d1sg4fegk1e17k')
-}
+# DATABASES = {
+#     'default': dj_database_url.parse('postgres://sduyltqwacdaxp:ad578bb6fb187d70524b95a7962bdbb765652fb72a2586ff4b6bca0c11fd3c40@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/d1sg4fegk1e17k')
+# }
 
 
 # Password validation
