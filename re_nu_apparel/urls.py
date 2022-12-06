@@ -13,7 +13,8 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profiles/', include('profiles.urls')),
     path('information/', include('information.urls')),
-    path('reviews/', include('reviews.urls'))
+    path('reviews/', include('reviews.urls')),
+    path('blog/', include/('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 're_nu_apparel.views.handler404'
