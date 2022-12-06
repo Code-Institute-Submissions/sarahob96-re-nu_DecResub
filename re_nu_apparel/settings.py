@@ -97,7 +97,7 @@ TEMPLATES = [
     },
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://renu-apparel.herokuapp.com/', 'https://sarahob96-renu-fxzggoiyqe5.ws-eu77.gitpod.io/']
+CSRF_TRUSTED_ORIGINS = ['https://renu-apparel.herokuapp.com/', 'https://sarahob96-renu-fxzggoiyqe5.ws-eu77.gitpod.io/', 'https://sarahob96-renu-fxzggoiyqe5.ws-eu77.gitpod.io/']
 
 
 ALLOWED_HOSTS = ['renu-apparel.herokuapp.com', 'localhost']
