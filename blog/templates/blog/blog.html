@@ -10,7 +10,7 @@ Renu Reads
 <h1> Renu Reads </h1>
 
 {% for article in object_list %}
-    <li>{{ article.title }} <br>
+    <li><a href="{% url 'blog-view' article.pk %}">{{ article.title }} </a> <br>
     {{ article.post }}
     </li>
 {% endfor %}

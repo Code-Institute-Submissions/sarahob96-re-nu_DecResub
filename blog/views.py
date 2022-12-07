@@ -7,3 +7,7 @@ class blogView(ListView):
     model = Article
     template_name = 'blog/blog.html'
 
+
+class blog_post_view(DetailView):
+    model = Article
+    template_name = 'blog/blog_post.html'
