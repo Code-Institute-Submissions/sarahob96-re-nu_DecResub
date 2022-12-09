@@ -13,4 +13,5 @@ Renu Reads
     {{ article.post }}
 </div>
 <a href="{% url 'update_post' article.pk %}"> Update post </a>
+<a href="{% url 'delete_post' article.pk %}"> Delete post </a>
 {% endblock %}
