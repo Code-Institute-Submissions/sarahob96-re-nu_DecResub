@@ -8,6 +8,7 @@ Renu Reads
 
 {% block body %}
 <h1> Renu Reads </h1>
+<h6> <a href="{% url 'new_post' %}"> Add Post </a> </h6>
 
 {% for article in object_list %}
     <li><a href="{% url 'blog-view' article.pk %}">{{ article.title }} </a> <br>

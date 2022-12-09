@@ -23,7 +23,7 @@ Contact us
 
             <div class="align-items-center justify-content-center d-flex">
                 <div class="contact-form-container">
-                    <form action="{% url 'contact-success'%}" method="post" id="contact-post">
+                    <form action="{% url 'contact-success'%}" method="POST" id="contact-post">
                         {% csrf_token %}
                         {{ form|crispy }}
                         <button type="submit" class="btn btn-dark"> Submit </button>
