@@ -12,6 +12,19 @@ Renu Reads
     <hr>
     {{ article.post }}
 </div>
+
+<div>
+    <h2> Comments </h2>
+    {% if not article.blog_comment.all %}
+    No comments, be the first to leave one below.. 
+    {% else %}
+        {% for comment in article.blog_comment.all %}
+            {{ comment.user }}
+            {{ comment.date }}
+            {{ comment.comment }}
+        {% endfor %}
+    {% endif %}
+</div>
 <a href="{% url 'update_post' article.pk %}"> Update post </a>
 <a href="{% url 'delete_post' article.pk %}"> Delete post </a>
 {% endblock %}
