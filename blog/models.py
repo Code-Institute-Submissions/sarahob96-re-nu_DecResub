@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse 
-from django.contrib.auth.models import User
+
 # Create your models here.
 
 
@@ -16,10 +16,10 @@ class Article(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Article, related_name="blog_comment", on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, related_name="blog_comment", on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50, default="")
     comment = models.TextField()
 
     def __str__(self):
-        return self.post.title
+        return '%s - %s' % (self.article.title, self.name)
