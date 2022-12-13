@@ -208,7 +208,7 @@ The site has the following apps
   - Throughout development I used SQLite as this is the default database used when using django. When deployed on Heroku, PostgreSQL database is used. 
   
   <h5> Database Schema </h5>
-  <img src = "assets/images/schema-1.png">  
+  <img src = "assets/images/schema-.png">  
 
   <h3> Models </h3>
   
@@ -222,7 +222,7 @@ The site has the following apps
   <h3> Contact Model (custom) </h3>
     <img src = "assets/images/contact-model].png">
     
-  <h3> Checkout Model (custom- adapted) </h3>
+  <h3> Checkout Model </h3>
     <img src = "assets/images/checkout-model.png"> 
     
   <h3> Category Model </h3>
@@ -236,7 +236,14 @@ The site has the following apps
     
   <h3> Review Model (custom) </h3>
     <img src = "assets/images/review-model.png">
-    
+   
+  <h3> Article Model (custom) </h3>
+  <img src = "assets/images/blog-m.png">
+  
+  <h3> Comment Model (custom) </h3>
+  <img src = "assets/images/comment-m.png">
+  
+  
   <h3> The Surface Plane </h3>
   
   <h4> Colour Scheme </h4>
@@ -315,6 +322,13 @@ The site has the following apps
     - Blog posts are only displayed for authenticated members.
     
     <img src = "assets/images/blog-home1.png">
+    
+    - Comments can be left by the authenicated user. Superusers have access to delete any comment posted. 
+    
+    <img src = "assets/images/w.comments.png">
+    
+    <img src = "assets/images/comments.png">
+  
   
   - Guest
     - Users that remain on site without logging in (guest users) can still make orders and look at reviews but do not have the ability to leave reviews or check out exclusive content.
@@ -654,10 +668,13 @@ AWS - Amazon web services was used to store all media and static files.
 The Code Institute project - Boutique Ado was used to help build my project. I adapted models and views to suit my site as needed.
   
 - I used a number of sports clothing sites including [Nike](https://www.nike.com/ie/?cp=72550463143_search_%7cnike%7c10564798947%7c107421904514%7ce%7cc%7cEN%7cpure%7c452146885339&ds_rl=1252249&gclid=CjwKCAiA9qKbBhAzEiwAS4yeDSCQ0_-lTRoTkFRFyhLSEM2XzUOxz9JqrBam84U56u-caiP3RaCxuhoCbMMQAvD_BwE&gclsrc=aw.ds), [Lulu lemon](https://www.eu.lululemon.com/en-lu/home?CID=Google_IRL_SRCH_Branded_lululemon&gclid=CjwKCAiA9qKbBhAzEiwAS4yeDYNnXDaiGT6mIsS5yPyX7vIjfpOD7TXWOn9HQtgpvzQR7OnKa8lX9hoCaP8QAvD_BwE&gclsrc=aw.ds) and [gym plus coffee](https://gympluscoffee.com/collections/womens?gclid=CjwKCAiA9qKbBhAzEiwAS4yeDci01O-m5p7Ie96SymiOgo1rzawB_l3js_kIXNoDtZ9fbsca6Ce3LBoCY7sQAvD_BwE) to get product descriptions for my products.
-  
+
+- Codymy.com on You tube for some helpful videos that I used for my blog model. 
 - A sitemap was generated on [XML Sitemap Generator](https://www.xml-sitemaps.com/details-renu-apparel.herokuapp.com-3deb2a24e.html).
 - Stack overflow and the Code institute slack group chats came in very useful with specific issues.
   
+- Content for the blog posts were obtained from abbot.ie and realbuzz.com. 
+
  <h4> Media </h4>
   
 Images were sourced from:
