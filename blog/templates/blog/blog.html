@@ -7,13 +7,23 @@ Renu Reads
 {% endblock %}
 
 {% block body %}
+
+<div class="text-center">
 <h1> Renu Reads </h1>
+<hr class="w-50">
+{% if user.is_authenticated %}
 <h6> <a href="{% url 'new_post' %}"> Add Post </a> </h6>
 
 {% for article in object_list %}
-    <li><a href="{% url 'blog-view' article.pk %}">{{ article.title }} </a> <br>
-    {{ article.post }}
-    </li>
-{% endfor %}
+  <h3><li class="article-list"><a href="{% url 'blog-view' article.pk %}">{{ article.title }} </a> <br>
 
+    </li>
+    </h3>
+{% endfor %}
+{% else %}
+
+<h3> Become a <a href="{% url 'account_signup' %}"> RENU member </a> today to gain access to our blog 
+ or <a href="{% url 'account_login'%}"> Login now </a> </h3>
+ {% endif %}
+</div>
 {% endblock%}

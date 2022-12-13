@@ -306,6 +306,9 @@ hr{
 .contact-container{
     padding-top: 40px;
 }
+.article-list{
+    list-style-type: none;
+}
 
 .add-product-form{
     padding: 20px 100px 0 100px;
