@@ -43,3 +43,10 @@ class add_comment(CreateView):
         return super().form_valid(form)
 
     success_url = reverse_lazy('renureads')
+
+
+class delete_comment(DeleteView):
+    model = Comment
+    template_name = 'blog/delete_comment.html'
+    success_url = reverse_lazy('renureads')
+

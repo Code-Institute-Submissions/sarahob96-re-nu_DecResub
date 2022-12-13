@@ -31,12 +31,13 @@ Renu Reads
     <p> Leave a comment <a href="{% url 'add_comment' article.pk %}"> here </a> </p>
     <br>
         {% for comment in article.blog_comment.all %}
+       
             <strong> {{ comment.name }}
-            {{ comment.date }} </strong>
+            {{ comment.date }} </strong> {% if request.user.is_superuser %}<a href="{% url 'delete_comment' comment.pk %}" class="pl-2"> <i class="delete fa-solid fa-trash-can"></i> </a>  {% endif %}
+
             <br>
             {{ comment.comment }}
             <br>
-            
         {% endfor %}
     {% endif %}
 
