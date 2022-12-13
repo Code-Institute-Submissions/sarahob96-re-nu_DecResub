@@ -310,6 +310,11 @@ The site has the following apps
   
   
     <img src = "assets/images/renu-go.png">
+    
+  - Renu Reads - Member Exclusive
+    - Blog posts are only displayed for authenticated members.
+    
+    <img src = "assets/images/blog-home1.png">
   
   - Guest
     - Users that remain on site without logging in (guest users) can still make orders and look at reviews but do not have the ability to leave reviews or check out exclusive content.
