@@ -1,6 +1,6 @@
 <h1> RENU APPAREL  </h1>
 
-  <img src = "assets/images/multi-device-renu.png">
+  <img src = "assets/images/mockup-2.png">
  
  <h2> About </h2>
 This site has been created as part of the Code Institute Diploma. Project 5 demonstrates a full stack e-commerce site build using Django, Python, CSS, HTML and Javascript. 
@@ -319,7 +319,7 @@ The site has the following apps
     <img src = "assets/images/renu-go.png">
     
   - Renu Reads - Member Exclusive
-    - Blog posts are only displayed for authenticated members.
+    - Blog posts are only displayed for authenticated members. Admin users can add blog posts via the admin site but have the option to update/delete these on the front end. 
     
     <img src = "assets/images/blog-home1.png">
     
@@ -443,6 +443,7 @@ The site has the following apps
   <h2> Manual Testing - Features </h2>
   
    <img src = "assets/images/testing.png">
+   <img src = "assets/images/tests.png">
   
   <h2> User Stories - Validation </h2>
   
