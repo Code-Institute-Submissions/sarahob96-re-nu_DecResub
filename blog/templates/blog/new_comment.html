@@ -10,11 +10,11 @@ Add Comment
 <div class="p-5">
     <h2> Add a comment below
     </h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button> Add Comment </button>
-</form>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button> Add Comment </button>
+    </form>
 </div>
 
 {% endblock %}

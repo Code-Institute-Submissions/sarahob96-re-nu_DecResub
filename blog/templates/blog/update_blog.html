@@ -10,11 +10,11 @@ Update Post
 <div>
     <h2> Update Post
     </h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form| crispy}}
-    <button> Update Post </button>
-</form>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form| crispy}}
+        <button> Update Post </button>
+    </form>
 </div>
 
 {% endblock %}

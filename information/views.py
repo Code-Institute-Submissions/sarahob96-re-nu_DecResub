@@ -10,15 +10,14 @@ from django.contrib import messages
 def form_contact(request):
     """user contact form """
 
-    form = contact_form()
     if request.method == 'POST':
         contact_fields = {
 
-            'name': request.POST['name'],
-            'your_message': request.POST['your_message'],
-            'email': request.POST['email'],
-            'date': request.POST['email'],
-            'phone': request.POST['phone'],
+            name: request.POST('name'),
+            your_message: request.POST('your_message'),
+            email: request.POST('email'),
+            date: request.POST('date'),
+            phone: request.POST.get('phone')
         }
         form = contact_form(contact_fields)
 

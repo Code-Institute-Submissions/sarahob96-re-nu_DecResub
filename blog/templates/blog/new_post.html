@@ -10,11 +10,11 @@ Renu Reads
 <div>
     <h2> Add Blog Post
     </h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form| crispy}}
-    <button> Submit Post </button>
-</form>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form| crispy}}
+        <button> Submit Post </button>
+    </form>
 </div>
 
 {% endblock %}
